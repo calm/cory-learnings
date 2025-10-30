@@ -76,6 +76,35 @@
 
 **IMPORTANT**: Cory expects an optimized todo list at the start of every interaction.
 
+### ⚙️ Automatic Enforcement
+
+**Configured**: User prompt submit hook in `~/.claude/settings.local.json`
+
+This hook automatically injects a reminder before every user message:
+```
+🤖 AUTOMATIC REMINDER:
+- If this request involves 2+ steps, create an optimized todo list using TodoWrite BEFORE starting work
+- Review ~/cory-learnings/MASTER_LEARNINGS.md for Cory's preferences
+- Follow the "do this yourself" principle - complete implementations fully
+```
+
+**How it works**:
+- Hook runs automatically on every user message
+- Reminder is injected into conversation context
+- Claude sees it and follows the guidance
+- No manual action needed from Cory
+
+**Configuration**:
+```json
+{
+  "hooks": {
+    "user-prompt-submit": "echo '...[reminder text]...'"
+  }
+}
+```
+
+This ensures Claude **always** creates todo lists for multi-step tasks without requiring manual reminders.
+
 ### When to Create Todo Lists
 - ✅ **ALWAYS** at the start of any multi-step task
 - ✅ **ALWAYS** when Cory gives a request that involves 2+ steps
