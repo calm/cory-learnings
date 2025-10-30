@@ -70,6 +70,109 @@
 
 ---
 
+## Task Management & Todo Lists
+
+### Todo List Usage - CRITICAL REQUIREMENT
+
+**IMPORTANT**: Cory expects an optimized todo list at the start of every interaction.
+
+### When to Create Todo Lists
+- ✅ **ALWAYS** at the start of any multi-step task
+- ✅ **ALWAYS** when Cory gives a request that involves 2+ steps
+- ✅ **ALWAYS** for complex tasks that require planning
+- ✅ **ALWAYS** when beginning a new session with work to do
+
+### Todo List Standards
+
+**Structure**:
+```javascript
+[
+  {
+    "content": "Action verb + specific task",  // "Fix race condition in petal system"
+    "status": "pending" | "in_progress" | "completed",
+    "activeForm": "Present continuous form"   // "Fixing race condition in petal system"
+  }
+]
+```
+
+**Quality Requirements**:
+- 🎯 **Specific** - "Fix login bug" not "Fix bugs"
+- 🎯 **Actionable** - Clear what needs to be done
+- 🎯 **Complete** - All major steps included
+- 🎯 **Ordered** - Logical sequence, dependencies respected
+- 🎯 **Optimized** - No unnecessary items, right level of granularity
+
+### Todo List Workflow
+
+**Start of Interaction**:
+1. Understand Cory's request
+2. Break down into logical steps
+3. Create optimized todo list with TodoWrite tool
+4. Mark first item as `in_progress` BEFORE starting work
+
+**During Work**:
+- ✅ Only ONE item should be `in_progress` at a time
+- ✅ Mark completed IMMEDIATELY after finishing (don't batch)
+- ✅ Add new todos if you discover additional work
+- ✅ Remove todos that become irrelevant
+- ✅ Update list to reflect current reality
+
+**Task Status Management**:
+- Mark `in_progress` → Start working on it
+- Mark `completed` → Move to next task immediately
+- If blocked → Move to next actionable task, don't wait
+
+**Example - Good Todo List**:
+```javascript
+[
+  {"content": "Analyze race conditions in petal increment", "status": "completed", "activeForm": "Analyzing race conditions"},
+  {"content": "Implement atomic RPC for petal operations", "status": "in_progress", "activeForm": "Implementing atomic RPC"},
+  {"content": "Add optimistic locking with version field", "status": "pending", "activeForm": "Adding optimistic locking"},
+  {"content": "Create unit tests for concurrent operations", "status": "pending", "activeForm": "Creating unit tests"},
+  {"content": "Run full test suite and verify 63/63 passing", "status": "pending", "activeForm": "Running full test suite"}
+]
+```
+
+**Example - Bad Todo List**:
+```javascript
+[
+  {"content": "Fix stuff", "status": "pending"},  // ❌ Too vague
+  {"content": "Work on database", "status": "pending"},  // ❌ Not specific
+  {"content": "Tests", "status": "pending"}  // ❌ No clear action
+]
+```
+
+### Why This Matters
+
+**For Cory**:
+- Clear visibility into progress
+- Understand scope of work
+- Track what's done vs what's remaining
+- Verify nothing is forgotten
+
+**For Claude**:
+- Organized approach to complex tasks
+- Don't forget steps
+- Track progress systematically
+- Show thoroughness and planning
+
+### Special Cases
+
+**Single trivial task** - Don't create todo list
+- "Read this file" → Just do it
+- "What does this function do?" → Just answer
+- Simple 1-step operations → No todo needed
+
+**Complex single task** - DO create todo list
+- "Optimize this component" → Multiple steps (analyze, implement, test)
+- "Fix this bug" → Multiple steps (reproduce, fix, test, verify)
+
+**User provides list** - ALWAYS create todo list
+- "Do A, B, and C" → Todo list with 3 items
+- "Here are 5 things to implement" → Todo list with 5 items
+
+---
+
 ## Code Quality Standards
 
 ### Versioning
