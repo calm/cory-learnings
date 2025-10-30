@@ -254,6 +254,72 @@ Cory shared: https://github.com/calm/calm-api/pull/13684
 
 ---
 
+## Shared Tools for Other Projects
+
+### Tools Now Available Cross-Project
+
+**Date**: 2025-10-30
+**Status**: ios-automation tools are now exportable and available to all Calm projects
+
+**What's Available**:
+- ✅ **index.js** - Main export file with all tools
+- ✅ **SHARED_TOOLS.md** - Complete documentation
+- ✅ **package.json** - Updated with exports and proper main entry
+
+**Tool Categories**:
+1. **iOS Automation** - simulator, deviceHelper (manage simulators, devices)
+2. **Element Finding** - smartFinder, fieldHelper (multi-strategy element finding)
+3. **AI/Vision** - ocr, vision, visualCompare (text extraction, AI finding, visual testing)
+4. **Integrations** - jiraTicket, appiumHelper
+5. **Utilities** - logger, configValidator, testDataGenerator, wait
+
+**How Other Projects Can Use**:
+
+```bash
+# Method 1: npm link (recommended)
+cd ~/Desktop/calm/ios-automation && npm link
+cd ~/Desktop/calm/your-project && npm link ios-automation
+```
+
+```javascript
+// Then in code
+const { simulator, logger, smartFinder } = require('ios-automation');
+
+await simulator.boot('iPhone 15 Pro');
+logger.info('Simulator started successfully');
+```
+
+**Method 2: Direct import**:
+```javascript
+const { simulator } = require('../ios-automation');
+```
+
+**Method 3: Add to package.json**:
+```json
+{
+  "dependencies": {
+    "ios-automation": "file:../ios-automation"
+  }
+}
+```
+
+**Projects That Could Benefit**:
+- **calm-couples** - Use logger (replace console.log), testDataGenerator, visualCompare
+- **calm-ai-project-manager** - Use logger, configValidator, jiraTicket
+- **android** - Use logger, wait utilities, testDataGenerator (consistent tooling)
+- **web/www** - Use logger, wait, testReporter, visualCompare
+
+**Documentation**:
+- Full guide: `~/Desktop/calm/ios-automation/SHARED_TOOLS.md`
+- Tool examples, use cases, troubleshooting included
+
+**Cory's Intent**:
+"ensure other projects have access to the tools on ios-automation if helpful"
+
+This makes ios-automation utilities reusable across the Calm ecosystem without duplicating code.
+
+---
+
 ## Notes for Future Cory
 
 **If you come back to this project:**
