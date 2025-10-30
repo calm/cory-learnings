@@ -80,30 +80,34 @@
 
 **Configured**: User prompt submit hook in `~/.claude/settings.local.json`
 
-This hook automatically injects a reminder before every user message:
+This hook automatically injects a comprehensive reminder before every user message:
 ```
 🤖 AUTOMATIC REMINDER:
-- If this request involves 2+ steps, create an optimized todo list using TodoWrite BEFORE starting work
+- If 2+ steps: Create optimized todo list using TodoWrite BEFORE starting work
+- "Do this yourself": NEVER leave TODOs in code - complete implementations fully
+- "Test all and make sure ok": Run tests, verify they pass - zero tolerance for failures
+- "Be critical and continue": Work autonomously, be brutally honest about issues
+- Use structured logger (not console.log) for all error/info messages
 - Review ~/cory-learnings/MASTER_LEARNINGS.md for Cory's preferences
-- Follow the "do this yourself" principle - complete implementations fully
 ```
 
 **How it works**:
 - Hook runs automatically on every user message
 - Reminder is injected into conversation context
-- Claude sees it and follows the guidance
+- Claude sees all core working principles before responding
 - No manual action needed from Cory
+- Covers: todo lists, complete implementations, testing, autonomous execution, code quality
 
 **Configuration**:
 ```json
 {
   "hooks": {
-    "user-prompt-submit": "echo '...[reminder text]...'"
+    "user-prompt-submit": "echo '\n---\n🤖 AUTOMATIC REMINDER:\n- If 2+ steps: Create optimized todo list using TodoWrite BEFORE starting work\n- \"Do this yourself\": NEVER leave TODOs in code - complete implementations fully\n- \"Test all and make sure ok\": Run tests, verify they pass - zero tolerance for failures\n- \"Be critical and continue\": Work autonomously, be brutally honest about issues\n- Use structured logger (not console.log) for all error/info messages\n- Review ~/cory-learnings/MASTER_LEARNINGS.md for Cory'\''s preferences\n---'"
   }
 }
 ```
 
-This ensures Claude **always** creates todo lists for multi-step tasks without requiring manual reminders.
+This ensures Claude **always** follows your core working principles: complete implementations, comprehensive testing, autonomous execution, and optimized todo lists.
 
 ### When to Create Todo Lists
 - ✅ **ALWAYS** at the start of any multi-step task
