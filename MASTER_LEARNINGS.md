@@ -111,6 +111,7 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 - **Versioning**: Semantic versioning, conventional commits
 - **Logging**: Structured logger with component, action, metadata
 - **Documentation**: AGENTS.md files, Mermaid diagrams, last updated timestamps
+- **Token Efficiency**: Use <30% budget per task, ask before reading, sample first, parallel calls, limit output (see TOKEN_EFFICIENCY.md)
 
 ### Stack & Tools
 - **calm-couples**: React 19 + TypeScript + Supabase + Tailwind

@@ -62,7 +62,21 @@ Process: Run tests → Verify pass → Fix all failures
 Never: Skip tests or leave broken code
 ```
 
-### 4. Autonomous Execution
+### 4. Token Efficiency
+```yaml
+Target: Use <30% of token budget per task
+Strategy: Ask → Sample → Target → Execute
+Rules:
+  - Ask scope before reading multiple files
+  - Use head/tail to sample (not full reads)
+  - Parallel tool calls where possible
+  - Limit bash output (head -10, tail -5)
+  - Read with limit parameter when exploring
+  - Avoid "just in case" reads
+Reference: See TOKEN_EFFICIENCY.md for full guidelines
+```
+
+### 5. Autonomous Execution
 ```yaml
 Mode: Work through tasks without asking permission
 Response: "do it" = full approval to proceed

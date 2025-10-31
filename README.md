@@ -89,10 +89,18 @@ cd ~/cory-learnings
 ### Run Tests
 ```bash
 cd ~/cory-learnings
-./tests/run-all-tests.sh         # Run all validation tests
-./tests/structure.test.sh        # Test repository structure
-./tests/frontmatter.test.sh      # Test YAML frontmatter
-./tests/versions.test.sh         # Test version consistency
+./tests/run-all-tests.sh              # Run all validation tests
+
+# Repository validation tests
+./tests/structure.test.sh             # Test repository structure
+./tests/frontmatter.test.sh           # Test YAML frontmatter
+./tests/markdown.test.sh              # Test markdown syntax
+./tests/versions.test.sh              # Test version consistency
+
+# AI agent compliance tests
+./tests/ai-agent-compliance.test.sh   # Test AI agent behavior compliance
+./tests/code-quality.test.sh          # Test code quality standards
+./tests/todo-patterns.test.sh         # Test todo list patterns
 ```
 
 **Test Coverage**:
@@ -100,6 +108,9 @@ cd ~/cory-learnings
 - ✅ YAML frontmatter validation
 - ✅ Markdown syntax validation
 - ✅ Version consistency checks
+- ✅ AI agent behavior compliance
+- ✅ Code quality standards (no TODOs, console.log, TypeScript strict)
+- ✅ Todo list pattern validation
 
 ### Validate Repository
 ```bash
@@ -127,6 +138,42 @@ cd ~/cory-learnings
 # Creates learnings file and symlink
 ```
 
+### Test AI Agent Compliance
+```bash
+# Test that AI agents are following documented principles
+cd ~/cory-learnings
+./tests/ai-agent-compliance.test.sh
+
+# Test code quality in a specific project
+./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
+
+# Test with verbose output for detailed violations
+VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
+
+# Validate todo list patterns
+./tests/todo-patterns.test.sh
+```
+
+**AI Agent Tests**:
+- `ai-agent-compliance.test.sh` - Validates AI agents follow documented principles
+  - Code quality standards (no TODO comments, no console.log)
+  - Documentation structure (AI_QUICKSTART.md, TERM_DICTIONARY.md)
+  - Testing standards (98% coverage, no skipped tests)
+  - Workflow patterns (conventional commits, Claude attribution)
+  - Repository integrity (required files, version consistency)
+
+- `code-quality.test.sh` - Real-time code quality validation during development
+  - Can be run as pre-commit hook
+  - Checks specific project directories
+  - Identifies critical violations vs warnings
+  - Use VERBOSE=true for detailed output
+
+- `todo-patterns.test.sh` - Validates todo list management
+  - ACTIVE_TODOS.md structure and formatting
+  - Descriptive todo content (not vague)
+  - Multi-window coordination patterns
+  - Documentation consistency
+
 ---
 
 ## Documentation Files
@@ -136,6 +183,7 @@ cd ~/cory-learnings
 | [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 540 |
 | [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Comprehensive terminology reference | 600+ |
 | [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide | 940 |
+| [TOKEN_EFFICIENCY.md](TOKEN_EFFICIENCY.md) | Token optimization guidelines | 400+ |
 | [EXAMPLES.md](EXAMPLES.md) | Conversation patterns and anti-patterns | 513 |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and evolution tracking | 169 |
 | [projects/README.md](projects/README.md) | Project overview and quick commands | 296 |
