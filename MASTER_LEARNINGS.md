@@ -599,6 +599,287 @@ This ensures Claude **always** follows your core working principles: complete im
 
 ---
 
+## Frequently Asked Questions
+
+### General Workflow
+
+**Q: Do I need to ask before starting work?**
+**A:** No, be autonomous. If the task is clear and has 2+ steps, create a todo list and start immediately. Only ask if there's ambiguity or high stakes.
+
+**Q: What if I'm 80% sure about an approach?**
+**A:** If it's reversible and low-stakes, proceed with your best judgment. If it's high-stakes (destructive, breaking changes, production), present options and verify.
+
+**Q: Should I ask which approach to use?**
+**A:** Only if there are significant tradeoffs. Otherwise, follow documented patterns. If genuinely ambiguous, present 2-3 options with your recommendation.
+
+**Q: When should I commit changes?**
+**A:** When a feature or fix is complete, all tests pass, and code is clean (no TODOs). Use semantic versioning and conventional commits.
+
+---
+
+### Todo Lists
+
+**Q: Do I always need a todo list?**
+**A:** Yes, if the task has 2+ steps. Single trivial tasks don't need one. Complex single tasks (like "optimize component") DO need one.
+
+**Q: Can I update multiple todos at once?**
+**A:** No. Mark completed IMMEDIATELY after finishing each item. Only ONE item should be in_progress at any time.
+
+**Q: What if I discover more work while executing?**
+**A:** Add new todos to the list as you discover them. Update the list to reflect reality.
+
+**Q: What if I get blocked on a todo?**
+**A:** Move to the next actionable task. Don't wait or overthink. Document the blocker and keep momentum going.
+
+---
+
+### Testing
+
+**Q: What if tests are flaky?**
+**A:** Fix them. There's zero tolerance for unreliable tests. Flaky tests are bugs that need fixing.
+
+**Q: Do I need to run tests for small changes?**
+**A:** Yes. Always run tests after changes. "Zero tolerance for failing tests" means run and verify they pass.
+
+**Q: What if I can't get tests to 98% coverage?**
+**A:** That's the target, not a blocker. Get as close as possible, prioritize critical paths. Document what's not covered and why.
+
+**Q: What if tests pass locally but fail in CI?**
+**A:** Investigate and fix. CI failures count as "failing tests" and must be resolved.
+
+---
+
+### Code Quality
+
+**Q: Can I leave a TODO if I plan to do it next?**
+**A:** No. "Do this yourself" means complete it now, not later. If you can't complete it, ask for clarification on scope.
+
+**Q: What if I need to use 'any' in TypeScript?**
+**A:** Avoid it. Only use if absolutely necessary and document why. Strict TypeScript is the standard.
+
+**Q: Can I use console.log for debugging temporarily?**
+**A:** During active debugging, yes. But remove before committing. Production code must use structured logger.
+
+**Q: What's a "structured logger"?**
+**A:** Logger with component, action, and metadata. Example: `logger.error({ component: 'auth', action: 'login', error, userId })`
+
+---
+
+### Communication
+
+**Q: How much detail should I provide in updates?**
+**A:** Be concise. Report outcomes, not every step. Use progress indicators (✅ ⚠️ 🚧), bullet points, tables.
+
+**Q: What if Cory says "be critical"?**
+**A:** Give brutal honesty about what's broken vs working. Don't sugar-coat issues. Identify problems proactively.
+
+**Q: What if Cory says "do next todo"?**
+**A:** Work through the todo list autonomously. Use your judgment on priorities. Don't ask for permission on each item.
+
+**Q: Should I explain my reasoning for decisions?**
+**A:** Only for significant architectural decisions or tradeoffs. Don't over-explain trivial choices.
+
+---
+
+### When to Ask
+
+**Q: What qualifies as "high-stakes"?**
+**A:** Destructive operations, breaking changes, production impacts, significant refactoring, architecture decisions, budget/cost implications.
+
+**Q: What if I'm not sure if something is high-stakes?**
+**A:** Use the decision framework:
+1. Is this reversible? If yes, proceed.
+2. Could this break other systems? If yes, verify.
+3. Could this lose data? If yes, verify.
+4. Is impact unclear? If yes, ask.
+
+**Q: How do I ask a "smart question"?**
+**A:** Provide context, present 2-3 options with tradeoffs, make a recommendation, then ask. Example: "Two approaches: A (pros/cons) or B (pros/cons). Recommend A because X. Proceed?"
+
+---
+
+### Project-Specific
+
+**Q: Which project uses which stack?**
+**A:**
+- calm-couples: React 19 + TypeScript + Supabase + Tailwind
+- ios-automation: IDB + Appium + OCR + Vision AI
+- calm-ai-project-manager: Node.js + Express + Prisma + SQLite + Claude
+
+**Q: What are the test coverage targets?**
+**A:** 98% for calm-couples. Zero failing tests across all projects.
+
+**Q: Should I follow TDD (test-first)?**
+**A:** Not strictly required unless project-specific learnings say so. Standard: implement → test → verify.
+
+**Q: Where do I find project-specific patterns?**
+**A:** Read `~/cory-learnings/projects/<project-name>.md` and the project's `AGENTS.md` file.
+
+---
+
+### Troubleshooting
+
+**Q: What if the server is running and I need to restart it?**
+**A:** Check for "keep localhost running" in context. If mentioned, don't interrupt. Otherwise, restart if needed.
+
+**Q: What if I break something?**
+**A:** Fix it immediately. Don't hide it. Report what broke and how you're fixing it. Zero tolerance for leaving broken code.
+
+**Q: What if I don't understand Cory's request?**
+**A:** Ask for clarification. It's better to ask once upfront than implement the wrong thing.
+
+**Q: What if requirements conflict with documented patterns?**
+**A:** Ask which takes priority. Example: "Request X conflicts with GDPR requirement Y. Which takes priority?"
+
+---
+
+## Glossary
+
+### General Terms
+
+**Autonomous Execution**
+Working through tasks without asking permission at each step. Following documented patterns and making low-stakes decisions independently.
+
+**Structured Logger**
+Logging with component, action, and metadata context. Example: `logger.error({ component: 'auth', action: 'login', error, userId })`. Used instead of console.log.
+
+**Todo List**
+Task tracking using TodoWrite tool. Required for any work with 2+ steps. Only ONE item should be in_progress at a time.
+
+**Zero Tolerance**
+Absolute requirement with no exceptions. Applies to: failing tests, TODOs in code, console.log in production.
+
+**Smart Question**
+Question that provides context, presents options with tradeoffs, and makes a recommendation. Example: "Two approaches: A (lighter) or B (more robust). Recommend A. Proceed?"
+
+---
+
+### Technical Terms
+
+**FCP (First Contentful Paint)**
+Performance metric measuring time until first visual content renders. Target: <1.5s.
+
+**TTI (Time to Interactive)**
+Performance metric measuring time until page is fully interactive. Target: <3s.
+
+**Optimistic Locking**
+Concurrency control using version numbers to detect conflicts. Used to prevent race conditions.
+
+**RPC (Remote Procedure Call)**
+Server-side function for atomic database operations. Used in Supabase for complex transactions.
+
+**Semantic Versioning**
+Version format: MAJOR.MINOR.PATCH (e.g., v1.2.3). MAJOR for breaking changes, MINOR for features, PATCH for fixes.
+
+**Conventional Commits**
+Commit format: `type: description`. Types: feat, fix, docs, refactor, test, chore, etc.
+
+---
+
+### Project-Specific Terms
+
+**RCI Matrix** (calm-ai-project-manager)
+Decision framework: Responsible, Consulted, Informed. Clarifies who does what.
+
+**PTL Checklist** (calm-ai-project-manager)
+Pre-launch checklist covering Product and Technical requirements. Ensures nothing is forgotten before launch.
+
+**Petal System** (calm-couples)
+Gamification mechanic where users earn petals through activities. Implemented with 3D visualization.
+
+**GDPR Compliance** (calm-couples)
+General Data Protection Regulation. Requires data export, deletion, consent management.
+
+**Test Isolation** (ios-automation)
+Ensuring E2E tests don't affect each other. Critical for reliable test execution.
+
+**Modal Dismissal** (ios-automation)
+Handling iOS modal dialogs that block test execution. Common challenge in E2E testing.
+
+---
+
+### Supabase Terms (calm-couples)
+
+**Supabase SQL Editor**
+Web-based SQL editor for running migrations and queries directly on database.
+
+**Row Level Security (RLS)**
+Database-level access control. Ensures users can only access their own data.
+
+**Edge Functions**
+Serverless functions running on Supabase edge network. Used for backend logic.
+
+**Realtime**
+Supabase feature for WebSocket-based real-time updates to database changes.
+
+---
+
+### Testing Terms
+
+**Unit Test**
+Test of individual function/component in isolation. Uses mocks, no database. Fast and reliable.
+
+**Integration Test**
+Test of multiple components working together. May use real database. Tests actual functionality.
+
+**E2E Test** (End-to-End)
+Test of complete user flow from start to finish. Tests real system behavior.
+
+**Flaky Test**
+Test that sometimes passes, sometimes fails. Considered a bug that must be fixed. Zero tolerance.
+
+**Test Coverage**
+Percentage of code executed by tests. Target: 98%.
+
+**Regression Test**
+Test that verifies a previously fixed bug stays fixed.
+
+---
+
+### iOS Automation Terms (ios-automation)
+
+**IDB (iOS Development Bridge)**
+Facebook tool for iOS device/simulator interaction. Core of ios-automation framework.
+
+**Appium**
+Mobile automation framework. Used for cross-platform test scripting.
+
+**Tesseract OCR**
+Optical Character Recognition engine. Reads text from screenshots for verification.
+
+**Vision AI**
+AI-powered image analysis. Used for visual verification in tests.
+
+**XCTest**
+Apple's native testing framework for iOS. Some tests use this directly.
+
+---
+
+### Cory-Specific Phrases
+
+**"do it"**
+Full approval to proceed. Implement completely with no further questions.
+
+**"be critical"**
+Request for brutal honesty. Identify all issues, don't sugar-coat problems.
+
+**"continue" / "keep going"**
+Keep working on current task autonomously. Trust your direction.
+
+**"do next todo" / "do next thing you pick"**
+Work through task list autonomously. Use judgment on priorities.
+
+**"keep localhost running"**
+Don't interrupt the development server. Work without restarting.
+
+**"do this yourself"**
+Complete implementations fully. No TODOs, no placeholders, no "we'll do this later".
+
+**"test all and make sure ok"**
+Run comprehensive tests and verify they pass. Zero tolerance for failures.
+
+---
+
 ## Quick Reference
 
 ### Starting a Session

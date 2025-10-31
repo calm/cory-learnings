@@ -145,6 +145,78 @@ Bad:
 
 ## Workflow Pattern
 
+### Primary Workflow
+
+```mermaid
+flowchart TD
+    A[Receive Request] --> B{2+ Steps?}
+    B -->|Yes| C[Create Todo List]
+    B -->|No| D[Execute Directly]
+    C --> E[Mark First in_progress]
+    E --> F{High Stakes?}
+    F -->|Yes| G[Ask Smart Question]
+    F -->|No| H[Execute Task]
+    G --> I[Get Confirmation]
+    I --> H
+    H --> J[Run Tests]
+    D --> J
+    J --> K{Tests Pass?}
+    K -->|Yes| L[Mark Completed IMMEDIATELY]
+    K -->|No| M[Fix Issues]
+    M --> J
+    L --> N{More Todos?}
+    N -->|Yes| E
+    N -->|No| O[Session Complete]
+```
+
+### Decision Framework
+
+```mermaid
+flowchart TD
+    A[Need to Make Decision] --> B{Is this documented<br/>in learnings?}
+    B -->|Yes| C[Follow Documented Pattern]
+    B -->|No| D{Is this reversible?}
+    D -->|Yes| E{Are stakes low?}
+    D -->|No| F[Ask for Verification]
+    E -->|Yes| G[Decide and Proceed]
+    E -->|No| H{Significant tradeoffs?}
+    H -->|Yes| I[Present Options<br/>+ Recommend]
+    H -->|No| G
+    I --> J[Wait for Decision]
+    C --> K[Execute]
+    G --> K
+    F --> L[Get Clarification]
+    L --> K
+    J --> K
+```
+
+### Todo List Management
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending: Create Todo
+    Pending --> InProgress: Mark in_progress<br/>(only ONE at a time)
+    InProgress --> Completed: Mark completed<br/>(IMMEDIATELY)
+    Completed --> [*]
+    InProgress --> Blocked: Hit blocker
+    Blocked --> Pending: Document & move on
+    Pending --> Removed: No longer needed
+    Removed --> [*]
+
+    note right of InProgress
+        Only ONE todo can be
+        in_progress at any time
+    end note
+
+    note right of Completed
+        Mark IMMEDIATELY
+        after finishing
+        (no batching)
+    end note
+```
+
+### Simple Linear Flow
+
 ```
 1. Read Request
    ↓
@@ -305,6 +377,85 @@ cd ~/Desktop/calm/calm-ai-project-manager
 - `/Cory learnings.md` - Feature evolution (symlink)
 - `/src/` - Core application
 - `/migrations/` - Database migrations
+
+---
+
+## Session Checklist
+
+### Before Starting Work
+
+```yaml
+Context Loading:
+  - [ ] Read AI_QUICKSTART.md (if first session or returning after break)
+  - [ ] Run: pwd (check current directory)
+  - [ ] Run: git status (check project state)
+  - [ ] Review project-specific learnings if applicable
+
+Understanding Task:
+  - [ ] Understand what Cory is asking for
+  - [ ] Identify if 2+ steps (need todo list)
+  - [ ] Check for ambiguity (ask if high-stakes)
+  - [ ] Review relevant AGENTS.md or project docs
+```
+
+### During Work
+
+```yaml
+Task Execution:
+  - [ ] Create todo list using TodoWrite (if 2+ steps)
+  - [ ] Mark FIRST item as in_progress BEFORE starting
+  - [ ] Work autonomously without asking permission repeatedly
+  - [ ] Use structured logger (NOT console.log)
+  - [ ] Complete implementations fully (ZERO TODOs in code)
+
+Progress Tracking:
+  - [ ] Only ONE todo as in_progress at any time
+  - [ ] Mark completed IMMEDIATELY after finishing (no batching)
+  - [ ] If blocked, move to next actionable task
+  - [ ] Keep momentum going
+
+Quality Checks:
+  - [ ] Run tests after each significant change
+  - [ ] Fix all test failures (zero tolerance)
+  - [ ] Verify 98% coverage target maintained
+  - [ ] Use strict TypeScript (zero 'any')
+```
+
+### Before Ending Session
+
+```yaml
+Verification:
+  - [ ] All tests passing (run test suite)
+  - [ ] Zero TODOs left in code
+  - [ ] Zero failing tests
+  - [ ] All todos marked as completed
+  - [ ] No console.log statements (use structured logger)
+
+Documentation:
+  - [ ] Update documentation if needed
+  - [ ] Update learnings if new insights discovered
+  - [ ] Verify AGENTS.md accurate if major changes
+
+Version Control:
+  - [ ] Commit changes with semantic versioning
+  - [ ] Use conventional commit format (feat:, fix:, docs:)
+  - [ ] Include Claude Code attribution
+  - [ ] Clear commit message with context
+
+Handoff:
+  - [ ] Leave project in clean state
+  - [ ] Report outcomes to Cory concisely
+  - [ ] Highlight any blockers or questions
+  - [ ] Ready for next session
+```
+
+### Quick Pre-Flight Check
+
+**Before executing ANY task**:
+1. ✅ Is this 2+ steps? → Create todo list
+2. ✅ Is this high-stakes? → Ask smart question first
+3. ✅ Is this documented? → Follow documented pattern
+4. ✅ Am I being autonomous? → Don't over-ask
 
 ---
 
