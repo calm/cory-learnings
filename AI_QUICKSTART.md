@@ -34,6 +34,7 @@ Timing: BEFORE starting work
 Status: Only ONE in_progress at a time
 Updates: Mark completed IMMEDIATELY (no batching)
 Order: Create todos in priority(ish) order - most important/logical first
+Persistence: Save pending todos to ACTIVE_TODOS.md at end of session
 ```
 
 ### 2. Complete Implementations

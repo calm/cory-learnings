@@ -365,6 +365,12 @@ This ensures Claude **always** follows your core working principles: complete im
 - ✅ Remove todos that become irrelevant
 - ✅ Update list to reflect current reality
 
+**End of Session (If Work Remains)**:
+- 📝 **CRITICAL**: Save pending todos to file for next conversation
+- Todo lists don't persist between Claude Code conversations
+- Must save to file to preserve context for next session
+- Save location: `~/cory-learnings/ACTIVE_TODOS.md` or project-specific file
+
 ### Interface Verification - CRITICAL
 
 **When Cory asks to "run interface" or start development server**:
