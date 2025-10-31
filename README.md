@@ -1,7 +1,7 @@
 ---
 title: "Cory's Centralized Learnings Repository"
 description: "Single source of truth for preferences and learnings"
-version: "2.0"
+version: "2.3"
 last_updated: "2025-10-30"
 type: "repository-readme"
 audience: ["ai-agents", "developers", "teams"]
@@ -10,22 +10,21 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 # Cory's Centralized Learnings Repository
 
-**Purpose**: Single source of truth for Cory's preferences, working style, decisions, and learnings across all projects.
+**Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Last Updated**: 2025-10-30
+**Version**: 2.3 | **Last Updated**: 2025-10-30
 
 ---
 
-## What This Is
+## Quick Start
 
-This repository centralizes all "Cory learnings" files from various projects. Instead of scattered learnings files, everything is in one place with version control, search, and history.
+### For AI Agents
+Read [AI_QUICKSTART.md](AI_QUICKSTART.md) first (481 lines) for essential working principles, then reference project-specific files as needed.
 
-### Benefits
-- ✅ **Single Source of Truth** - One place for all learnings
-- ✅ **Version Control** - Track how preferences evolve over time
-- ✅ **Searchable** - Grep/search across all projects at once
-- ✅ **Accessible** - Access from anywhere, not buried in project folders
-- ✅ **Symlinked** - Each project still has its learnings file (via symlink)
+**Critical rules**: Todo lists for 2+ step tasks • Zero TODOs in code • Zero tolerance for failing tests • Work autonomously • Verify localhost before commits
+
+### For Humans
+View [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) (940 lines) for comprehensive preferences or browse [projects/](projects/) for project-specific context.
 
 ---
 
@@ -33,332 +32,153 @@ This repository centralizes all "Cory learnings" files from various projects. In
 
 ```
 cory-learnings/
-├── README.md                           # This file - Repository guide
-├── AI_QUICKSTART.md                    # ⚡ Quick reference for AI agents (READ FIRST)
-├── MASTER_LEARNINGS.md                 # Comprehensive aggregated learnings
-├── TEMPLATE_NEW_PROJECT.md             # Template for new project learnings
-├── add-project.sh                      # Script to add new project
-├── projects/                           # Individual project learnings
-│   ├── calm-couples.md                # calm-couples project (541 lines)
-│   ├── ios-automation.md              # ios-automation project (272 lines)
-│   └── calm-ai-project-manager.md     # calm-ai-project-manager project (426 lines)
-└── .git/                              # Version control
+├── README.md                        # This file
+├── AI_QUICKSTART.md                 # Quick reference for AI agents
+├── MASTER_LEARNINGS.md              # Comprehensive preferences guide
+├── EXAMPLES.md                      # Conversation patterns (good vs bad)
+├── CHANGELOG.md                     # Version history
+├── TEMPLATE_NEW_PROJECT.md          # New project template
+├── add-project.sh                   # Project addition script
+├── scripts/                         # Validation and search tools
+│   ├── check-symlinks.sh           # Verify project symlinks
+│   ├── validate-structure.sh       # Check repository integrity
+│   ├── find-broken-links.sh        # Find broken references
+│   ├── search-learnings.sh         # Search across files
+│   └── quick-find.sh               # Interactive search menu
+└── projects/                        # Project-specific learnings
+    ├── README.md                    # Project quick reference
+    ├── calm-couples.md              # React/Supabase wellness platform
+    ├── ios-automation.md            # iOS E2E testing framework
+    └── calm-ai-project-manager.md  # Node.js AI project manager
 ```
 
-**Key Files**:
-- **AI_QUICKSTART.md** - Ultra-concise reference for AI agents (200 lines)
-- **MASTER_LEARNINGS.md** - Complete reference with all patterns (470 lines)
-- **README.md** - Repository documentation and usage guide
+**Total Content**: 4,211 lines across 10 markdown files
 
 ---
 
-## How It Works
+## Key Features
 
-### Symlinks
-Each project directory has a **symlink** that points to this central repository:
-
-```bash
-# calm-couples
-~/Desktop/calm/calm-couples/CORY_LEARNINGS.md
-  -> ~/cory-learnings/projects/calm-couples.md
-
-# ios-automation
-~/Desktop/calm/ios-automation/CORY_LEARNINGS.md
-  -> ~/cory-learnings/projects/ios-automation.md
-
-# calm-ai-project-manager
-~/Desktop/calm/calm-ai-project-manager/Cory learnings.md
-  -> ~/cory-learnings/projects/calm-ai-project-manager.md
-```
-
-**What this means**:
-- Edit the file in the project directory → edits the central repo version
-- Changes are immediately visible in both places
-- Commit from either location
+- **Centralized**: Single location for all learnings with git version control
+- **Symlinked**: Project directories link to central files for seamless access
+- **Searchable**: Grep across all projects simultaneously
+- **Versioned**: Track preference evolution with semantic versioning (v2.3)
+- **Automated**: Auto-loads into Claude Code sessions via hooks
 
 ---
 
 ## Usage
 
-### For AI Agents (START HERE)
-
-**Quick Start (Read First)**:
-```bash
-cat ~/cory-learnings/AI_QUICKSTART.md
-```
-This 200-line file contains everything you need to work effectively with Cory.
-
-**Detailed Reference**:
-```bash
-cat ~/cory-learnings/MASTER_LEARNINGS.md
-```
-Comprehensive 470-line guide with all preferences, standards, and patterns.
-
-**Project-Specific Context**:
-```bash
-cat ~/cory-learnings/projects/calm-couples.md
-cat ~/cory-learnings/projects/ios-automation.md
-cat ~/cory-learnings/projects/calm-ai-project-manager.md
-```
-
-**AI Agent Workflow**:
-1. Read `AI_QUICKSTART.md` at session start
-2. Review project-specific learnings for context
-3. Follow critical rules (todo lists, complete implementations, testing)
-4. Work autonomously using patterns documented
-5. Update learnings if new insights emerge
-
-**Key Principles for AI Agents**:
-- ✅ Create optimized todo list BEFORE starting (if 2+ steps)
-- ✅ Complete implementations - ZERO TODOs in code
-- ✅ Run tests and verify they pass - zero tolerance for failures
-- ✅ Work autonomously without asking permission repeatedly
-- ✅ Be brutally honest about what's broken vs working
-- ✅ Mark exactly ONE todo as in_progress at a time
-- ✅ Mark todos completed IMMEDIATELY after finishing
-
-### Reading Learnings (Humans)
-
-**View master learnings (aggregated)**:
+### Search Learnings
 ```bash
 cd ~/cory-learnings
-cat MASTER_LEARNINGS.md
+./scripts/search-learnings.sh "testing"          # Search main files
+./scripts/search-learnings.sh "RLS" --all        # Search all files
+./scripts/quick-find.sh                          # Interactive menu
 ```
 
-**View project-specific learnings**:
+### Validate Repository
 ```bash
-cd ~/cory-learnings/projects
-cat calm-couples.md
-cat ios-automation.md
-cat calm-ai-project-manager.md
+cd ~/cory-learnings/scripts
+./validate-structure.sh      # Check file structure
+./check-symlinks.sh          # Verify project symlinks
+./find-broken-links.sh       # Find broken markdown links
 ```
 
-**Search across all learnings**:
+### Update Learnings
+```bash
+# Edit files directly or via project symlinks
+vim ~/cory-learnings/projects/calm-couples.md
+vim ~/Desktop/calm/calm-couples/CORY_LEARNINGS.md  # Same file via symlink
+
+# Commit changes
+cd ~/cory-learnings
+git add . && git commit -m "docs: update calm-couples testing requirements"
+```
+
+### Add New Project
 ```bash
 cd ~/cory-learnings
-grep -r "be critical" .
-grep -r "test" projects/
+./add-project.sh new-project-name
+# Creates learnings file and symlink
 ```
 
-### Updating Learnings
+---
 
-**Option 1: Edit from project directory**:
+## Documentation Files
+
+| File | Purpose | Lines |
+|------|---------|-------|
+| [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 481 |
+| [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide | 940 |
+| [EXAMPLES.md](EXAMPLES.md) | Conversation patterns and anti-patterns | 513 |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and evolution tracking | 169 |
+| [projects/README.md](projects/README.md) | Project overview and quick commands | 296 |
+
+---
+
+## Project Symlinks
+
+Each project directory maintains a symlink to its central learnings file:
+
 ```bash
-cd ~/Desktop/calm/calm-couples
-vim CORY_LEARNINGS.md  # Actually edits ~/cory-learnings/projects/calm-couples.md
+~/Desktop/calm/calm-couples/CORY_LEARNINGS.md
+  → ~/cory-learnings/projects/calm-couples.md
+
+~/Desktop/calm/ios-automation/CORY_LEARNINGS.md
+  → ~/cory-learnings/projects/ios-automation.md
+
+~/Desktop/calm/calm-ai-project-manager/Cory learnings.md
+  → ~/cory-learnings/projects/calm-ai-project-manager.md
 ```
 
-**Option 2: Edit from central repo**:
-```bash
-cd ~/cory-learnings/projects
-vim calm-couples.md
-```
-
-**After editing, commit changes**:
-```bash
-cd ~/cory-learnings
-git add .
-git commit -m "docs: update calm-couples learnings - add new testing preferences"
-git push  # If you set up a remote
-```
-
-### Adding a New Project
-
-When starting a new project that needs a learnings file:
-
-1. **Create the learnings file in central repo**:
-```bash
-cd ~/cory-learnings/projects
-touch new-project.md
-# Add initial content
-```
-
-2. **Create symlink from project directory**:
-```bash
-cd ~/path/to/new-project
-ln -s ~/cory-learnings/projects/new-project.md CORY_LEARNINGS.md
-```
-
-3. **Commit to central repo**:
-```bash
-cd ~/cory-learnings
-git add projects/new-project.md
-git commit -m "docs: add learnings file for new-project"
-```
+Changes made to either location are immediately reflected in both.
 
 ---
 
 ## Git Workflow
 
-### Initial Setup (Already Done)
 ```bash
-cd ~/cory-learnings
-git init
-git add .
-git commit -m "feat: initialize centralized learnings repository"
+# View changes
+git status && git diff
+
+# Commit updates
+git add . && git commit -m "docs: [description]"
+
+# View history
+git log --oneline
+git log --follow projects/calm-couples.md    # File-specific history
 ```
-
-### Optional: Add Remote (GitHub/GitLab)
-```bash
-cd ~/cory-learnings
-git remote add origin https://github.com/coryweinstein/cory-learnings.git
-git push -u origin main
-```
-
-### Regular Updates
-```bash
-cd ~/cory-learnings
-git status                 # See what changed
-git diff                   # Review changes
-git add .                  # Stage changes
-git commit -m "docs: update ios-automation learnings"
-git push                   # Push to remote (if configured)
-```
-
-### View History
-```bash
-cd ~/cory-learnings
-git log                           # See all commits
-git log --oneline                 # Compact view
-git log --follow projects/calm-couples.md  # History of specific file
-```
-
----
-
-## Master Learnings File
-
-[MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) aggregates common patterns across all projects:
-
-- **Core Working Principles** - "do this yourself", "be critical and continue", etc.
-- **Communication Style** - How Cory works, key phrases, what works/what to avoid
-- **Code Quality Standards** - Versioning, logging, documentation, testing
-- **Technical Preferences** - Architecture, tools, git practices
-- **Project Contexts** - Brief overview of each project
-- **What Cory Values** - Features, code, documentation, workflow
-- **Patterns That Work** - Development flow, problem solving, handling blockers
-- **Quality Bars** - Test coverage, TypeScript, performance, code quality
-- **Lessons Learned** - Success patterns, common pitfalls
-- **Quick Reference** - Starting/during/ending sessions
-
-**When to update**:
-- After learning new preferences
-- When discovering new patterns
-- If priorities change
-- Quarterly review recommended
-
----
-
-## Project-Specific Files
-
-Each project has its own detailed learnings file:
-
-### [calm-couples.md](projects/calm-couples.md)
-- React/Supabase relationship wellness platform
-- Race condition fixes, testing standards
-- 541 lines of detailed learnings
-
-### [ios-automation.md](projects/ios-automation.md)
-- iOS E2E testing framework
-- Test automation insights, modal handling
-- 272 lines of technical learnings
-
-### [calm-ai-project-manager.md](projects/calm-ai-project-manager.md)
-- Node.js AI-powered project manager
-- Feature evolution, Calm engineering patterns
-- 426 lines of project context
-
----
-
-## Tips
-
-### For AI Agents
-Before starting work on any project:
-1. Read `MASTER_LEARNINGS.md` for general preferences
-2. Read project-specific learnings file for context
-3. Follow the patterns documented
-4. Update learnings file if new insights emerge
-
-### For Cory
-- Keep this repo up to date after significant sessions
-- Review quarterly to identify evolving patterns
-- Use git history to track preference changes over time
-- Search across all files when you can't remember which project had a specific insight
-
-### For Teams
-- Share relevant sections with team members
-- Use as onboarding material for new AI assistants
-- Reference when questions arise about preferences
-- Keep project-specific vs universal learnings separate
 
 ---
 
 ## Maintenance
 
 ### Regular Tasks
-- ✅ Update learnings files after each significant session
-- ✅ Review and update MASTER_LEARNINGS.md monthly
-- ✅ Commit changes regularly with descriptive messages
-- ✅ Keep symlinks functional (verify occasionally)
+- Update learnings after significant sessions
+- Review and consolidate monthly
+- Commit changes with semantic versioning
+- Verify symlinks quarterly
 
 ### Quarterly Review
-- Review all project learnings
-- Identify common patterns to add to master
+- Identify patterns to elevate to MASTER_LEARNINGS.md
 - Remove outdated information
-- Consolidate duplicate insights
-
-### If Symlinks Break
-```bash
-# Verify symlink status
-ls -la ~/Desktop/calm/*/CORY_LEARNINGS.md
-
-# Recreate if needed
-cd ~/cory-learnings
-ln -sf "$(pwd)/projects/calm-couples.md" ~/Desktop/calm/calm-couples/CORY_LEARNINGS.md
-```
+- Update version in CHANGELOG.md
 
 ---
 
-## Quick Commands
+## Version History
 
-```bash
-# Navigate to central repo
-cd ~/cory-learnings
+| Version | Date | Key Changes |
+|---------|------|-------------|
+| 2.3.0 | 2025-10-30 | Validation scripts, search helpers, TOC, optimized auto-load |
+| 2.2.0 | 2025-10-30 | FAQ, Glossary, Session Checklist, Mermaid diagrams |
+| 2.1.0 | 2025-10-30 | When to ask guidance, examples, slash commands |
+| 2.0.0 | 2025-10-30 | AI optimization, structured metadata |
+| 1.0.0 | 2025-10-29 | Initial centralized repository |
 
-# View master learnings
-less MASTER_LEARNINGS.md
-
-# Search for a pattern
-grep -r "autonomous" .
-
-# See recent changes
-git log --oneline -10
-
-# View specific file history
-git log --follow projects/calm-couples.md
-
-# Update and commit
-git add . && git commit -m "docs: update learnings" && git push
-```
+See [CHANGELOG.md](CHANGELOG.md) for detailed version history.
 
 ---
 
-## Future Enhancements
-
-Potential improvements:
-- 🔍 Web interface for searching/browsing
-- 📊 Analytics on common patterns
-- 🔗 Auto-sync to notion or confluence
-- 📧 Weekly digest of changes
-- 🤖 AI-powered insights extraction
-
----
-
-## Contact & Support
-
-**Repository Owner**: Cory Weinstein
-**Created**: 2025-10-30
-**Purpose**: Centralize learnings across all projects
-
----
-
-*Remember: "be critical and continue" + "do this yourself" + "test all and make sure ok"*
+**Maintained by**: Cory Weinstein
+**Related**: [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | [AI_QUICKSTART.md](AI_QUICKSTART.md) | [EXAMPLES.md](EXAMPLES.md)

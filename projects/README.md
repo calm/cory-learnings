@@ -81,6 +81,27 @@ Testing:
 - Database changes → Use Supabase SQL Editor
 - Deploy → Vercel automatic on push
 
+### Quick Commands
+```bash
+# Navigate to project
+cd ~/Desktop/calm/calm-couples
+
+# Development
+npm run dev              # Start dev server (localhost:3000)
+npm test                 # Run all tests
+npm run build            # Production build
+npm run lint             # Lint check
+
+# Git workflow
+git status               # Check changes
+git add . && git commit  # Commit changes
+git push                 # Deploy via Vercel
+
+# Supabase
+npx supabase status      # Check Supabase connection
+npx supabase db reset    # Reset local database
+```
+
 ### Key Challenges Solved
 - ✅ Race conditions in petal increment
 - ✅ Optimistic locking with version fields
@@ -147,6 +168,32 @@ Tools:
 - Handle modals → Use modal dismissal utilities
 - Debug tests → Check screenshots + logs
 - Run tests → npm test (unit) or custom E2E runner
+
+### Quick Commands
+```bash
+# Navigate to project
+cd ~/Desktop/calm/ios-automation
+
+# Development
+npm test                           # Run unit tests (648 tests)
+node src/e2e-runner.js            # Run E2E tests
+npm run lint                       # Lint check
+
+# iOS Simulator Management
+xcrun simctl list devices          # List available simulators
+idb list-targets                   # List IDB targets
+idb boot <udid>                    # Boot simulator
+idb launch com.calm.Calm           # Launch Calm app
+
+# Debugging
+ls screenshots/                    # Check test screenshots
+tail -f logs/test-run.log         # View test logs
+idb ui describe                    # Get UI hierarchy
+
+# Git workflow
+git status && git diff             # Review changes
+git add . && git commit            # Commit changes
+```
 
 ### Key Challenges
 - ⚠️ Test isolation (in progress)
@@ -216,6 +263,33 @@ Features:
 - Database changes → Prisma migrations
 - AI features → Graceful degradation required
 - Deploy → Self-hosted instructions in docs
+
+### Quick Commands
+```bash
+# Navigate to project
+cd ~/Desktop/calm/calm-ai-project-manager
+
+# Development
+npm run dev                        # Start dev server
+npm test                           # Run tests
+npm run build                      # Build for production
+npm start                          # Run production build
+
+# Database
+npx prisma migrate dev             # Create migration
+npx prisma studio                  # Open DB GUI
+npx prisma generate                # Generate Prisma client
+npx prisma db push                 # Push schema changes
+
+# Testing
+npm test -- --watch                # Watch mode
+npm run test:coverage              # Coverage report
+
+# Git workflow
+git status                         # Check changes
+git add . && git commit            # Commit changes
+git push                           # Push to remote
+```
 
 ### Key Philosophy
 - **AI Optional**: Core features work without AI

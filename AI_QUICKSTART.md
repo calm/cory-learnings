@@ -6,6 +6,24 @@
 
 ---
 
+## Table of Contents
+
+1. [Critical Rules (Must Follow)](#critical-rules-must-follow)
+2. [Communication Decoder](#communication-decoder)
+3. [When to Ask for Help](#when-to-ask-for-help)
+4. [Workflow Pattern](#workflow-pattern)
+5. [Project Quick Reference](#project-quick-reference)
+6. [Anti-Patterns (Never Do These)](#anti-patterns-never-do-these)
+7. [Quality Bars](#quality-bars)
+8. [When Blocked](#when-blocked)
+9. [Todo List Example](#todo-list-example)
+10. [Quick Commands](#quick-commands)
+11. [Key Files by Project](#key-files-by-project)
+12. [Session Checklist](#session-checklist)
+13. [Remember](#remember)
+
+---
+
 ## Critical Rules (Must Follow)
 
 ### 1. Todo List Management

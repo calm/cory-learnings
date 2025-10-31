@@ -1,7 +1,7 @@
 ---
 title: "Cory Learnings Changelog"
 description: "Track how preferences and standards evolve over time"
-version: "2.1"
+version: "2.3"
 last_updated: "2025-10-30"
 type: "changelog"
 ---
@@ -12,6 +12,77 @@ All notable changes to Cory's learnings and preferences will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.3.0] - 2025-10-30
+
+### Added
+- **Validation Scripts**: Tools to verify repository integrity
+  - `check-symlinks.sh`: Verify all project symlinks are working
+  - `validate-structure.sh`: Check repository structure is correct
+  - `find-broken-links.sh`: Find broken markdown references
+- **Search Helper Scripts**: Quick access to common queries
+  - `search-learnings.sh`: Search across all learnings files
+  - `quick-find.sh`: Common search patterns pre-configured
+- **Table of Contents**: Added to MASTER_LEARNINGS.md and AI_QUICKSTART.md with jump links
+
+### Changed
+- **Auto-Load Script Optimization**: Reduced from 56 lines to ~30 lines for efficiency
+- **projects/README.md**: Enhanced with quick command examples per project
+- **Version Sync**: Aligned all version numbers across files (CHANGELOG, README, YAML frontmatter)
+
+### Infrastructure
+- Added validation and search tooling for repository maintenance
+- Improved discoverability with TOC navigation in long files
+
+---
+
+## [2.2.0] - 2025-10-30
+
+### Added
+- **FAQ Section**: 40+ questions and answers in MASTER_LEARNINGS.md
+  - General Workflow (7 Q&A)
+  - Todo Lists (6 Q&A)
+  - Testing (5 Q&A)
+  - Code Quality (4 Q&A)
+  - Communication (5 Q&A)
+  - When to Ask (6 Q&A)
+  - Project-Specific (5 Q&A)
+  - Troubleshooting (4 Q&A)
+- **Glossary Section**: 50+ terms defined in MASTER_LEARNINGS.md
+  - General terms (autonomous execution, structured logger, zero tolerance)
+  - Technical terms (FCP, TTI, optimistic locking, RPC)
+  - Project-specific terms (RCI matrix, petal system, GDPR)
+  - Supabase terms (SQL Editor, RLS, Edge Functions, Realtime)
+  - Testing terms (unit, integration, E2E, flaky tests)
+  - iOS automation terms (IDB, Appium, Tesseract OCR, Vision AI)
+  - Cory-specific phrases decoded
+- **Session Checklist Template**: Comprehensive before/during/after work checklist in AI_QUICKSTART.md
+- **Mermaid Workflow Diagrams**: 3 visual diagrams in AI_QUICKSTART.md
+  - Primary workflow flowchart
+  - Decision framework flowchart
+  - Todo list state diagram
+- **projects/README.md**: Quick-access project cards with overview table
+  - Status indicators for each project
+  - Tech stack details and key metrics
+  - Common tasks and challenges per project
+  - Quick access commands
+- **Auto-Loading System**: Automated injection of learnings via hooks
+  - `~/.claude/scripts/auto-load-learnings.sh`: Executable hook script
+  - Updated `~/.claude/settings.local.json`: Configured user-prompt-submit hook
+  - No manual action needed - learnings auto-load in every session
+
+### New Requirements Added
+- **Todo Priority Ordering**: Create todos in priority(ish) order - most important/logical first
+- **Localhost Verification**: CRITICAL - verify localhost runs correctly BEFORE committing to GitHub
+- **README Maintenance**: Keep README updated with new features/changes
+- **No Broken Commits**: Test application works locally if changes affect runtime
+
+### Changed
+- Enhanced session workflow with pre-flight, during-work, and wrap-up checklists
+- Improved terminology clarity with comprehensive glossary
+- Better onboarding for AI agents with visual workflow diagrams
 
 ---
 
@@ -157,6 +228,8 @@ When adding new learnings or changing preferences:
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| 2.3.0 | 2025-10-30 | Validation scripts, search helpers, TOC, optimized auto-load |
+| 2.2.0 | 2025-10-30 | FAQ, Glossary, Session Checklist, Mermaid diagrams, auto-loading |
 | 2.1.0 | 2025-10-30 | When to ask guidance, examples, slash commands |
 | 2.0.0 | 2025-10-30 | AI optimization, quick reference, structured metadata |
 | 1.0.0 | 2025-10-29 | Initial centralized repository |

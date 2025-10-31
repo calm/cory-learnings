@@ -20,6 +20,27 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 
 ---
 
+## Table of Contents
+
+1. [AI Quick Reference (CRITICAL - READ FIRST)](#ai-quick-reference-critical---read-first)
+2. [Core Working Principles](#core-working-principles)
+3. [Communication Style](#communication-style)
+4. [Task Management & Todo Lists](#task-management--todo-lists)
+5. [Code Quality Standards](#code-quality-standards)
+6. [Technical Preferences](#technical-preferences)
+7. [Project Contexts](#project-contexts)
+8. [What Cory Values](#what-cory-values)
+9. [Patterns That Work](#patterns-that-work)
+10. [Quality Bars](#quality-bars)
+11. [Lessons Learned](#lessons-learned)
+12. [Frequently Asked Questions](#frequently-asked-questions)
+13. [Glossary](#glossary)
+14. [Quick Reference](#quick-reference)
+15. [Project-Specific Links](#project-specific-links)
+16. [Meta: About This File](#meta-about-this-file)
+
+---
+
 ## AI Quick Reference (CRITICAL - READ FIRST)
 
 **Context**: This section is optimized for AI assistants to quickly parse and apply Cory's working preferences.
