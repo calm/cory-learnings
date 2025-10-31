@@ -38,9 +38,11 @@ All work from today's session completed:
 When Claude creates todos, they'll be saved here in this format:
 
 ```markdown
-### [Project Name] - [Date]
+### [Project Name] - [Date] - [Window ID]
 
 **Context**: Brief description of what we're working on
+
+**Window**: Window 1 / Window 2 / Window 3 (if using multiple)
 
 **Pending Todos:**
 - [ ] Todo item 1 - Brief description
@@ -53,6 +55,21 @@ When Claude creates todos, they'll be saved here in this format:
 **Completed (for reference):**
 - [x] Completed task 1
 - [x] Completed task 2
+```
+
+**Multi-Window Coordination:**
+```markdown
+### Window 1 - Feature Work
+- [IN PROGRESS] Implementing authentication flow
+- Branch: feature/auth
+
+### Window 2 - Bug Fixes
+- [PENDING] Fix race condition in petal system
+- Branch: fix/race-condition
+
+### Window 3 - Documentation
+- [PENDING] Update README with new features
+- Branch: docs/readme-update
 ```
 
 ---

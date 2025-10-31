@@ -635,6 +635,56 @@ Server running at http://localhost:3000
 - ✅ Critical analysis and continuous improvement
 - ✅ Autonomous execution with trust
 
+### Multi-Window Workflow
+
+**Can you work on same repository in multiple Claude Code windows?**
+- ✅ **YES** - Fully supported, no performance impact
+- Each window = separate Claude instance with own context
+- Windows run in parallel without slowing each other down
+
+**Best Practices:**
+
+**Use Different Branches:**
+```bash
+# Window 1 - Feature work
+git checkout -b feature/auth
+
+# Window 2 - Bug fixes
+git checkout -b fix/race-condition
+
+# Window 3 - Documentation
+git checkout -b docs/readme-update
+```
+
+**Or Different Tasks on Same Branch:**
+- Window 1: Frontend work
+- Window 2: Backend API
+- Window 3: Tests/docs
+- Coordinate via ACTIVE_TODOS.md
+
+**Avoid Conflicts:**
+- ✅ Work on different files when possible
+- ✅ Commit frequently in each window
+- ✅ Pull before starting work in any window
+- ✅ Use `git status` to see what other windows changed
+- ❌ Don't edit same file in multiple windows simultaneously
+
+**Coordination:**
+- Use ACTIVE_TODOS.md to note what each window is doing
+- Add window identifier: "[Window 1] Working on auth"
+- Check file before making big changes
+
+**When to Use Multiple Windows:**
+- ✅ Working on independent features
+- ✅ One for coding, one for research
+- ✅ One per project in monorepo
+- ✅ Long-running tasks in one window, quick tasks in another
+
+**Performance:**
+- No slowdown - each window independent
+- File system handles multiple readers/writers
+- Git handles concurrent operations
+
 ---
 
 ## Patterns That Work
