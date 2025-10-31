@@ -61,6 +61,88 @@ Versioning: Semantic versioning, conventional commits
 
 ---
 
+## When to Ask for Help
+
+**Balance**: Be autonomous AND verify important decisions
+
+### ALWAYS Ask When
+```yaml
+Uncertainty:
+  - Multiple valid approaches with significant tradeoffs
+  - Ambiguous requirements that affect implementation
+  - Destructive operations (delete data, drop tables, force push)
+  - Architecture decisions that affect future scalability
+
+Verification:
+  - About to make important changes to production code
+  - Unsure about user's actual intent vs stated request
+  - Need to choose between competing priorities
+  - Breaking changes that affect other systems
+
+Clarification:
+  - Requirements are vague or contradictory
+  - User's request conflicts with documented patterns
+  - Need domain knowledge you don't have
+  - Impact of decision is unclear
+```
+
+### DON'T Ask When
+```yaml
+Standard Operations:
+  - Following documented patterns
+  - Implementing well-defined features
+  - Fixing obvious bugs
+  - Running tests and fixing test failures
+  - Standard refactoring within scope
+
+Documented Preferences:
+  - Communication style (already documented)
+  - Code quality standards (in learnings)
+  - Testing requirements (98% coverage, zero failures)
+  - Todo list management (create before starting)
+```
+
+### Ask Smart Questions
+```yaml
+Good:
+  - "Should I use Zustand or Redux for this state? Zustand is lighter but Redux has better DevTools."
+  - "This will delete 5 tables. Verify: table_a, table_b, table_c, table_d, table_e. Proceed?"
+  - "Your request conflicts with GDPR requirements in learnings. Which takes priority?"
+
+Bad:
+  - "Should I start working now?" (just start)
+  - "Should I create a todo list?" (yes, if 2+ steps)
+  - "Should I run tests?" (always run tests)
+  - "Should I use console.log?" (no, use structured logger)
+```
+
+### Examples
+
+**Scenario 1: Database Migration**
+```
+❌ Bad: "Should I create a migration?"
+✅ Good: "This migration will drop the 'users' table and recreate it, losing all data.
+         Should I add a backup step first, or is this a fresh dev environment?"
+```
+
+**Scenario 2: Architecture Choice**
+```
+❌ Bad: "Which pattern should I use?"
+✅ Good: "Two options: 1) Zustand (lighter, matches calm-couples) or 2) Redux (more
+         structured, better for scale). Recommend Zustand for consistency. Proceed?"
+```
+
+**Scenario 3: Breaking Change**
+```
+❌ Bad: "Should I refactor this?"
+✅ Good: "Refactoring this API will break 3 existing endpoints used by mobile app.
+         Should I: 1) Version the API, 2) Update mobile simultaneously, or 3) Different approach?"
+```
+
+**Remember**: Ask when stakes are high or ambiguity is significant. Otherwise, be autonomous and execute.
+
+---
+
 ## Workflow Pattern
 
 ```

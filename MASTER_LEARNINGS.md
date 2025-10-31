@@ -38,13 +38,35 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 
 ❌ NEVER DO:
 - Leave TODOs or placeholders in code
-- Ask for permission repeatedly ("should I...", "would you like me to...")
+- Ask for permission on standard operations ("should I start?", "should I run tests?")
 - Over-explain every decision
 - Hide broken things or failing tests
 - Use console.log instead of structured logger
 - Batch multiple todo completions
 - Have multiple todos in_progress simultaneously
 ```
+
+### When to Ask for Help (Important!)
+**Balance**: Be autonomous AND verify important decisions
+
+**ALWAYS Ask When**:
+- Multiple valid approaches with significant tradeoffs
+- Destructive operations (delete data, drop tables, force push)
+- Breaking changes that affect other systems
+- Requirements are ambiguous or contradictory
+- About to make important changes to production code
+- User's request conflicts with documented patterns
+
+**DON'T Ask When**:
+- Following documented patterns
+- Implementing well-defined features
+- Running tests and fixing failures
+- Standard refactoring within scope
+- Questions already answered in learnings
+
+**Ask Smart Questions**:
+- ✅ Good: "This migration drops 'users' table. Is this a fresh dev environment or should I backup first?"
+- ❌ Bad: "Should I create a todo list?" (yes, if 2+ steps - it's documented)
 
 ### Communication Protocol
 | User Says | AI Should Do |
@@ -143,6 +165,102 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 - Leaving TODOs - "do this yourself" means complete it
 - Analysis paralysis - doing > talking
 - Hiding broken things - face problems directly
+
+### When to Ask vs When to Decide
+
+**Philosophy**: Be autonomous but verify important decisions
+
+#### ALWAYS Ask Cory When:
+
+**High Stakes Decisions**:
+- Destructive operations (deleting data, dropping tables, force pushing to main)
+- Breaking changes that affect other systems or APIs
+- Architecture decisions that impact future scalability
+- Significant budget/cost implications
+
+**Ambiguity & Tradeoffs**:
+- Multiple valid approaches with significant tradeoffs
+- Requirements are vague, contradictory, or incomplete
+- Request conflicts with documented patterns or learnings
+- Unclear which priority takes precedence
+
+**Domain Knowledge Gaps**:
+- Need business context you don't have
+- Unfamiliar with domain-specific constraints
+- Impact of decision is unclear
+- Production vs development environment uncertainty
+
+**Verification Points**:
+- About to make important changes to production code
+- Unsure about user's actual intent vs stated request
+- Need to choose between competing business priorities
+- Before committing to significant refactoring effort
+
+#### NEVER Ask When:
+
+**Documented Standards**:
+- How to communicate (covered in learnings)
+- Code quality requirements (98% coverage, strict TypeScript)
+- Whether to create todo lists (yes, if 2+ steps)
+- Logging standards (structured logger, not console.log)
+- Testing requirements (run tests, zero failures)
+
+**Standard Operations**:
+- Following established patterns in the codebase
+- Implementing well-defined features
+- Fixing obvious bugs or test failures
+- Routine refactoring within defined scope
+- Creating/updating documentation
+
+**Procedural Questions**:
+- "Should I start working?" (yes, just start)
+- "Should I run tests?" (always)
+- "Should I commit this?" (yes, when feature complete)
+- "Should I mark todo complete?" (yes, immediately)
+
+#### How to Ask Smart Questions
+
+**Good Questions** (provide context + options):
+```
+✅ "This migration will drop 'users' table. Two options:
+   1. Add backup step first (safer, takes 5 min)
+   2. Proceed if fresh dev environment
+   Which environment is this?"
+
+✅ "Two approaches: Zustand (lighter, matches calm-couples) or Redux (better DevTools).
+   Recommend Zustand for consistency. Proceed?"
+
+✅ "Your request conflicts with GDPR requirements from calm-couples learnings.
+   Which takes priority here?"
+```
+
+**Bad Questions** (already documented):
+```
+❌ "Should I create a todo list?"
+   → Yes, always if 2+ steps (documented)
+
+❌ "Should I use console.log?"
+   → No, use structured logger (documented)
+
+❌ "Should I start now?"
+   → Yes, be autonomous (documented)
+
+❌ "Which pattern should I use?"
+   → Too vague, provide context and options
+```
+
+#### Decision-Making Framework
+
+**When in doubt, ask yourself**:
+1. **Is this documented?** → Check learnings first
+2. **Is this reversible?** → If yes, decide and proceed
+3. **Is this high-stakes?** → If yes, verify with Cory
+4. **Are tradeoffs significant?** → Present options and recommend
+5. **Is intent clear?** → If no, ask for clarification
+
+**Default to Action**: When stakes are low and requirements are clear, be autonomous and execute.
+
+**Default to Verification**: When stakes are high or ambiguity is significant, ask smart questions with context.
 
 ---
 
@@ -452,13 +570,32 @@ This ensures Claude **always** follows your core working principles: complete im
 - **Momentum**: Keep progress going, handle blockers gracefully
 
 ### Common Pitfalls (To Avoid)
-- Asking for permission repeatedly
-- Leaving TODOs in code
-- Over-explaining every decision
-- Analysis paralysis before action
-- Hiding broken things
-- Weak error handling
-- Assuming clean state without verification
+
+**Communication Anti-Patterns**:
+- ❌ Asking for permission repeatedly on standard operations
+  - "Should I start?" "Should I continue?" "Should I run tests?"
+  - These are all documented - just do them
+- ❌ Asking questions already answered in learnings
+  - "Should I use console.log?" → No, structured logger (documented)
+  - "Do I need to create todo list?" → Yes, if 2+ steps (documented)
+- ❌ NOT asking when stakes are high
+  - Proceeding with destructive operations without verification
+  - Making breaking changes without confirming impact
+  - Choosing architecture without presenting tradeoffs
+
+**Code Quality Anti-Patterns**:
+- ❌ Leaving TODOs or placeholders in code
+- ❌ Over-explaining every trivial decision
+- ❌ Hiding broken things or failing tests
+- ❌ Weak error handling without context
+- ❌ Using console.log instead of structured logger
+
+**Workflow Anti-Patterns**:
+- ❌ Analysis paralysis before action
+- ❌ Not creating todo list for multi-step tasks
+- ❌ Batching multiple todo completions instead of marking immediately
+- ❌ Having multiple todos in_progress simultaneously
+- ❌ Assuming clean state without verification
 
 ---
 
