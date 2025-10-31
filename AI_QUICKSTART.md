@@ -70,10 +70,17 @@ Ports: Each project on different localhost port (prevent conflicts)
 ### 6. Interface Verification
 ```yaml
 When: Cory asks to "run interface" or start server
-Action: Start dev server AND verify localhost actually works
-Test: Check URL responds (curl or browser test)
-Report: Confirm working or report errors
-Never: Assume it works without verification
+Action: Start server, verify URL responds, CHECK EXPECTED BEHAVIOR
+Steps:
+  1. Start server (npm run dev)
+  2. Verify URL responds (curl)
+  3. Check expected behavior:
+     - Page loads without errors
+     - No console errors
+     - Key UI elements render
+     - API calls succeed
+  4. Report: "✅ [Feature] works" or "❌ [Error] found"
+Never: Report "server started" without checking behavior
 ```
 
 ---

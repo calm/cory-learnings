@@ -369,24 +369,96 @@ This ensures Claude **always** follows your core working principles: complete im
 
 **When Cory asks to "run interface" or start development server**:
 
-**ALWAYS verify localhost actually works:**
-1. Start the development server (`npm run dev`, `npm start`, etc.)
-2. Wait for server to fully start
-3. **TEST the URL** - don't assume it worked:
-   - Use `curl http://localhost:PORT` to verify response
-   - OR check browser can access the URL
-   - Look for actual server output/response
-4. **Report status clearly**:
-   - ✅ "Server running at http://localhost:3000 - verified working"
-   - ❌ "Server started but getting errors: [error message]"
-   - ❌ "Port 3000 already in use - need to kill existing process"
+**ALWAYS verify localhost actually works AND check expected behavior:**
 
-**NEVER:**
-- ❌ Assume localhost works without verification
-- ❌ Report "server started" without testing
-- ❌ Skip the verification step
+**Step 1: Start Server**
+```bash
+npm run dev  # or npm start, etc.
+# Wait for "Server running at..." message
+```
 
-**Why this matters:** Cory navigates to localhost URLs frequently and needs to know they actually work, not just that the command was run.
+**Step 2: Verify URL Responds**
+```bash
+curl http://localhost:3000
+# OR open in browser and check response
+```
+
+**Step 3: Check Expected Behavior (CRITICAL)**
+
+Verify the interface behaves as expected:
+
+**For Web Applications:**
+- ✅ Page loads without errors
+- ✅ No console errors in browser dev tools
+- ✅ Key UI elements render (login form, dashboard, navigation)
+- ✅ No 404s for assets (CSS, JS, images)
+- ✅ API calls succeed (check network tab)
+- ✅ Authentication flow works (if applicable)
+
+**For APIs:**
+- ✅ Health check endpoint responds
+- ✅ Key endpoints return expected data structure
+- ✅ Database connection established
+- ✅ No startup errors in logs
+
+**For Test Frameworks:**
+- ✅ Web UI loads at specified port
+- ✅ Test list visible
+- ✅ Can trigger test runs
+- ✅ Results display correctly
+
+**Step 4: Report Status with Details**
+
+**✅ Good Reports:**
+```
+Server running at http://localhost:3000
+✅ Login page loads correctly
+✅ No console errors
+✅ Dashboard renders with data
+✅ All API calls succeeding
+```
+
+**❌ Bad Reports (Too Vague):**
+```
+Server started  ❌ (Did you verify? What works?)
+```
+
+**❌ Errors Found:**
+```
+Server running at http://localhost:3000
+❌ Getting 404 on /api/users
+❌ Console error: "Cannot read property 'id' of undefined"
+❌ Login button not responding
+```
+
+**Examples by Project:**
+
+**calm-couples (localhost:3000):**
+- ✅ Landing page loads
+- ✅ Login/signup forms visible
+- ✅ Plant garden renders (3D isometric view)
+- ✅ Activities list populates
+- ✅ Supabase connection active
+
+**ios-automation (localhost:4000):**
+- ✅ Web dashboard loads
+- ✅ Device list shows connected simulators
+- ✅ Test suite list visible
+- ✅ Can trigger smoke test
+- ✅ Screenshot viewer works
+
+**calm-ai-project-manager (localhost:3001):**
+- ✅ API health check responds
+- ✅ /api/projects returns data
+- ✅ Database connection confirmed
+- ✅ AI prioritization endpoint accessible
+- ✅ No Prisma errors in logs
+
+**Why This Matters:**
+- Cory navigates to localhost URLs frequently
+- Needs to know not just "it responds" but "expected behavior works"
+- Catches broken features immediately
+- Prevents wasted time debugging after Cory opens browser
 
 **Task Status Management**:
 - Mark `in_progress` → Start working on it
