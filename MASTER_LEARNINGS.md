@@ -1170,3 +1170,18 @@ Run comprehensive tests and verify they pass. Zero tolerance for failures.
 **Remember**: *"be critical and continue" + "do this yourself" + "test all and make sure ok" = core working principles*
 
 *This document aggregates learnings across all projects and will be updated continuously.*
+
+## VS Code Chat Windows
+
+**Date Added**: 2025-10-31
+
+### Cross-Project Editing
+You can use any chat window in VS Code to edit any of your projects - the chat isn't locked to a specific workspace. GitHub Copilot can access and modify files across different projects regardless of which workspace is currently open.
+
+**Benefits**:
+- No need to switch chat windows to work on different projects
+- Maintain conversation context while working across multiple codebases
+- Flexibility to organize chats by topic rather than by project
+
+**Note**: While you can edit any project from any chat, keeping separate chat windows per project can help maintain cleaner conversation history and context.
+
