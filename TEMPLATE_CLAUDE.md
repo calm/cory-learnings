@@ -2,14 +2,18 @@
 
 **Last Updated**: [DATE]
 **Project**: [PROJECT_NAME]
+**Purpose**: Lightweight context for AI agents (see AGENTS.md for full details)
+
+---
 
 ## Critical Rules
 
 1. **Todo Lists**: Use TodoWrite for ANY task with 2+ steps BEFORE starting
 2. **Complete Work**: ZERO TODOs in code - implement fully
-3. **Zero Test Failures**: Tests must pass - zero tolerance
-4. **Token Efficiency**: Ask → Sample → Target → Execute (<30% budget)
-5. **Work Autonomously**: "Be critical and continue" = keep going
+3. **Zero Test Failures**: Tests must pass - zero tolerance (98% coverage)
+4. **Token Efficiency**: Ask → Grep → Sample → Target → Execute (<30% budget)
+5. **Make Things Fast**: Parallel ops, optimized builds, efficient code
+6. **Work Autonomously**: "Be critical and continue" = keep going
 
 ## Project Context
 
