@@ -622,6 +622,29 @@ This ensures Claude **always** follows your core working principles: complete im
 - **Pragmatism**: Choose practical solutions over theoretical perfection
 - **Momentum**: Keep progress going, handle blockers gracefully
 
+### Workflow Preferences & Pain Points
+
+**Context Sharing (Desired)**:
+- 💭 **Wish**: Tokens/context shared across projects
+- **Pain Point**: Having to re-explain preferences when switching projects
+- **Current Workaround**: cory-learnings auto-loads via hook system
+- **Why It Matters**:
+  - Work spans multiple related projects (calm-couples, ios-automation, calm-ai-pm)
+  - Context built in one project would be valuable in others
+  - Preferences are consistent across all projects
+  - Would save time and reduce repetition
+
+**Current Solution**:
+- Auto-load script injects critical rules in every session
+- cory-learnings repository centralizes all preferences
+- Symlinks make learnings accessible from any project
+- Hook system ensures consistency
+
+**Ideal Future**:
+- Token/context pool shared across project directories
+- Claude remembers prior conversations when switching projects
+- Seamless context continuity across related work
+
 ### Common Pitfalls (To Avoid)
 
 **Communication Anti-Patterns**:
