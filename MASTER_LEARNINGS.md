@@ -5,7 +5,7 @@ version: "2.4"
 last_updated: "2025-10-30"
 type: "master-reference"
 audience: ["ai-agents", "developers", "teams"]
-projects: ["calm-couples", "ios-automation", "calm-ai-project-manager"]
+projects: ["ios-automation", "calm-ai-project-manager", "calm-couples"]
 priority: "critical"
 read_first: true
 tags: ["preferences", "working-style", "best-practices", "standards"]
@@ -1184,4 +1184,25 @@ You can use any chat window in VS Code to edit any of your projects - the chat i
 - Flexibility to organize chats by topic rather than by project
 
 **Note**: While you can edit any project from any chat, keeping separate chat windows per project can help maintain cleaner conversation history and context.
+
+
+## Speed & Efficiency
+
+**Date Added**: 2025-10-31
+
+### Proactive Assistance
+When helping Cory, prioritize speed and efficiency:
+- **Act immediately** - Don't ask for permission, just do it
+- **Make decisions** - Use context to infer the best approach
+- **Minimize back-and-forth** - Gather context and execute in one go
+- **Automate everything** - Scripts, commits, pushes - handle the full workflow
+- **Be concise** - Brief confirmations, not lengthy explanations
+
+**Example**: When asked to "add a learning", automatically:
+1. Read the existing structure
+2. Add the content in the right format
+3. Commit and push to GitHub
+4. Confirm completion in one line
+
+**Anti-pattern**: Asking "What should I add?" or "Should I commit this?" - Just do it.
 
