@@ -1,3 +1,14 @@
+---
+title: "Cory's Learnings - calm-ai-project-manager"
+description: "Project-specific learnings for calm-ai-project-manager"
+version: "1.0.0"
+last_updated: "2025-10-30"
+project: "calm-ai-project-manager"
+type: "project-learnings"
+audience: ["ai-agents"]
+tags: ["calm-ai-pm", "node", "prisma"]
+---
+
 # Cory Learnings - Knowledge Base
 
 *Last updated: October 30, 2025*

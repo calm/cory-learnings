@@ -35,9 +35,13 @@ cory-learnings/
 ├── README.md                        # This file
 ├── AI_QUICKSTART.md                 # Quick reference for AI agents
 ├── MASTER_LEARNINGS.md              # Comprehensive preferences guide
+├── TERM_DICTIONARY.md               # Comprehensive terminology reference (50+ terms)
 ├── EXAMPLES.md                      # Conversation patterns (good vs bad)
 ├── CHANGELOG.md                     # Version history
 ├── TEMPLATE_NEW_PROJECT.md          # New project template
+├── README_BEST_PRACTICES.md         # README guidelines and standards
+├── TEMPLATE_README.md               # Ready-to-use README template
+├── ACTIVE_TODOS.md                  # Persistent todos across sessions
 ├── add-project.sh                   # Project addition script
 ├── scripts/                         # Validation and search tools
 │   ├── check-symlinks.sh           # Verify project symlinks
@@ -45,6 +49,12 @@ cory-learnings/
 │   ├── find-broken-links.sh        # Find broken references
 │   ├── search-learnings.sh         # Search across files
 │   └── quick-find.sh               # Interactive search menu
+├── tests/                           # Repository validation tests
+│   ├── run-all-tests.sh            # Run full test suite
+│   ├── structure.test.sh           # Validate file structure
+│   ├── frontmatter.test.sh         # Validate YAML frontmatter
+│   ├── markdown.test.sh            # Validate markdown syntax
+│   └── versions.test.sh            # Validate version consistency
 └── projects/                        # Project-specific learnings
     ├── README.md                    # Project quick reference
     ├── calm-couples.md              # React/Supabase wellness platform
@@ -52,7 +62,7 @@ cory-learnings/
     └── calm-ai-project-manager.md  # Node.js AI project manager
 ```
 
-**Total Content**: 4,211 lines across 10 markdown files
+**Total Content**: 6,800+ lines across 19 markdown files
 
 ---
 
@@ -75,6 +85,21 @@ cd ~/cory-learnings
 ./scripts/search-learnings.sh "RLS" --all        # Search all files
 ./scripts/quick-find.sh                          # Interactive menu
 ```
+
+### Run Tests
+```bash
+cd ~/cory-learnings
+./tests/run-all-tests.sh         # Run all validation tests
+./tests/structure.test.sh        # Test repository structure
+./tests/frontmatter.test.sh      # Test YAML frontmatter
+./tests/versions.test.sh         # Test version consistency
+```
+
+**Test Coverage**:
+- ✅ File structure validation
+- ✅ YAML frontmatter validation
+- ✅ Markdown syntax validation
+- ✅ Version consistency checks
 
 ### Validate Repository
 ```bash
@@ -108,7 +133,8 @@ cd ~/cory-learnings
 
 | File | Purpose | Lines |
 |------|---------|-------|
-| [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 481 |
+| [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 540 |
+| [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Comprehensive terminology reference | 600+ |
 | [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide | 940 |
 | [EXAMPLES.md](EXAMPLES.md) | Conversation patterns and anti-patterns | 513 |
 | [CHANGELOG.md](CHANGELOG.md) | Version history and evolution tracking | 169 |

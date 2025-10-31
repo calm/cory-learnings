@@ -169,7 +169,7 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 |--------|---------|
 | **"do it"** | Full approval, proceed with implementation |
 | **"be critical"** | Wants honest assessment, not sugar-coating |
-| **"continue"** / **"keep going"** | Keep working on current task, I trust your direction |
+| **"continue"** / **"c"** / **"keep going"** | Keep working on current task, I trust your direction |
 | **"do next todo"** / **"do next thing you pick"** | Work autonomously, trust AI judgment on priorities |
 | **"keep localhost running"** | Don't interrupt the dev server |
 | **"push changes if needed"** | Version and commit proactively |
@@ -540,6 +540,11 @@ Server running at http://localhost:3000
 - Appreciates detailed guides with examples and patterns
 - Last updated timestamps
 - Mermaid diagrams for architecture
+- **TERM_DICTIONARY.md**: Maintain comprehensive terminology reference
+  - Add new terms as they're introduced to projects
+  - Include clear definitions, examples, and cross-references
+  - Keep organized by category (workflow, tools, project-specific, etc.)
+  - Single source of truth for all technical terminology
 
 ### Testing
 - **Unit Tests**: Use mocks, don't require database, fast and reliable
@@ -938,6 +943,10 @@ git checkout -b docs/readme-update
 ---
 
 ## Glossary
+
+**📖 For comprehensive terminology reference, see [TERM_DICTIONARY.md](TERM_DICTIONARY.md) (50+ terms with examples and cross-references)**
+
+This section provides quick definitions. For detailed explanations, examples, and related terms, refer to TERM_DICTIONARY.md.
 
 ### General Terms
 

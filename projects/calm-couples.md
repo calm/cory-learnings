@@ -1,3 +1,14 @@
+---
+title: "Cory's Learnings - calm-couples"
+description: "Project-specific learnings for calm-couples"
+version: "1.0.0"
+last_updated: "2025-10-30"
+project: "calm-couples"
+type: "project-learnings"
+audience: ["ai-agents"]
+tags: ["calm-couples", "react", "supabase"]
+---
+
 # 🧠 Cory's Learnings & Preferences
 
 > **Purpose**: Living document tracking Cory's preferences, decisions, feedback, and discoveries across development sessions.

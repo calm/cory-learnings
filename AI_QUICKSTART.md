@@ -1,3 +1,13 @@
+---
+title: "AI Assistant Quick Start"
+description: "Ultra-concise reference for AI agents working with Cory"
+version: "2.4"
+last_updated: "2025-10-30"
+type: "ai-guide"
+audience: ["ai-agents"]
+tags: ["quickstart", "reference", "workflow"]
+---
+
 # AI Assistant Quick Start
 
 **Purpose**: Ultra-concise reference for AI agents working with Cory
@@ -92,7 +102,7 @@ Never: Report "server started" without checking behavior
 |-----------|---------|-----------|
 | "do it" | Full approval | Implement completely |
 | "be critical" | Honest assessment | Identify ALL issues |
-| "continue" | Keep working | No permission needed |
+| "continue" / "c" | Keep going | Continue current task |
 | "do next todo" | Use judgment | Work autonomously |
 | "keep localhost running" | Don't interrupt | Keep server alive |
 
@@ -512,6 +522,18 @@ Handoff:
 
 ---
 
+## Resources
+
+- **[MASTER_LEARNINGS.md](MASTER_LEARNINGS.md)**: Complete preferences and working style guide (447 lines)
+- **[TERM_DICTIONARY.md](TERM_DICTIONARY.md)**: Comprehensive terminology reference (50+ terms)
+  - Use when encountering unfamiliar technical terms
+  - Add new terms as they're introduced
+  - Single source of truth for all terminology
+- **[tests/](tests/)**: Repository validation tests
+  - Run `./tests/run-all-tests.sh` to validate repository integrity
+  - Tests for structure, frontmatter, markdown syntax, version consistency
+
+---
+
 **Last Updated**: 2025-10-30
 **Next Review**: Monthly
-**Full Details**: [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) (447 lines)

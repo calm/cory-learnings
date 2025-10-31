@@ -1,3 +1,13 @@
+---
+title: "Cory's Learnings - [PROJECT NAME]"
+description: "Template for tracking project-specific learnings"
+version: "1.0.0"
+last_updated: "2025-10-30"
+type: "template"
+audience: ["ai-agents", "developers"]
+tags: ["template", "learnings", "project-specific"]
+---
+
 # Cory's Learnings - [PROJECT NAME]
 
 **Purpose**: Track Cory's preferences, decisions, and learnings for [PROJECT NAME]

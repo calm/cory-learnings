@@ -1,3 +1,14 @@
+---
+title: "Cory's Learnings - ios-automation"
+description: "Project-specific learnings for ios-automation"
+version: "1.0.0"
+last_updated: "2025-10-30"
+project: "ios-automation"
+type: "project-learnings"
+audience: ["ai-agents"]
+tags: ["ios-automation", "idb", "appium"]
+---
+
 # Cory's Learnings & Preferences
 
 **Purpose**: Track everything Cory has asked, told, found out, and learned during iOS automation work.
