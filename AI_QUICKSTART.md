@@ -67,6 +67,15 @@ Versioning: Semantic versioning, conventional commits
 Ports: Each project on different localhost port (prevent conflicts)
 ```
 
+### 6. Interface Verification
+```yaml
+When: Cory asks to "run interface" or start server
+Action: Start dev server AND verify localhost actually works
+Test: Check URL responds (curl or browser test)
+Report: Confirm working or report errors
+Never: Assume it works without verification
+```
+
 ---
 
 ## Communication Decoder

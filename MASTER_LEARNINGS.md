@@ -365,6 +365,29 @@ This ensures Claude **always** follows your core working principles: complete im
 - ✅ Remove todos that become irrelevant
 - ✅ Update list to reflect current reality
 
+### Interface Verification - CRITICAL
+
+**When Cory asks to "run interface" or start development server**:
+
+**ALWAYS verify localhost actually works:**
+1. Start the development server (`npm run dev`, `npm start`, etc.)
+2. Wait for server to fully start
+3. **TEST the URL** - don't assume it worked:
+   - Use `curl http://localhost:PORT` to verify response
+   - OR check browser can access the URL
+   - Look for actual server output/response
+4. **Report status clearly**:
+   - ✅ "Server running at http://localhost:3000 - verified working"
+   - ❌ "Server started but getting errors: [error message]"
+   - ❌ "Port 3000 already in use - need to kill existing process"
+
+**NEVER:**
+- ❌ Assume localhost works without verification
+- ❌ Report "server started" without testing
+- ❌ Skip the verification step
+
+**Why this matters:** Cory navigates to localhost URLs frequently and needs to know they actually work, not just that the command was run.
+
 **Task Status Management**:
 - Mark `in_progress` → Start working on it
 - Mark `completed` → Move to next task immediately
