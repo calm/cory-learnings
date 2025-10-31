@@ -15,6 +15,7 @@ Tool: TodoWrite
 Timing: BEFORE starting work
 Status: Only ONE in_progress at a time
 Updates: Mark completed IMMEDIATELY (no batching)
+Order: Create todos in priority(ish) order - most important/logical first
 ```
 
 ### 2. Complete Implementations
@@ -430,13 +431,18 @@ Verification:
   - [ ] Zero failing tests
   - [ ] All todos marked as completed
   - [ ] No console.log statements (use structured logger)
+  - [ ] Localhost running correctly (if applicable)
+  - [ ] No broken functionality before commit
 
 Documentation:
   - [ ] Update documentation if needed
   - [ ] Update learnings if new insights discovered
   - [ ] Verify AGENTS.md accurate if major changes
+  - [ ] Keep README updated with new features/changes
 
-Version Control:
+Version Control (CRITICAL):
+  - [ ] Verify localhost runs correctly BEFORE committing to GitHub
+  - [ ] Test application works locally if changes affect runtime
   - [ ] Commit changes with semantic versioning
   - [ ] Use conventional commit format (feat:, fix:, docs:)
   - [ ] Include Claude Code attribution
