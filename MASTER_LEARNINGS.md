@@ -1206,3 +1206,29 @@ When helping Cory, prioritize speed and efficiency:
 
 **Anti-pattern**: Asking "What should I add?" or "Should I commit this?" - Just do it.
 
+
+## Test Coverage Strategy
+
+**Date Added**: 2025-10-31
+
+### Incremental Testing Approach
+Add ~10% test coverage while developing - focus on the most critical parts first. More comprehensive tests can come later.
+
+**Priorities for Initial Testing**:
+1. **Core functionality** - Main feature paths that users will hit
+2. **Critical edge cases** - Error handling, null checks, boundary conditions
+3. **Integration points** - Where systems connect (APIs, database, external services)
+4. **High-risk areas** - Complex logic, calculations, state management
+
+**What to skip initially**:
+- UI/visual tests (unless critical to UX)
+- Exhaustive edge case combinations
+- Performance benchmarks
+- Extensive E2E flows
+
+**Example**: For a new API endpoint:
+- ✅ Test: Happy path, auth validation, error handling
+- ⏭️ Later: Rate limiting, complex query combinations, load testing
+
+**Philosophy**: Ship with confidence on core functionality, iterate on comprehensive coverage.
+
