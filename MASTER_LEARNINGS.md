@@ -113,6 +113,20 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 - **Documentation**: AGENTS.md files, Mermaid diagrams, last updated timestamps
 - **Token Efficiency**: Use <30% budget per task, ask before reading, sample first, parallel calls, limit output (see TOKEN_EFFICIENCY.md)
 
+### AI Coding Agent Priority (TOP PRIORITY)
+**Order of use to keep coding without slowing down:**
+1. **Copilot in VSCode** (use Claude through Copilot)
+   - Use until Premium requests exhausted for the month
+   - Resets monthly
+   - When exhausted, defaults to GPT-4 (move to #2)
+2. **Gemini Agent / Gemini CLI**
+   - UNLIMITED use (Google Workspace)
+   - Excellent for text/image input tasks
+   - Use when Copilot Premium is exhausted
+3. **Claude Agent / Claude Code**
+   - Use as fallback or for specialized tasks
+   - Token-efficient workflow required
+
 ### Stack & Tools
 - **calm-couples**: React 19 + TypeScript + Supabase + Tailwind
 - **ios-automation**: IDB + Appium + OCR + Vision AI
@@ -734,10 +748,14 @@ git checkout -b docs/readme-update
 - Type-safe throughout
 
 ### Performance
+- **Make Things Fast** - Core principle across all work
 - First Contentful Paint: <1.5s
 - Time to Interactive: <3s
 - API Response Time: <200ms
 - Bundle Size: <500KB
+- Token efficiency: <30% budget per session
+- Parallel operations by default
+- Optimize for speed in code, builds, tests, and AI interactions
 
 ### Code Quality
 - ESLint: Zero warnings
