@@ -90,6 +90,7 @@ Logging: Structured logger (NOT console.log)
 TypeScript: Strict mode, zero 'any'
 Versioning: Semantic versioning, conventional commits
 Ports: Each project on different localhost port (prevent conflicts)
+Cost Awareness: Include cost projections in project READMEs
 ```
 
 ### 6. Interface Verification
@@ -499,6 +500,7 @@ Documentation:
   - [ ] Update learnings if new insights discovered
   - [ ] Verify AGENTS.md accurate if major changes
   - [ ] Keep README updated with new features/changes
+  - [ ] Ensure README includes cost projections (if applicable)
 
 Version Control (CRITICAL):
   - [ ] Verify localhost runs correctly BEFORE committing to GitHub
@@ -513,6 +515,7 @@ Handoff:
   - [ ] Report outcomes to Cory concisely
   - [ ] Highlight any blockers or questions
   - [ ] Ready for next session
+  - [ ] End message with project context summary (see Communication Best Practices below)
 ```
 
 ### Quick Pre-Flight Check
@@ -533,6 +536,55 @@ Handoff:
 ```
 
 **Action-oriented. Honest. Complete. Tested. Autonomous.**
+
+---
+
+## Communication Best Practices
+
+### Project Context Summary (REQUIRED at end of sessions)
+
+**Always end your final message with a clear project context summary**:
+
+```
+---
+**Project Context:**
+- Project: [project name]
+- Functionality: [what was worked on]
+- Key Changes: [bullet list of changes]
+- Status: [current state]
+```
+
+**Examples:**
+
+```
+---
+**Project Context:**
+- Project: calm-couples
+- Functionality: Added cost projections to README
+- Key Changes:
+  • Infrastructure cost breakdown by user scale
+  • 40% cost optimization strategies (database, bandwidth, hosting)
+  • Implementation phases with savings estimates
+- Status: Documentation complete, ready for review
+```
+
+```
+---
+**Project Context:**
+- Project: ios-automation
+- Functionality: AI vision verification cost optimization
+- Key Changes:
+  • Added Claude API cost analysis ($150-300/mo current)
+  • Identified 60-70% savings opportunities (OCR-first, caching)
+  • ROI analysis showing 19x-39x return despite AI costs
+- Status: Complete, ready to implement Phase 1 optimizations
+```
+
+**Why this matters:**
+- Provides instant context for next session
+- Shows what was accomplished at a glance
+- Makes it easy to resume work later
+- Documents decision rationale
 
 ---
 
