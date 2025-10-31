@@ -1,3 +1,13 @@
+---
+title: "Cory's Centralized Learnings Repository"
+description: "Single source of truth for preferences and learnings"
+version: "2.0"
+last_updated: "2025-10-30"
+type: "repository-readme"
+audience: ["ai-agents", "developers", "teams"]
+tags: ["documentation", "learnings", "repository-structure"]
+---
+
 # Cory's Centralized Learnings Repository
 
 **Purpose**: Single source of truth for Cory's preferences, working style, decisions, and learnings across all projects.
@@ -23,14 +33,22 @@ This repository centralizes all "Cory learnings" files from various projects. In
 
 ```
 cory-learnings/
-├── README.md                           # This file
-├── MASTER_LEARNINGS.md                 # Aggregated learnings across all projects
+├── README.md                           # This file - Repository guide
+├── AI_QUICKSTART.md                    # ⚡ Quick reference for AI agents (READ FIRST)
+├── MASTER_LEARNINGS.md                 # Comprehensive aggregated learnings
+├── TEMPLATE_NEW_PROJECT.md             # Template for new project learnings
+├── add-project.sh                      # Script to add new project
 ├── projects/                           # Individual project learnings
-│   ├── calm-couples.md                # calm-couples project
-│   ├── ios-automation.md              # ios-automation project
-│   └── calm-ai-project-manager.md     # calm-ai-project-manager project
+│   ├── calm-couples.md                # calm-couples project (541 lines)
+│   ├── ios-automation.md              # ios-automation project (272 lines)
+│   └── calm-ai-project-manager.md     # calm-ai-project-manager project (426 lines)
 └── .git/                              # Version control
 ```
+
+**Key Files**:
+- **AI_QUICKSTART.md** - Ultra-concise reference for AI agents (200 lines)
+- **MASTER_LEARNINGS.md** - Complete reference with all patterns (470 lines)
+- **README.md** - Repository documentation and usage guide
 
 ---
 
@@ -62,7 +80,44 @@ Each project directory has a **symlink** that points to this central repository:
 
 ## Usage
 
-### Reading Learnings
+### For AI Agents (START HERE)
+
+**Quick Start (Read First)**:
+```bash
+cat ~/cory-learnings/AI_QUICKSTART.md
+```
+This 200-line file contains everything you need to work effectively with Cory.
+
+**Detailed Reference**:
+```bash
+cat ~/cory-learnings/MASTER_LEARNINGS.md
+```
+Comprehensive 470-line guide with all preferences, standards, and patterns.
+
+**Project-Specific Context**:
+```bash
+cat ~/cory-learnings/projects/calm-couples.md
+cat ~/cory-learnings/projects/ios-automation.md
+cat ~/cory-learnings/projects/calm-ai-project-manager.md
+```
+
+**AI Agent Workflow**:
+1. Read `AI_QUICKSTART.md` at session start
+2. Review project-specific learnings for context
+3. Follow critical rules (todo lists, complete implementations, testing)
+4. Work autonomously using patterns documented
+5. Update learnings if new insights emerge
+
+**Key Principles for AI Agents**:
+- ✅ Create optimized todo list BEFORE starting (if 2+ steps)
+- ✅ Complete implementations - ZERO TODOs in code
+- ✅ Run tests and verify they pass - zero tolerance for failures
+- ✅ Work autonomously without asking permission repeatedly
+- ✅ Be brutally honest about what's broken vs working
+- ✅ Mark exactly ONE todo as in_progress at a time
+- ✅ Mark todos completed IMMEDIATELY after finishing
+
+### Reading Learnings (Humans)
 
 **View master learnings (aggregated)**:
 ```bash

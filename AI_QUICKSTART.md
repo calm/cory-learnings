@@ -1,0 +1,242 @@
+# AI Assistant Quick Start
+
+**Purpose**: Ultra-concise reference for AI agents working with Cory
+**Usage**: Read this FIRST before starting any task
+**Full Details**: See [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md)
+
+---
+
+## Critical Rules (Must Follow)
+
+### 1. Todo List Management
+```yaml
+When: ANY task with 2+ steps
+Tool: TodoWrite
+Timing: BEFORE starting work
+Status: Only ONE in_progress at a time
+Updates: Mark completed IMMEDIATELY (no batching)
+```
+
+### 2. Complete Implementations
+```yaml
+Rule: ZERO TODOs in code
+Action: Implement fully, no placeholders
+Philosophy: "do this yourself" = complete it now
+```
+
+### 3. Testing
+```yaml
+Standard: Zero tolerance for failing tests
+Coverage: 98% target
+Process: Run tests → Verify pass → Fix all failures
+Never: Skip tests or leave broken code
+```
+
+### 4. Autonomous Execution
+```yaml
+Mode: Work through tasks without asking permission
+Response: "do it" = full approval to proceed
+Blocked: Move to next actionable task, keep momentum
+Communication: Report outcomes, not every step
+```
+
+### 5. Code Quality
+```yaml
+Logging: Structured logger (NOT console.log)
+TypeScript: Strict mode, zero 'any'
+Versioning: Semantic versioning, conventional commits
+```
+
+---
+
+## Communication Decoder
+
+| Cory Says | Meaning | AI Action |
+|-----------|---------|-----------|
+| "do it" | Full approval | Implement completely |
+| "be critical" | Honest assessment | Identify ALL issues |
+| "continue" | Keep working | No permission needed |
+| "do next todo" | Use judgment | Work autonomously |
+| "keep localhost running" | Don't interrupt | Keep server alive |
+
+---
+
+## Workflow Pattern
+
+```
+1. Read Request
+   ↓
+2. Create Todo List (if 2+ steps)
+   ↓
+3. Mark First Item in_progress
+   ↓
+4. Execute Task
+   ↓
+5. Run Tests
+   ↓
+6. Mark Completed IMMEDIATELY
+   ↓
+7. Move to Next Task
+   ↓
+8. Repeat until Done
+```
+
+---
+
+## Project Quick Reference
+
+### calm-couples
+```yaml
+Type: Relationship wellness platform
+Stack: React 19 + TypeScript + Supabase + Tailwind
+Status: MVP complete, production-ready
+Tests: 63 tests, 98% coverage target
+Key: 3D plant system, race condition fixes, GDPR
+```
+
+### ios-automation
+```yaml
+Type: E2E testing for Calm iOS app
+Stack: IDB + Appium + Tesseract OCR + Vision AI
+Status: Framework validated (8/10), test suite in progress (2/10)
+Tests: 648 unit tests passing
+Key: Test isolation, modal dismissal, state management
+```
+
+### calm-ai-project-manager
+```yaml
+Type: AI-powered project management
+Stack: Node.js + Express + Prisma + SQLite + Claude 3.5
+Version: v1.1.0
+Key: Task management, RCI matrix, knowledge base, PTL checklists
+Philosophy: AI enhances, never blocks functionality
+```
+
+---
+
+## Anti-Patterns (Never Do These)
+
+```diff
+- Leaving TODOs or placeholders in code
+- Asking "should I..." repeatedly
+- Over-explaining every decision
+- Hiding broken things or failing tests
+- Using console.log instead of structured logger
+- Analysis paralysis before action
+- Batching multiple todo completions
+- Having multiple todos in_progress simultaneously
+```
+
+---
+
+## Quality Bars
+
+```yaml
+Test Coverage: 98%
+Failing Tests: 0 (zero tolerance)
+TypeScript: Strict mode, zero 'any'
+Performance:
+  FCP: <1.5s
+  TTI: <3s
+  API: <200ms
+  Bundle: <500KB
+Code Quality:
+  ESLint: Zero warnings
+  Prettier: Auto-formatted
+  Logging: Structured only
+  TODOs: None allowed
+```
+
+---
+
+## When Blocked
+
+```
+1. Don't overthink (30 seconds max)
+2. Move to next actionable task
+3. Document blocker briefly
+4. Keep momentum going
+5. Return when unblocked
+```
+
+---
+
+## Todo List Example
+
+**Good:**
+```json
+[
+  {"content": "Fix race condition in petal increment", "status": "completed", "activeForm": "Fixing race condition"},
+  {"content": "Add optimistic locking with version field", "status": "in_progress", "activeForm": "Adding optimistic locking"},
+  {"content": "Create unit tests for concurrent operations", "status": "pending", "activeForm": "Creating unit tests"},
+  {"content": "Run full test suite and verify 63/63 passing", "status": "pending", "activeForm": "Running full test suite"}
+]
+```
+
+**Bad:**
+```json
+[
+  {"content": "Fix stuff", "status": "pending"},  // Too vague
+  {"content": "Work on database", "status": "pending"},  // Not specific
+  {"content": "Tests", "status": "pending"}  // No clear action
+]
+```
+
+---
+
+## Quick Commands
+
+```bash
+# View master learnings
+cat ~/cory-learnings/MASTER_LEARNINGS.md
+
+# View project-specific
+cat ~/cory-learnings/projects/calm-couples.md
+
+# Search across all
+cd ~/cory-learnings && grep -r "pattern" .
+
+# Navigate to project
+cd ~/Desktop/calm/calm-couples
+cd ~/Desktop/calm/ios-automation
+cd ~/Desktop/calm/calm-ai-project-manager
+```
+
+---
+
+## Key Files by Project
+
+**calm-couples:**
+- `/AGENTS.md` - AI guidance, architecture
+- `/CORY_LEARNINGS.md` - Project learnings (symlink)
+- `/package.json` - Dependencies
+- `/src/lib/supabase/` - Supabase integration
+
+**ios-automation:**
+- `/AGENTS.md` - Testing framework guide
+- `/CORY_LEARNINGS.md` - Test insights (symlink)
+- `/src/` - Test implementations
+- `/tests/` - Unit tests
+
+**calm-ai-project-manager:**
+- `/AGENTS.md` - Project structure
+- `/Cory learnings.md` - Feature evolution (symlink)
+- `/src/` - Core application
+- `/migrations/` - Database migrations
+
+---
+
+## Remember
+
+```
+"be critical and continue" + "do this yourself" + "test all and make sure ok"
+= core working principles
+```
+
+**Action-oriented. Honest. Complete. Tested. Autonomous.**
+
+---
+
+**Last Updated**: 2025-10-30
+**Next Review**: Monthly
+**Full Details**: [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) (447 lines)

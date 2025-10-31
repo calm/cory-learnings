@@ -1,9 +1,85 @@
+---
+title: "Cory's Master Learnings"
+description: "Central knowledge base aggregating preferences, working style, and learnings"
+version: "2.0"
+last_updated: "2025-10-30"
+type: "master-reference"
+audience: ["ai-agents", "developers", "teams"]
+projects: ["calm-couples", "ios-automation", "calm-ai-project-manager"]
+priority: "critical"
+read_first: true
+tags: ["preferences", "working-style", "best-practices", "standards"]
+---
+
 # Cory's Master Learnings
 
 **Last Updated**: 2025-10-30
 **Projects**: calm-couples, ios-automation, calm-ai-project-manager
 
 > Central knowledge base aggregating Cory's preferences, working style, decisions, and learnings across all projects.
+
+---
+
+## AI Quick Reference (CRITICAL - READ FIRST)
+
+**Context**: This section is optimized for AI assistants to quickly parse and apply Cory's working preferences.
+
+### Core Directives (Always Apply)
+```
+✅ MUST DO:
+- Create optimized todo list for ANY task with 2+ steps (use TodoWrite tool BEFORE starting)
+- Complete implementations fully - ZERO TODOs in code
+- Run tests and verify they pass - zero tolerance for failures
+- Work autonomously without asking permission at each step
+- Be brutally honest about what's broken vs working
+- Use structured logger (not console.log) for all errors/info
+- Mark exactly ONE todo as in_progress at any time
+- Mark todos completed IMMEDIATELY after finishing (no batching)
+
+❌ NEVER DO:
+- Leave TODOs or placeholders in code
+- Ask for permission repeatedly ("should I...", "would you like me to...")
+- Over-explain every decision
+- Hide broken things or failing tests
+- Use console.log instead of structured logger
+- Batch multiple todo completions
+- Have multiple todos in_progress simultaneously
+```
+
+### Communication Protocol
+| User Says | AI Should Do |
+|-----------|--------------|
+| "do it" | Full approval, implement completely |
+| "be critical" | Honest assessment, identify all issues |
+| "continue" / "keep going" | Keep working autonomously |
+| "do next todo" / "do next thing you pick" | Work through list, use judgment |
+| "keep localhost running" | Don't interrupt dev server |
+
+### Todo List Requirements (NON-NEGOTIABLE)
+- **When**: ALWAYS for 2+ step tasks, start of any session with work
+- **Format**: `{"content": "Action verb + specific task", "status": "pending|in_progress|completed", "activeForm": "Present continuous form"}`
+- **Quality**: Specific, actionable, complete, ordered, optimized
+- **Workflow**: Create → Mark first in_progress → Work → Mark completed → Next
+- **Rule**: Only ONE in_progress at a time, mark completed IMMEDIATELY
+
+### Quality Standards
+- **Testing**: 98% coverage target, zero failing tests
+- **TypeScript**: Strict mode, zero `any`
+- **Versioning**: Semantic versioning, conventional commits
+- **Logging**: Structured logger with component, action, metadata
+- **Documentation**: AGENTS.md files, Mermaid diagrams, last updated timestamps
+
+### Stack & Tools
+- **calm-couples**: React 19 + TypeScript + Supabase + Tailwind
+- **ios-automation**: IDB + Appium + OCR + Vision AI
+- **calm-ai-project-manager**: Node.js + Express + Prisma + SQLite + Claude 3.5
+
+### When Blocked
+1. Don't overthink
+2. Move to next actionable task
+3. Document blocker
+4. Keep momentum
+5. Return when unblocked
 
 ---
 
