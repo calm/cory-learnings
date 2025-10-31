@@ -354,3 +354,373 @@ Track these across sessions:
 **Remember**: Every token costs money and uses context. Be ruthlessly efficient.
 
 **Mantra**: "Sample → Ask → Target → Execute"
+
+---
+
+## 🔥 Extreme Optimization Tactics
+
+### Tactic 1: The "Question First" Rule
+```
+❌ NEVER: Read files to understand what to do
+✅ ALWAYS: Ask user to clarify scope first
+
+Example:
+User: "Fix the authentication system"
+❌ Bad: Read auth files to understand system
+✅ Good: "What specifically needs fixing? Login flow, tokens, or session management?"
+```
+
+### Tactic 2: The "1-File Rule" for Exploration
+```
+When exploring unfamiliar codebase:
+- Read at most 1 file fully
+- Use grep/glob for everything else
+- Ask user for architecture doc if confused
+
+❌ Bad: Read 5 files to understand structure
+✅ Good: grep -r "class.*Auth" + ask user
+```
+
+### Tactic 3: The "No Speculation" Rule
+```
+❌ NEVER: Read extra files "just in case"
+✅ ALWAYS: Read only what you KNOW you need
+
+If you're reading a file "to see if it might help" → STOP
+```
+
+### Tactic 4: Aggressive Output Limiting
+```bash
+# ALWAYS use these limits:
+ls | head -5          # Not ls
+git log -3            # Not git log
+grep pattern | head -10    # Not grep pattern
+find . -name "*.ts" | head -5  # Not full find
+
+# Default limits by command:
+head: 10 lines max
+tail: 5 lines max
+grep: 10 results max
+git log: 3-5 commits max
+```
+
+### Tactic 5: The "Parallel Everything" Rule
+```
+If reading 2+ files → ALWAYS parallel in same message
+
+❌ Bad: Read file1 → respond → Read file2 → respond
+✅ Good: Read(file1) + Read(file2) + Read(file3) in one message
+
+Saves: ~1-2K tokens per additional file
+```
+
+### Tactic 6: Grep Before Read
+```
+❌ NEVER: Read file to find something specific
+✅ ALWAYS: Grep first, read only if needed
+
+Example:
+Task: "Find where API endpoint is defined"
+❌ Bad: Read routes.ts, api.ts, controllers/*.ts
+✅ Good: grep -r "POST /api" --include="*.ts" -n | head -5
+
+Saves: 5K-10K tokens
+```
+
+### Tactic 7: Use limit Parameter Religiously
+```typescript
+// When exploring unknown files:
+Read(file_path, limit=20)  // Preview
+Read(file_path, limit=50)  // If need more context
+Read(file_path)            // Only if absolutely necessary
+
+// Never read full file first!
+```
+
+### Tactic 8: The "Summary Response" Pattern
+```
+Instead of showing full output:
+
+❌ Bad:
+Uses Bash → Shows 200 lines of output → Explains
+
+✅ Good:
+Uses Bash with | tail -5 → Shows summary → Explains
+
+User can ask for more if needed
+```
+
+---
+
+## 💰 Token Cost Examples
+
+### Real Cost Breakdown
+
+| Action | Tokens | Cost (@$15/1M) | Multiply by 10 sessions |
+|--------|--------|---------------|------------------------|
+| Read 500-line file | ~2,000 | $0.03 | $0.30 |
+| Full test output (200 lines) | ~1,000 | $0.015 | $0.15 |
+| Git log (50 commits) | ~800 | $0.012 | $0.12 |
+| ls -la (100 files) | ~500 | $0.0075 | $0.075 |
+| **Unnecessary reads (3 files)** | **~6,000** | **$0.09** | **$0.90** |
+
+**Daily Impact** (4 sessions):
+- Good habits: ~60K tokens = $0.90/day
+- Bad habits: ~180K tokens = $2.70/day
+- **Savings: $1.80/day = $657/year**
+
+---
+
+## 🎯 Quick Wins (Do These NOW)
+
+### Win 1: Add to Every Bash Command
+```bash
+# Add these ALWAYS:
+command | head -10      # Limit output
+command 2>/dev/null    # Suppress errors
+command --quiet        # If available
+command | tail -5      # Just the end
+```
+
+### Win 2: Never Read Full Docs
+```
+❌ NEVER: Read README.md (usually 200+ lines)
+✅ ALWAYS: head -30 README.md
+Then ask: "Should I read more?"
+```
+
+### Win 3: Use Glob Instead of Read for Lists
+```
+Task: "What files are in src/?"
+❌ Bad: Read multiple files to see
+✅ Good: ls -1 src/ | head -10
+```
+
+### Win 4: Batch All Initial Reads
+```
+Start of session:
+❌ Bad: Read AI_QUICKSTART → respond → Read PROJECT.md → respond
+✅ Good: Read(AI_QUICKSTART, limit=50) + Read(PROJECT.md, limit=50) parallel
+
+Saves: 2-3K tokens
+```
+
+### Win 5: Suppress Verbose Tool Output
+```typescript
+// Configure tools for minimal output:
+Bash: Always pipe to head/tail
+Grep: Always use head_limit parameter
+Read: Use limit parameter when exploring
+```
+
+---
+
+## 📊 Session Token Budget Tracker
+
+### Use This Template
+
+```markdown
+## Session Start
+- Budget: 200,000 tokens
+- Target: <60,000 tokens (30%)
+- Task Type: [Demo/Feature/Bug/Docs]
+- Expected: [15K/40K/25K/12K per type]
+
+## Checkpoint 1 (After initial understanding)
+- Used: _____ tokens
+- Percentage: _____%
+- On track? [Yes/No]
+- Adjust: [What to do different]
+
+## Checkpoint 2 (Midway)
+- Used: _____ tokens
+- Percentage: _____%
+- On track? [Yes/No]
+- Adjust: [What to do different]
+
+## Session End
+- Total: _____ tokens
+- Target: <60,000
+- Actual %: _____%
+- Grade: [A/B/C/D/F]
+- Lessons: [What drove usage]
+- Next time: [How to improve]
+```
+
+### Grade Scale
+- **A**: <20% of budget (40K tokens)
+- **B**: 20-30% (40-60K tokens)
+- **C**: 30-40% (60-80K tokens)
+- **D**: 40-50% (80-100K tokens)
+- **F**: >50% (100K+ tokens)
+
+---
+
+## 🚫 Absolute Never-Do List
+
+### 1. Never Read Documentation Front-to-Back
+```
+❌ Read README.md (200 lines)
+❌ Read CONTRIBUTING.md (150 lines)
+❌ Read API_DOCS.md (300 lines)
+
+✅ head -20 each file
+✅ Ask: "Which section matters?"
+```
+
+### 2. Never Run Full Test Suite for Info
+```
+❌ npm test (shows 500 lines)
+✅ npm test 2>&1 | tail -10
+✅ npm test --silent | grep -E "(PASS|FAIL)"
+```
+
+### 3. Never List All Files
+```
+❌ ls -la (100 files)
+❌ find . -name "*.ts" (200 files)
+
+✅ ls -1 | head -10
+✅ find . -name "*.ts" | head -5
+```
+
+### 4. Never Read Multiple Files Sequentially
+```
+❌ Read file1 → analyze → Read file2 → analyze
+✅ Read file1 + file2 + file3 in parallel
+```
+
+### 5. Never Show Full Bash Output
+```
+❌ git log
+❌ npm test
+❌ ls -la
+❌ grep -r pattern .
+
+✅ git log -5
+✅ npm test | tail -10
+✅ ls -1 | head -10
+✅ grep -r pattern . | head -5
+```
+
+### 6. Never Read Files to "Understand Context"
+```
+❌ "Let me read a few files to understand the project"
+✅ "What aspect of the project should I focus on?"
+
+If exploring: Use grep/glob, not Read
+```
+
+### 7. Never Use TodoWrite for Single-Step Tasks
+```
+❌ Task: "Run tests" → Create todo list
+✅ Task: "Run tests" → Just run them
+
+TodoWrite itself costs tokens!
+```
+
+---
+
+## 🎓 Advanced Patterns
+
+### Pattern 1: The "Grep-First" Workflow
+```bash
+# Always grep before reading:
+Task: "Find authentication logic"
+
+Step 1: grep -r "authenticate\|auth" --include="*.ts" | head -10
+Step 2: Identify likely file (e.g., auth.service.ts:42)
+Step 3: Read(auth.service.ts, offset=35, limit=20)
+# Not: Read entire auth.service.ts
+
+Saves: 80% tokens vs reading full file
+```
+
+### Pattern 2: The "Sample-Decide-Target" Workflow
+```bash
+# For unknown codebases:
+Step 1: ls -1 src/ | head -10          # Structure
+Step 2: head -15 src/main.ts           # Entry point
+Step 3: Ask user: "Is X the right file?"
+Step 4: Read specific file if confirmed
+
+# Not: Read 5 files to understand
+Saves: 5-8K tokens
+```
+
+### Pattern 3: The "Suppress-Everything" Workflow
+```bash
+# Maximum output suppression:
+command 2>/dev/null | grep "key pattern" | head -5
+
+# Examples:
+npm test 2>/dev/null | grep -E "(✓|✗)" | head -10
+git log --oneline -3 2>/dev/null
+find . -name "*.ts" 2>/dev/null | grep "auth" | head -5
+```
+
+### Pattern 4: The "Lazy Load" Workflow
+```
+Don't load project context upfront
+
+❌ Bad: Read AI_QUICKSTART + MASTER + PROJECT at start
+✅ Good: Read AI_QUICKSTART(limit=50) only
+Then read more ONLY when specifically needed
+
+Saves: 10-15K tokens
+```
+
+---
+
+## 📈 Token Reduction Scorecard
+
+Track these ratios:
+
+### Files Read vs Files Used
+- **Target**: 1:1 (every file read gets used)
+- **Acceptable**: 2:1 (half of reads useful)
+- **Poor**: 3:1+ (reading speculatively)
+
+### Lines Read vs Lines Referenced
+- **Target**: Read only needed sections
+- **Measure**: Use Read with offset/limit
+- **Goal**: <25% of file read on average
+
+### Tool Calls Per Task
+- **Simple tasks**: 3-5 tool calls
+- **Medium tasks**: 8-12 tool calls
+- **Complex tasks**: 15-25 tool calls
+- **Red flag**: >30 tool calls
+
+### Parallel vs Sequential Ratio
+- **Target**: 60%+ of tool calls in parallel
+- **Measure**: Batch independent operations
+- **Red flag**: <40% parallel
+
+---
+
+## 🏆 Optimization Hall of Fame
+
+### Best Practices Seen in Wild
+
+1. **Ask First**: "What part of auth needs fixing?" (saved 15K)
+2. **Grep Pattern**: `grep -r "TODO" | wc -l` instead of reading files (saved 10K)
+3. **Limit Everything**: `head -10` on every bash command (saved 5K)
+4. **Parallel Reads**: 3 files in one message (saved 3K)
+5. **Targeted Read**: Read with offset+limit (saved 8K)
+
+---
+
+## Related Documents
+
+- [AI_QUICKSTART.md](AI_QUICKSTART.md) - Core guidelines (includes token efficiency)
+- [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) - Comprehensive preferences
+- [EXAMPLES.md](EXAMPLES.md) - Good vs bad patterns
+
+---
+
+**Remember**: Every token costs money and uses context. Be ruthlessly efficient.
+
+**New Mantra**: "Ask → Grep → Sample → Target → Execute"
+
+**Ultimate Goal**: <20K tokens for typical tasks (10% of budget)
