@@ -1,7 +1,7 @@
 ---
 title: "Cory's Centralized Learnings Repository"
 description: "Single source of truth for preferences and learnings"
-version: "2.3"
+version: "2.4"
 last_updated: "2025-10-30"
 type: "repository-readme"
 audience: ["ai-agents", "developers", "teams"]
@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.3 | **Last Updated**: 2025-10-30
+**Version**: 2.4 | **Last Updated**: 2025-10-30
 
 ---
 
@@ -170,6 +170,7 @@ git log --follow projects/calm-couples.md    # File-specific history
 
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| 2.4.0 | 2025-10-30 | Interface verification, port management, README guidelines |
 | 2.3.0 | 2025-10-30 | Validation scripts, search helpers, TOC, optimized auto-load |
 | 2.2.0 | 2025-10-30 | FAQ, Glossary, Session Checklist, Mermaid diagrams |
 | 2.1.0 | 2025-10-30 | When to ask guidance, examples, slash commands |

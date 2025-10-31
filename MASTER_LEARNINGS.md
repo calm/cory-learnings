@@ -1,7 +1,7 @@
 ---
 title: "Cory's Master Learnings"
 description: "Central knowledge base aggregating preferences, working style, and learnings"
-version: "2.0"
+version: "2.4"
 last_updated: "2025-10-30"
 type: "master-reference"
 audience: ["ai-agents", "developers", "teams"]

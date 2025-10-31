@@ -1,7 +1,7 @@
 ---
 title: "Cory Learnings Changelog"
 description: "Track how preferences and standards evolve over time"
-version: "2.3"
+version: "2.4"
 last_updated: "2025-10-30"
 type: "changelog"
 ---
@@ -12,6 +12,51 @@ All notable changes to Cory's learnings and preferences will be documented in th
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [2.4.0] - 2025-10-30
+
+### Added
+**Interface Verification Requirement (CRITICAL)**
+- New requirement: When asked to "run interface" - start server AND verify URL works
+- Added to MASTER_LEARNINGS.md with detailed workflow
+- Added to AI_QUICKSTART.md as section 6
+- Added to auto-load-learnings.sh CRITICAL RULES
+- Prevents assuming localhost works without actual verification
+
+**Localhost Port Management**
+- Each project MUST run on different localhost port
+- calm-couples: http://localhost:3000
+- ios-automation: http://localhost:4000
+- calm-ai-project-manager: http://localhost:3001
+- Added to MASTER_LEARNINGS.md Development Environment section
+- Added to AI_QUICKSTART.md Code Quality rules
+- Updated all Quick Commands in projects/README.md with explicit ports
+
+**Professional README Guidelines**
+- README_BEST_PRACTICES.md (699 lines): Comprehensive guide
+  - Core principles (What/How/Where approach)
+  - Length guidelines by project type (150-250 lines ideal)
+  - Professional writing style guide
+  - What to include vs avoid with examples
+  - Before/after examples (365→184 line reduction)
+  - Templates by project type
+  - Maintenance checklist
+- TEMPLATE_README.md (267 lines): Ready-to-use template
+  - All essential sections in proper order
+  - Port configuration guidance
+  - Testing standards and workflow
+  - Common issues solutions
+
+### Changed
+- Auto-load script: Added interface verification to CRITICAL RULES
+- Projects README: All localhost URLs now explicit with port numbers
+
+### Why This Matters
+- **Interface Verification**: Cory navigates to localhost URLs frequently - needs to know they work
+- **Port Management**: Prevents conflicts when running multiple projects simultaneously
+- **README Quality**: Professional documentation improves project maintainability and onboarding
 
 ---
 
