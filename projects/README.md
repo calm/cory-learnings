@@ -87,7 +87,7 @@ Testing:
 cd ~/Desktop/calm/calm-couples
 
 # Development
-npm run dev              # Start dev server (localhost:3000)
+npm run dev              # Start dev server (http://localhost:3000)
 npm test                 # Run all tests
 npm run build            # Production build
 npm run lint             # Lint check
@@ -175,6 +175,7 @@ Tools:
 cd ~/Desktop/calm/ios-automation
 
 # Development
+npm start                          # Start web interface (http://localhost:4000)
 npm test                           # Run unit tests (648 tests)
 node src/e2e-runner.js            # Run E2E tests
 npm run lint                       # Lint check
@@ -270,7 +271,7 @@ Features:
 cd ~/Desktop/calm/calm-ai-project-manager
 
 # Development
-npm run dev                        # Start dev server
+npm run dev                        # Start dev server (http://localhost:3001)
 npm test                           # Run tests
 npm run build                      # Build for production
 npm start                          # Run production build

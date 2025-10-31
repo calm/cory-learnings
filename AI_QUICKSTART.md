@@ -64,6 +64,7 @@ Communication: Report outcomes, not every step
 Logging: Structured logger (NOT console.log)
 TypeScript: Strict mode, zero 'any'
 Versioning: Semantic versioning, conventional commits
+Ports: Each project on different localhost port (prevent conflicts)
 ```
 
 ---

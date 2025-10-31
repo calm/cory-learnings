@@ -463,6 +463,15 @@ This ensures Claude **always** follows your core working principles: complete im
 - **AI**: Anthropic Claude 3.5 Sonnet (optional, graceful degradation)
 - **iOS Automation**: xcrun simctl, IDB, Appium, Tesseract OCR, Vision AI
 
+### Development Environment
+- **Port Management**: Each project MUST run on a different localhost port
+  - **calm-couples**: http://localhost:3000
+  - **ios-automation**: http://localhost:4000
+  - **calm-ai-project-manager**: http://localhost:3001
+  - Check `package.json` or config files for port settings
+  - Prevents port conflicts when running multiple projects
+  - Update `.env` or config if ports conflict
+
 ### Git Practices
 - **Commit Format**: Conventional commits (feat:, fix:, docs:, etc.)
 - **Attribution**: Include Claude Code attribution
