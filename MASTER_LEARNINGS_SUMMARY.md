@@ -234,6 +234,7 @@ Cleanup:   Save pending to ACTIVE_TODOS.md at session end
 **Be direct** → Honest about problems, no hiding issues
 **Document decisions** → Why, not just what
 **Quick wins when smart** → Don't over-engineer; ship value early, iterate later
+**Real-time visibility** → Show status at each step; blockers/wins immediately visible
 
 ---
 

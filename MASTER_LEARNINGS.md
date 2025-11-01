@@ -658,6 +658,8 @@ Server running at http://localhost:3000
 ### In Workflow
 - ✅ Keep server running during development
 - ✅ Version control with semantic versioning
+- ✅ Real-time status visibility - blockers/wins immediately reported
+- ✅ AGENTS.md in every project (AI guidance, entry points, patterns)
 - ✅ Critical analysis and continuous improvement
 - ✅ Autonomous execution with trust
 

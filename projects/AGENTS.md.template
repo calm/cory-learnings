@@ -1,0 +1,235 @@
+---
+title: "AGENTS.md Template"
+description: "Copy this template into each project's root as AGENTS.md for AI agent guidance"
+version: "1.0"
+---
+
+# AGENTS.md Template
+
+**Purpose**: Quick guidance for AI agents working on this project. Copy to `{PROJECT_ROOT}/AGENTS.md`.
+
+---
+
+## Quick Start for AI Agents
+
+**Project**: [PROJECT_NAME]
+**Type**: [e.g., React SaaS, Node.js CLI, E2E Testing Framework]
+**Stack**: [e.g., React 19 + TypeScript + Supabase]
+**Key files**: See [Entry Points](#entry-points) below
+
+---
+
+## Entry Points
+
+| Need | File | What it does |
+|------|------|-------------|
+| **Understand architecture** | [ARCHITECTURE.md](./ARCHITECTURE.md) or [claude.md](./claude.md) | System design, module structure |
+| **Run the project** | [README.md](./README.md) | Setup, scripts, development |
+| **Fix a bug** | [src/](./src/) | Start with error trace, find affected file |
+| **Add a feature** | [docs/CONTRIBUTING.md](./docs/CONTRIBUTING.md) | Patterns, conventions, testing |
+| **Review tests** | [tests/](./tests/) or [__tests__/](./__tests__/) | Test patterns, coverage info |
+
+---
+
+## Common Tasks (Quick Reference)
+
+### 1. Set Up Development
+```bash
+npm install
+npm run dev
+```
+**Key files**: `.env.local`, `package.json`, root scripts
+
+### 2. Find & Fix a Bug
+```bash
+# 1. Identify component/module from error
+# 2. Locate in src/
+# 3. Understand data flow (grep for function name)
+# 4. Add/fix logic
+# 5. Run tests: npm test
+```
+
+### 3. Add a Feature
+```bash
+# 1. Create todo list (what needs to be done?)
+# 2. Create component/function skeleton with visible TODOs
+# 3. Implement piece by piece
+# 4. Test each piece
+# 5. Verify all tests pass
+# 6. Commit with clear message
+```
+
+### 4. Run Tests
+```bash
+npm test              # All tests
+npm test -- --watch  # Watch mode
+npm test -- src/     # Specific directory
+```
+
+---
+
+## Code Patterns
+
+### Logging
+**Pattern**: Use structured logger, not `console.log`
+```typescript
+// ✅ Good
+logger.info('User created', { userId, email })
+logger.error('Database connection failed', { error })
+
+// ❌ Bad
+console.log('user created')
+```
+
+### Testing
+**Pattern**: Test behavior, not implementation
+```typescript
+// ✅ Good - tests what matters
+expect(user.isActive).toBe(true)
+
+// ❌ Bad - tests internals
+expect(component.state.loading).toBe(false)
+```
+
+### Error Handling
+**Pattern**: Catch, log with context, then re-throw or recover
+```typescript
+// ✅ Good
+try {
+  await db.query()
+} catch (error) {
+  logger.error('Query failed', { query, error })
+  throw error
+}
+```
+
+### TypeScript
+**Pattern**: Strict mode, no `any`, explicit types
+```typescript
+// ✅ Good
+function create(name: string, age: number): User { }
+
+// ❌ Bad
+function create(name: any, age: any): any { }
+```
+
+---
+
+## Directory Structure
+
+```
+{PROJECT_ROOT}/
+├── src/                    # Main source code
+│   ├── components/         # React components (if applicable)
+│   ├── services/          # API, database, external services
+│   ├── utils/             # Helpers, constants
+│   └── types/             # TypeScript types
+├── tests/ or __tests__/    # Test files
+├── docs/                  # Documentation
+├── README.md              # Project overview
+├── AGENTS.md              # This file (AI guidance)
+├── claude.md              # [If exists] Project context for Claude
+└── package.json           # Dependencies, scripts
+```
+
+---
+
+## Common Issues & Solutions
+
+### Issue: Tests failing after changes
+**Solution**:
+1. Run `npm test` to see which tests failed
+2. Check the assertion that's failing
+3. Either fix the code or update the test (if intentional)
+4. Commit only when all tests pass
+
+### Issue: Type errors in TypeScript
+**Solution**:
+1. Read the error message (usually tells you exactly what's wrong)
+2. Check the file at the line number
+3. Either fix the type OR add explicit type annotation
+4. Never use `as any` as a shortcut
+
+### Issue: Environmental variable not found
+**Solution**:
+1. Check `.env.local` or `.env.example`
+2. Copy `.env.example` to `.env.local` and fill in values
+3. Restart dev server (`npm run dev`)
+
+### Issue: "Module not found"
+**Solution**:
+1. Check import path - is it correct?
+2. Is the file exported from its index?
+3. Run `npm install` if new dependency
+
+---
+
+## Performance Tips
+
+### Reduce Token Usage (for AI agents)
+1. **Use grep before reading**: `grep -r "pattern" src/`
+2. **Check this file first**: AGENTS.md (you are here!)
+3. **Ask for scope**: Before reading large files
+4. **Parallel operations**: Run independent tasks together
+5. **Reference not quote**: Point to files, don't show full content
+
+---
+
+## When Stuck
+
+1. **Check existing patterns**: Look at similar code
+2. **Read error messages carefully**: They're usually right
+3. **Run tests**: They often tell you what's wrong
+4. **Ask for help**: Point to the specific file + line number
+5. **Search documentation**: grep the codebase first
+
+---
+
+## Key Principles
+
+- **Complete implementations**: Don't leave TODOs (use template pattern if starting)
+- **Tests first**: Verify before committing
+- **Clear commits**: Explain WHY, not just what
+- **Structured logging**: Context matters for debugging
+- **Type safety**: Strict TypeScript, no `any`
+
+---
+
+## Useful Commands
+
+```bash
+# Development
+npm run dev              # Start dev server
+npm test                # Run all tests
+npm test -- --watch    # Watch mode
+
+# Building/Deployment
+npm run build           # Build for production
+npm run build:dev       # Build for development
+
+# Linting/Formatting
+npm run lint            # Check code style
+npm run format          # Auto-format code
+
+# Cleanup
+npm run clean           # Remove build artifacts
+npm install             # Install dependencies
+```
+
+---
+
+## Quick Links
+
+- **Cory's Learnings**: [cory-learnings repo](https://github.com/coryweinstein/cory-learnings)
+- **Key Principles**: [MASTER_LEARNINGS_SUMMARY.md](../../MASTER_LEARNINGS_SUMMARY.md)
+- **Search Help**: [EFFICIENT_SEARCH.md](../../.claude/EFFICIENT_SEARCH.md)
+
+---
+
+## Last Updated
+
+Created: 2025-11-01
+Template Version: 1.0
+
+**Customization**: Replace [PROJECT_NAME], adjust file paths, add project-specific sections.
+

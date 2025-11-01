@@ -8,7 +8,25 @@
       "Zero tolerance for test failures",
       "Work autonomously",
       "Use structured logger (not console.log)",
-      "Prioritize quick wins when smart (don't over-engineer)"
+      "Prioritize quick wins when smart (don't over-engineer)",
+      "Real-time visibility - report blockers/wins immediately"
+    ],
+    "key_principles": [
+      "Context is everything",
+      "Complete > Partial",
+      "Tests first",
+      "Automate thinking with todos",
+      "Be direct about problems",
+      "Document decisions (why, not what)",
+      "Quick wins when smart",
+      "Real-time visibility"
+    ],
+    "documentation_requirements": [
+      "AGENTS.md in every project (AI guidance, entry points, patterns)",
+      "Architecture diagrams (Mermaid)",
+      "Last updated timestamps",
+      "Clear examples and patterns",
+      "Common pitfalls sections"
     ],
     "template_pattern": [
       "Templates OK for quick starts if TODOs are obvious",
