@@ -1,8 +1,8 @@
 ---
 title: "Cory's Master Learnings"
 description: "Central knowledge base aggregating preferences, working style, and learnings"
-version: "2.4"
-last_updated: "2025-10-30"
+version: "2.5"
+last_updated: "2025-11-01"
 type: "master-reference"
 audience: ["ai-agents", "developers", "teams"]
 projects: ["ios-automation", "calm-ai-project-manager", "calm-couples"]
@@ -13,7 +13,7 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 
 # Cory's Master Learnings
 
-**Last Updated**: 2025-10-30
+**Last Updated**: 2025-11-01
 **Projects**: calm-couples, ios-automation, calm-ai-project-manager
 
 > Central knowledge base aggregating Cory's preferences, working style, decisions, and learnings across all projects.
@@ -561,6 +561,10 @@ Server running at http://localhost:3000
 - Appreciates detailed guides with examples and patterns
 - Last updated timestamps
 - Mermaid diagrams for architecture
+- **README badges**: Prefer emojis + text over img.shields.io badges when simpler
+  - ✅ Good: `✅ 80% coverage | 📦 387KB bundle | 🚀 Sub-200ms loads`
+  - ❌ Heavy: Img.shields badges when you can just use emoji + text
+  - Trade-off: Emojis are more readable, faster, no external dependencies
 - **TERM_DICTIONARY.md**: Maintain comprehensive terminology reference
   - Add new terms as they're introduced to projects
   - Include clear definitions, examples, and cross-references
