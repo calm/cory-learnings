@@ -390,10 +390,10 @@ START: Found Code to Refactor
 │  ├─ YES → Schedule refactor task
 │  └─ NO → Continue
 │
-├─ Would refactor reduce future token cost?
-│  ├─ > 20% savings? → Refactor (invest time)
-│  ├─ 10-20% savings? → Document + defer
-│  └─ < 10% savings? → SKIP (not worth it)
+├─ Would refactor improve code maintenance significantly?
+│  ├─ High impact? → Refactor (invest time)
+│  ├─ Medium impact? → Document + defer
+│  └─ Low impact? → SKIP (not worth it)
 │
 ├─ Is code actively being changed?
 │  ├─ YES → Refactor (reduce future conflicts)
@@ -416,15 +416,11 @@ START: Found Code to Refactor
 START: Should You Document This?
 │
 ├─ Is it project setup? (new developer onboarding)
-│  ├─ YES → Document thoroughly (saves hours)
+│  ├─ YES → Document thoroughly
 │  └─ NO → Continue
 │
 ├─ Is it a known pain point?
 │  ├─ YES → Document solution (prevents future bugs)
-│  └─ NO → Continue
-│
-├─ Would docs reduce future token costs?
-│  ├─ YES → Document (see TOKEN_EFFICIENCY.md)
 │  └─ NO → Continue
 │
 ├─ Is this a common question?

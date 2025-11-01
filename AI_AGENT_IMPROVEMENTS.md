@@ -1,6 +1,6 @@
 ---
 title: "AI Agent Improvements Roadmap"
-description: "Features that would help AI agents work smarter (token savings, speed, accuracy)"
+description: "Features that would help AI agents work smarter (speed, accuracy, efficiency)"
 version: "1.0"
 last_updated: "2025-11-01"
 status: "planning"
@@ -216,7 +216,7 @@ File: [Where it usually occurs]
 
 ## Notes
 
-- These are **force multipliers** - small effort, huge token savings
+- These are **force multipliers** - small effort, high impact
 - Focus on **most common tasks** first (bug fixes, feature creation)
 - Template-first approach (don't over-engineer)
 - Each addition should be <500 tokens to document
