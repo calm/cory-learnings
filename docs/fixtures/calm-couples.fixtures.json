@@ -1,0 +1,55 @@
+{
+  "users": [
+    {
+      "id": "test-user-1",
+      "email": "alice@test.com",
+      "name": "Alice",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "status": "active"
+    },
+    {
+      "id": "test-user-2",
+      "email": "bob@test.com",
+      "name": "Bob",
+      "createdAt": "2025-01-02T00:00:00Z",
+      "status": "active"
+    }
+  ],
+  "plants": [
+    {
+      "id": "plant-1",
+      "userId": "test-user-1",
+      "species": "Rose",
+      "health": 85,
+      "lastWatered": "2025-11-01T10:00:00Z",
+      "createdAt": "2025-10-01T00:00:00Z"
+    },
+    {
+      "id": "plant-2",
+      "userId": "test-user-1",
+      "species": "Daisy",
+      "health": 60,
+      "lastWatered": "2025-10-30T15:00:00Z",
+      "createdAt": "2025-10-15T00:00:00Z"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "rel-1",
+      "user1Id": "test-user-1",
+      "user2Id": "test-user-2",
+      "startDate": "2020-01-01T00:00:00Z",
+      "connectionScore": 85,
+      "lastSync": "2025-11-01T09:00:00Z"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "session-1",
+      "userId": "test-user-1",
+      "startedAt": "2025-11-01T08:00:00Z",
+      "duration": 1200,
+      "completed": true
+    }
+  ]
+}

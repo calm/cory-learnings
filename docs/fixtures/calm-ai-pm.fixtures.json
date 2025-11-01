@@ -1,0 +1,77 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "name": "calm-couples",
+      "description": "Relationship wellness app",
+      "status": "in-progress",
+      "createdAt": "2025-01-01T00:00:00Z",
+      "rciMatrix": {
+        "responsibility": 85,
+        "communication": 90,
+        "integration": 75
+      }
+    },
+    {
+      "id": "project-2",
+      "name": "ios-automation",
+      "description": "E2E testing framework",
+      "status": "in-progress",
+      "createdAt": "2025-02-01T00:00:00Z",
+      "rciMatrix": {
+        "responsibility": 80,
+        "communication": 85,
+        "integration": 70
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "projectId": "project-1",
+      "title": "Fix plant rendering",
+      "description": "3D plant not showing in some browsers",
+      "status": "in-progress",
+      "priority": "high",
+      "assignee": "cory",
+      "createdAt": "2025-11-01T08:00:00Z",
+      "dueDate": "2025-11-05T00:00:00Z"
+    },
+    {
+      "id": "task-2",
+      "projectId": "project-1",
+      "title": "Add dark mode",
+      "description": "Implement dark theme toggle",
+      "status": "pending",
+      "priority": "medium",
+      "assignee": null,
+      "createdAt": "2025-11-01T09:00:00Z",
+      "dueDate": "2025-11-10T00:00:00Z"
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": "member-1",
+      "email": "cory@example.com",
+      "name": "Cory",
+      "role": "developer",
+      "projects": ["project-1", "project-2"]
+    },
+    {
+      "id": "member-2",
+      "email": "qa@example.com",
+      "name": "QA",
+      "role": "tester",
+      "projects": ["project-2"]
+    }
+  ],
+  "knowledgeBase": [
+    {
+      "id": "kb-1",
+      "title": "RLS Policy Violation Fix",
+      "content": "Check user auth before queries",
+      "tags": ["supabase", "security"],
+      "createdAt": "2025-10-01T00:00:00Z"
+    }
+  ]
+}

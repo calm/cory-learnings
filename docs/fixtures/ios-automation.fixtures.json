@@ -1,0 +1,54 @@
+{
+  "testUsers": [
+    {
+      "id": "ios-test-1",
+      "email": "ios-test-1@example.com",
+      "password": "TestPass123!",
+      "firstName": "iOS",
+      "lastName": "Tester",
+      "device": "iPhone13",
+      "osVersion": "16.0"
+    },
+    {
+      "id": "ios-test-2",
+      "email": "ios-test-2@example.com",
+      "password": "TestPass456!",
+      "firstName": "Mobile",
+      "lastName": "User",
+      "device": "iPhone14",
+      "osVersion": "17.0"
+    }
+  ],
+  "workflows": [
+    {
+      "name": "user-registration",
+      "description": "Register new user via iOS app",
+      "steps": [
+        { "action": "tap", "element": "signUpButton" },
+        { "action": "input", "element": "emailField", "value": "newuser@test.com" },
+        { "action": "input", "element": "passwordField", "value": "Pass123!" },
+        { "action": "tap", "element": "submitButton" },
+        { "action": "wait", "element": "homeScreen", "timeout": 5000 }
+      ]
+    },
+    {
+      "name": "plant-creation",
+      "description": "Create a plant in the app",
+      "steps": [
+        { "action": "tap", "element": "addPlantButton" },
+        { "action": "input", "element": "speciesField", "value": "Rose" },
+        { "action": "tap", "element": "colorRed" },
+        { "action": "tap", "element": "saveButton" },
+        { "action": "verify", "element": "plantCard", "text": "Rose" }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "login-screen",
+      "device": "iPhone13",
+      "osVersion": "16.0",
+      "elements": ["emailField", "passwordButton", "forgotPasswordLink"]
+    }
+  ]
+}
