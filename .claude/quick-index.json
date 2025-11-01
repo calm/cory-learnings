@@ -69,6 +69,10 @@
       "path": "docs/cost-optimization/TOKEN_EFFICIENCY.md",
       "lines": 1190,
       "purpose": "AI token usage reduction"
+    },
+    "improvements": {
+      "path": "AI_AGENT_IMPROVEMENTS.md",
+      "purpose": "Roadmap for AI agent feature enhancements (decision trees, patterns, etc)"
     }
   },
   "projects": {
