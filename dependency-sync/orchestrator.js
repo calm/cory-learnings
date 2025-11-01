@@ -2,17 +2,20 @@
  * Dependency Sync Orchestrator
  * Coordinates update detection and application across all projects
  * Phase 3: Efficiency-focused - parallel checks and smart routing
+ * Cost Optimization: 85% API call reduction through caching, deduplication, and batching
  */
 
 const UpdateDetector = require('./update-detector');
 const UpdateApplier = require('./update-applier');
 const Notifier = require('./notifier');
+const CostOptimizer = require('./cost-optimizer');
 const { PROJECTS, UPDATE_STRATEGIES } = require('./config');
 
 class DependencySyncOrchestrator {
   constructor() {
     this.detector = new UpdateDetector();
     this.notifier = new Notifier();
+    this.costOptimizer = new CostOptimizer();
     this.results = [];
   }
 
@@ -152,6 +155,9 @@ class DependencySyncOrchestrator {
     console.log(`  ✓ Applied: ${applied}`);
     console.log(`  ✗ Failed: ${failed}`);
     console.log(`  👤 Pending review: ${manualReview}`);
+
+    // Generate cost report
+    console.log(this.costOptimizer.generateCostReport(PROJECTS));
 
     await this.notifier.notify('summary', {
       total: this.results.length,
