@@ -104,21 +104,22 @@ cory-learnings/
 
 This repository includes comprehensive cost analysis and optimization guides.
 
-### 💰 Current Costs (as of 2025-10-31)
+### 💰 Cost Analysis (Estimated Ranges)
 
-| Metric | Amount |
-|--------|--------|
-| **Current Monthly** | $277 - $1,925 |
-| **Optimized Monthly** | $130 - $900 |
+**Note**: Cost figures below are estimates/projections based on typical usage patterns. Actual costs vary significantly by project configuration and scale. See individual project READMEs for verified cost data.
+
+| Metric | Range |
+|--------|-------|
+| **Typical Current** | $277 - $1,925/month |
+| **With Optimization** | $130 - $900/month |
 | **Potential Savings** | $147 - $1,025/month |
-| **Savings %** | 47-53% |
 
-### Project Breakdown
-- **calm-couples**: $42-316/month → $25-190/month (40% savings)
-- **qa-automation**: $175-415/month → $45-110/month (60-70% savings)
-- **calm-ai-project-manager**: $60-1,194/month → $60-600/month (50% savings)
+### Project Cost Ranges (Estimated)
+- **calm-couples**: $42-316/month (Supabase primary driver)
+- **qa-automation**: $175-415/month (Claude API primary driver - depends on test volume)
+- **calm-ai-project-manager**: $60-1,194/month (Claude API primary driver - see [docs/COST_VERIFICATION_STATUS.md](https://github.com/calm/calm-ai-project-manager/blob/main/docs/COST_VERIFICATION_STATUS.md))
 
-**Primary Cost Drivers**: Supabase (calm-couples), Claude API (qa-automation), Claude API (calm-ai-project-manager)
+**Important**: For verified actual costs, check individual project documentation (COST_VERIFICATION_STATUS.md, CURRENT_OPERATIONAL_COST.md)
 
 ### 💻 Cost Tracking & Dashboard
 
