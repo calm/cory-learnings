@@ -1,12 +1,12 @@
 ---
-title: "Cory's Learnings - ios-automation"
-description: "Project-specific learnings for ios-automation"
+title: "Cory's Learnings - qa-automation"
+description: "Project-specific learnings for qa-automation"
 version: "1.0.0"
-last_updated: "2025-10-30"
-project: "ios-automation"
+last_updated: "2025-11-01"
+project: "qa-automation"
 type: "project-learnings"
 audience: ["ai-agents"]
-tags: ["ios-automation", "idb", "appium"]
+tags: ["qa-automation", "e2e-testing", "playwright", "appium"]
 ---
 
 # Cory's Learnings & Preferences

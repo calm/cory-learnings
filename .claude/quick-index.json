@@ -94,9 +94,9 @@
       "stack": "React 19 + TypeScript + Supabase + Tailwind",
       "type": "SaaS"
     },
-    "ios-automation": {
-      "path": "projects/ios-automation.md",
-      "stack": "IDB + Appium + Tesseract OCR",
+    "qa-automation": {
+      "path": "projects/qa-automation.md",
+      "stack": "Playwright + WebdriverIO/Appium",
       "type": "E2E Testing"
     },
     "calm-ai-project-manager": {

@@ -5,7 +5,7 @@ version: "2.5"
 last_updated: "2025-11-01"
 type: "master-reference"
 audience: ["ai-agents", "developers", "teams"]
-projects: ["ios-automation", "calm-ai-project-manager", "calm-couples"]
+projects: ["qa-automation", "calm-ai-project-manager", "calm-couples"]
 priority: "critical"
 read_first: true
 tags: ["preferences", "working-style", "best-practices", "standards"]
@@ -14,7 +14,7 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 # Cory's Master Learnings
 
 **Last Updated**: 2025-11-01
-**Projects**: calm-couples, ios-automation, calm-ai-project-manager
+**Projects**: calm-couples, qa-automation, calm-ai-project-manager
 
 > Central knowledge base aggregating Cory's preferences, working style, decisions, and learnings across all projects.
 
@@ -597,7 +597,7 @@ Server running at http://localhost:3000
 ### Development Environment
 - **Port Management**: Each project MUST run on a different localhost port
   - **calm-couples**: http://localhost:3000
-  - **ios-automation**: http://localhost:4000
+  - **qa-automation**: http://localhost:4000
   - **calm-ai-project-manager**: http://localhost:3001
   - Check `package.json` or config files for port settings
   - Prevents port conflicts when running multiple projects
@@ -621,12 +621,12 @@ Server running at http://localhost:3000
 - **Test Coverage**: 63 tests passing, 98% target
 - **Performance**: FCP <1.5s, TTI <3s, API <200ms, Bundle <500KB
 
-### ios-automation
-- **Type**: Automated E2E testing for Calm iOS app
-- **Status**: Framework validated (8/10), test suite in progress (2/10)
-- **Framework**: Custom (IDB + Appium + OCR + Vision AI)
-- **Test Count**: 648 unit tests passing, 3 E2E tests implemented
-- **Key Challenges**: Test isolation, modal dismissal, state management
+### qa-automation
+- **Type**: Cross-platform E2E testing (Web, iOS, Android)
+- **Status**: Production-ready with 297 tests validated (100% validity)
+- **Framework**: Playwright (web) + WebdriverIO/Appium (mobile)
+- **Test Count**: 297 tests total (268 mobile, 29 web) with 82% coverage
+- **Key Features**: Cost-optimized element finding (5-tier, 86% savings), multi-platform
 
 ### calm-ai-project-manager
 - **Type**: AI-powered project management tool

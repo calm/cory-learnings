@@ -1,6 +1,6 @@
 ---
 title: "Project Integration Map"
-description: "How calm-couples, ios-automation, and calm-ai-project-manager connect"
+description: "How calm-couples, qa-automation, and calm-ai-project-manager connect"
 version: "1.0"
 last_updated: "2025-11-01"
 ---
@@ -16,7 +16,7 @@ How the 3 projects talk to each other and share data.
 | Project | Type | Purpose | Users |
 |---------|------|---------|-------|
 | **calm-couples** | Consumer App | Relationship wellness, plant tracking | Couples using Calm app |
-| **ios-automation** | Test Framework | E2E testing for Calm iOS | QA, CI/CD |
+| **qa-automation** | Test Framework | E2E testing (Web, iOS, Android) | QA, CI/CD |
 | **calm-ai-project-manager** | Internal Tool | Project management + RCI matrix | Calm team |
 
 ---
@@ -40,8 +40,8 @@ calm-ai-project-manager (Node.js + Express + SQLite)
 
          ↓ (tests)
 
-ios-automation (Appium + IDB)
-    ├─ Tests: calm-couples features on iOS
+qa-automation (Playwright + WebdriverIO/Appium)
+    ├─ Tests: calm-couples features (web, iOS, Android)
     ├─ Validates: User workflows end-to-end
     ├─ Reports: Test results back to project manager
     └─ Uses: calm-ai-project-manager data for test scenarios
@@ -57,14 +57,14 @@ ios-automation (Appium + IDB)
 **Frequency**: Daily/hourly
 **Critical**: No (PM tool doesn't block app)
 
-### calm-ai-project-manager → ios-automation
+### calm-ai-project-manager → qa-automation
 **What**: Test scenario data, user workflows
 **How**: Test fixtures, config files
 **Frequency**: Per test run
 **Critical**: No (tests are validation)
 
-### ios-automation → calm-couples
-**What**: Validates that features work on iOS
+### qa-automation → calm-couples
+**What**: Validates that features work across platforms
 **How**: E2E tests of actual app behavior
 **Frequency**: Before releases
 **Critical**: Yes (validates shipping)
