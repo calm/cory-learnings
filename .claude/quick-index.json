@@ -71,6 +71,8 @@
     }
   },
   "guides": {
+    "agent_optimization": ".claude/AGENT_OPTIMIZATION.md",
+    "efficient_search": ".claude/EFFICIENT_SEARCH.md",
     "setup": "docs/guides/SETUP_GUIDE.md",
     "learning_path": "docs/guides/LEARNING_PATH.md",
     "architecture": "docs/guides/ARCHITECTURE.md",
