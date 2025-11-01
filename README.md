@@ -18,13 +18,21 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 ## Quick Start
 
-### For AI Agents
-Read [AI_QUICKSTART.md](AI_QUICKSTART.md) first (481 lines) for essential working principles, then reference project-specific files as needed.
+### 🚀 Start Here: [INDEX.md](INDEX.md)
+Fast navigation guide with links to all documentation and resources.
 
-**Critical rules**: Todo lists for 2+ step tasks • Zero TODOs in code • Zero tolerance for failing tests • Work autonomously • Verify localhost before commits
+### For AI Agents
+**Recommended reading order**:
+1. [MASTER_LEARNINGS_SUMMARY.md](MASTER_LEARNINGS_SUMMARY.md) (380 lines, 5 min) - Essential rules
+2. [AI_QUICKSTART.md](AI_QUICKSTART.md) (605 lines, 8 min) - Complete workflow
+3. Reference [.claude/EFFICIENT_SEARCH.md](.claude/EFFICIENT_SEARCH.md) for fast lookups
+
+**Critical rules**: Todo lists for 2+ step tasks • Zero TODOs in code • Zero tolerance for failing tests • Work autonomously
 
 ### For Humans
-View [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) (940 lines) for comprehensive preferences or browse [projects/](projects/) for project-specific context.
+- [INDEX.md](INDEX.md) - Complete navigation
+- [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) - Comprehensive reference
+- [TERM_DICTIONARY.md](TERM_DICTIONARY.md) - Terminology
 
 ---
 

@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2025-11-01",
+  "fastLookup": {
+    "critical_rules": [
+      "Todo lists for 2+ step tasks (use TodoWrite)",
+      "Complete implementations (no TODOs in code)",
+      "Zero tolerance for test failures",
+      "Work autonomously",
+      "Use structured logger (not console.log)"
+    ],
+    "when_to_ask": [
+      "Destructive operations",
+      "Breaking changes",
+      "Ambiguous requirements",
+      "High-stakes decisions"
+    ],
+    "never_ask_about": [
+      "Standard operations",
+      "Documented patterns",
+      "Running tests",
+      "Starting tasks"
+    ]
+  },
+  "files": {
+    "quickstart": {
+      "path": "AI_QUICKSTART.md",
+      "lines": 605,
+      "purpose": "Essential rules and workflow"
+    },
+    "reference": {
+      "path": "MASTER_LEARNINGS.md",
+      "lines": 1234,
+      "purpose": "Complete learning reference"
+    },
+    "dictionary": {
+      "path": "TERM_DICTIONARY.md",
+      "lines": 541,
+      "purpose": "Key terminology"
+    },
+    "tokens": {
+      "path": "docs/cost-optimization/TOKEN_EFFICIENCY.md",
+      "lines": 1190,
+      "purpose": "AI token usage reduction"
+    }
+  },
+  "projects": {
+    "calm-couples": {
+      "path": "projects/calm-couples.md",
+      "stack": "React 19 + TypeScript + Supabase + Tailwind",
+      "type": "SaaS"
+    },
+    "ios-automation": {
+      "path": "projects/ios-automation.md",
+      "stack": "IDB + Appium + Tesseract OCR",
+      "type": "E2E Testing"
+    },
+    "calm-ai-project-manager": {
+      "path": "projects/calm-ai-project-manager.md",
+      "stack": "Node.js + Express + Prisma + Claude 3.5",
+      "type": "Internal Tool"
+    }
+  },
+  "guides": {
+    "setup": "docs/guides/SETUP_GUIDE.md",
+    "learning_path": "docs/guides/LEARNING_PATH.md",
+    "architecture": "docs/guides/ARCHITECTURE.md",
+    "examples": "docs/guides/EXAMPLES.md",
+    "quick_reference": "docs/guides/QUICK_REFERENCE.md"
+  },
+  "scripts": {
+    "search": "./scripts/search-learnings.sh",
+    "tests": "./tests/run-all-tests.sh",
+    "compliance": "./tests/ai-agent-compliance.test.sh"
+  },
+  "qualityBars": {
+    "testCoverage": "98%",
+    "failingTests": "0",
+    "typeScript": "Strict mode, zero any",
+    "codeTodos": "0"
+  }
+}
