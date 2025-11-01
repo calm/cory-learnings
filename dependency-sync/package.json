@@ -1,0 +1,25 @@
+{
+  "name": "@cory-learnings/dependency-sync",
+  "version": "1.0.0",
+  "description": "Automatic dependency update system for Cory's projects",
+  "main": "orchestrator.js",
+  "type": "commonjs",
+  "scripts": {
+    "sync": "node orchestrator.js",
+    "check": "node cli.js check",
+    "apply": "node cli.js apply",
+    "watch": "node scheduler.js",
+    "test": "npm run check -- --dry-run"
+  },
+  "keywords": [
+    "dependencies",
+    "automation",
+    "updates",
+    "versions"
+  ],
+  "author": "Cory Weinstein",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
