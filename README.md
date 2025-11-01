@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.4 | **Last Updated**: 2025-10-30
+**Version**: 2.5 | **Last Updated**: 2025-10-31
 
 ---
 
@@ -62,7 +62,7 @@ cory-learnings/
     └── calm-ai-project-manager.md  # Node.js AI project manager
 ```
 
-**Total Content**: 6,800+ lines across 19 markdown files
+**Total Content**: 10,000+ lines across 27 markdown files
 
 ---
 
@@ -181,12 +181,17 @@ VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
 | File | Purpose | Lines |
 |------|---------|-------|
 | [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 540 |
-| [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Comprehensive terminology reference | 600+ |
 | [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide | 940 |
-| [TOKEN_EFFICIENCY.md](TOKEN_EFFICIENCY.md) | Token optimization guidelines | 400+ |
-| [EXAMPLES.md](EXAMPLES.md) | Conversation patterns and anti-patterns | 513 |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and evolution tracking | 169 |
-| [projects/README.md](projects/README.md) | Project overview and quick commands | 296 |
+| [TOKEN_EFFICIENCY.md](TOKEN_EFFICIENCY.md) | Token optimization guidelines | 1190 |
+| [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level system overview | 500+ |
+| [ARCHITECTURE.md](ARCHITECTURE.md) | System design and technical details | 600+ |
+| [LEARNING_PATH.md](LEARNING_PATH.md) | Structured learning guide | 650+ |
+| [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | One-page cheat sheet | 400+ |
+| [COMPREHENSIVE_COST_ANALYSIS.md](COMPREHENSIVE_COST_ANALYSIS.md) | Cost projections and analysis | 380+ |
+| [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Terminology reference | 600+ |
+| [EXAMPLES.md](EXAMPLES.md) | Conversation patterns | 513 |
+| [CHANGELOG.md](CHANGELOG.md) | Version history | 169 |
+| [projects/README.md](projects/README.md) | Project overview | 296 |
 
 ---
 
