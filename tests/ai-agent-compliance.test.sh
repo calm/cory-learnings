@@ -224,7 +224,7 @@ test_ai_quickstart_structure() {
         missing_sections+=("Testing")
     fi
 
-    if ! grep -q "### 4. Autonomous Execution" "$quickstart"; then
+    if ! grep -q "### 5. Autonomous Execution" "$quickstart"; then
         missing_sections+=("Autonomous Execution")
     fi
 
