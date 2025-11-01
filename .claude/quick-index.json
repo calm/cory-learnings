@@ -19,7 +19,8 @@
       "Be direct about problems",
       "Document decisions (why, not what)",
       "Quick wins when smart",
-      "Real-time visibility"
+      "Real-time visibility",
+      "More text = less cost (good docs save money/tokens)"
     ],
     "documentation_requirements": [
       "AGENTS.md in every project (AI guidance, entry points, patterns)",

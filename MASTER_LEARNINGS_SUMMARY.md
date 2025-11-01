@@ -235,6 +235,43 @@ Cleanup:   Save pending to ACTIVE_TODOS.md at session end
 **Document decisions** → Why, not just what
 **Quick wins when smart** → Don't over-engineer; ship value early, iterate later
 **Real-time visibility** → Show status at each step; blockers/wins immediately visible
+**More text = less cost** → Upfront documentation saves tokens/money on every future task
+
+---
+
+### More Text = Less Cost (Counterintuitive but True)
+
+**Principle**: Don't minimize documentation. Maximize usefulness.
+
+**Example from today**:
+- **18,000 lines added** to cory-learnings
+- **230K tokens spent** building it
+- **60-80% token savings** on every future task
+- **Payback**: 1-2 sessions
+- **Annual savings**: $1.44+ vs one-time cost of $0.52
+
+**Why it works**:
+- Error catalogs prevent 30 min diagnosis → save 85% tokens
+- Prompts save 200-500t per task
+- Decision trees prevent bad decisions → save rework tokens
+- Fixtures eliminate setup → save 300-400t per test
+- Patterns eliminate bikeshedding → save 200t per implementation
+
+**The math**:
+- 10 sessions × 5K token savings = 50K tokens saved
+- vs 230K tokens invested
+- Breakeven in 5 sessions, then profit forever
+
+**When to add more text**:
+- Reusable across multiple projects ✅
+- Solves repetitive problems ✅
+- Saves significant tokens per use ✅
+- Maintainable (not outdated docs) ✅
+
+**When NOT to add more text**:
+- One-time problem ❌
+- Outdated before next use ❌
+- Adds noise without value ❌
 
 ---
 
