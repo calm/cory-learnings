@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.7 | **Last Updated**: 2025-11-01
+**Version**: 2.8 | **Last Updated**: 2025-11-01
 
 ---
 
@@ -111,11 +111,36 @@ This repository includes comprehensive cost analysis and optimization guides.
 
 **Primary Cost Drivers**: Supabase (calm-couples), Claude API (qa-automation), Claude API (calm-ai-project-manager)
 
-### Cost Tracking Guide
-1. **Review current costs**: Check [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md)
-2. **Token optimization**: Use [TOKEN_EFFICIENCY.md](docs/cost-optimization/TOKEN_EFFICIENCY.md) guidelines
-3. **Implement savings**: Follow strategies in [COST_SAVINGS_GUIDE.md](docs/cost-optimization/COST_SAVINGS_GUIDE.md)
-4. **Update costs quarterly** - See "Maintenance" section below
+### 💻 Cost Tracking & Dashboard
+
+**Start the Cost Dashboard**:
+```bash
+node cost-tracking-dashboard.js
+# Opens: http://localhost:5000
+```
+
+**Log Token Usage**:
+```bash
+# After completing work
+token-tracker.sh log <project> <task> <tokens>
+
+# Examples
+token-tracker.sh log calm-ai-pm "Add AGENTS.md" 3500
+token-tracker.sh log qa-automation "Fix flaky test" 2800
+```
+
+**Cost Tracking Guide**:
+1. **Start dashboard**: `node cost-tracking-dashboard.js` (http://localhost:5000)
+2. **Log work**: `token-tracker.sh log <project> <task> <tokens>`
+3. **Review analytics**: View by project, date, task type in dashboard
+4. **Optimize**: Use [TOKEN_EFFICIENCY.md](docs/cost-optimization/TOKEN_EFFICIENCY.md) to reduce costs
+5. **Plan budget**: Check trends in [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md)
+
+**Resources**:
+- 📊 [COST_DASHBOARD_GUIDE.md](docs/COST_DASHBOARD_GUIDE.md) - Full dashboard documentation
+- 📈 [TOKEN_EFFICIENCY.md](docs/cost-optimization/TOKEN_EFFICIENCY.md) - Optimization guidelines
+- 💰 [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md) - Current costs analysis
+- 🎯 [COST_SAVINGS_GUIDE.md](docs/cost-optimization/COST_SAVINGS_GUIDE.md) - Reduction strategies
 
 ---
 
