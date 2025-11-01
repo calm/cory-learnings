@@ -1,0 +1,54 @@
+{
+  "sessionId": "SESSION_ID_HERE",
+  "date": "2025-11-01",
+  "project": "calm-couples",
+  "currentTask": {
+    "description": "What are you working on?",
+    "status": "in-progress",
+    "startedAt": "2025-11-01T10:00:00Z",
+    "estimatedMinutesRemaining": 30
+  },
+  "blockers": [
+    {
+      "issue": "RLS policy violation on user query",
+      "rootCause": "User not authenticated properly",
+      "solution": "Check Supabase auth before query",
+      "severity": "high",
+      "status": "investigating"
+    }
+  ],
+  "recentChanges": [
+    {
+      "file": "src/components/PlantCard.tsx",
+      "change": "Added error handling for null plant",
+      "testsPassing": true,
+      "timestamp": "2025-11-01T09:45:00Z"
+    }
+  ],
+  "testStatus": {
+    "total": 63,
+    "passing": 61,
+    "failing": 2,
+    "failedTests": [
+      "PlantService - handles missing species",
+      "UserSync - retries on network error"
+    ]
+  },
+  "lastCommit": {
+    "hash": "abc123",
+    "message": "fix: add null checks to plant sync",
+    "timestamp": "2025-11-01T09:30:00Z"
+  },
+  "notes": "Remember to check README-AI-CONTEXT.md for race condition info",
+  "tokenUsageEstimate": {
+    "sessionStart": 0,
+    "currentUsage": 5000,
+    "estimatedTotal": 8000,
+    "budget": 10000
+  },
+  "nextSteps": [
+    "Fix failing tests (RLS + retry logic)",
+    "Test with actual user account",
+    "Run full test suite before committing"
+  ]
+}
