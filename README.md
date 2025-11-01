@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.6 | **Last Updated**: 2025-11-01
+**Version**: 2.7 | **Last Updated**: 2025-11-01
 
 ---
 
@@ -35,7 +35,7 @@ Fast navigation guide with links to all documentation and resources.
 - [TERM_DICTIONARY.md](TERM_DICTIONARY.md) - Terminology
 
 ### For Project Work
-- **[AGENTS.md](projects/AGENTS.md.template)** in each project (calm-couples, ios-automation, calm-ai-project-manager)
+- **[AGENTS.md](projects/AGENTS.md.template)** in each project (calm-couples, qa-automation, calm-ai-project-manager)
   - Quick entry points, common tasks, code patterns
 - **[Decision Trees](docs/decision-trees/)** - When to refactor vs rewrite, tests vs bugs, optimize vs ship
 - **[Pattern Library](docs/patterns/)** - Copy-paste templates for logging, testing, error handling
@@ -73,7 +73,7 @@ cory-learnings/
 └── projects/                        # Project-specific learnings
     ├── README.md                    # Project quick reference
     ├── calm-couples.md              # React/Supabase wellness platform
-    ├── ios-automation.md            # iOS E2E testing framework
+    ├── qa-automation.md             # QA automation testing framework
     └── calm-ai-project-manager.md  # Node.js AI project manager
 ```
 
@@ -106,10 +106,10 @@ This repository includes comprehensive cost analysis and optimization guides.
 
 ### Project Breakdown
 - **calm-couples**: $42-316/month → $25-190/month (40% savings)
-- **ios-automation**: $175-415/month → $45-110/month (60-70% savings)
+- **qa-automation**: $175-415/month → $45-110/month (60-70% savings)
 - **calm-ai-project-manager**: $60-1,194/month → $60-600/month (50% savings)
 
-**Primary Cost Drivers**: Supabase (calm-couples), Claude Vision API (ios-automation), Claude API (calm-ai-project-manager)
+**Primary Cost Drivers**: Supabase (calm-couples), Claude API (qa-automation), Claude API (calm-ai-project-manager)
 
 ### Cost Tracking Guide
 1. **Review current costs**: Check [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md)
@@ -250,8 +250,8 @@ Each project directory maintains a symlink to its central learnings file:
 ~/Desktop/calm/calm-couples/CORY_LEARNINGS.md
   → ~/cory-learnings/projects/calm-couples.md
 
-~/Desktop/calm/ios-automation/CORY_LEARNINGS.md
-  → ~/cory-learnings/projects/ios-automation.md
+~/Desktop/calm/qa-automation/CORY_LEARNINGS.md
+  → ~/cory-learnings/projects/qa-automation.md
 
 ~/Desktop/calm/calm-ai-project-manager/Cory learnings.md
   → ~/cory-learnings/projects/calm-ai-project-manager.md
