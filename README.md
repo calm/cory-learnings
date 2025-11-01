@@ -45,6 +45,16 @@ Fast navigation guide with links to all documentation and resources.
 
 ---
 
+## Key Features
+
+- **Centralized**: Single location for all learnings with git version control
+- **Symlinked**: Project directories link to central files for seamless access
+- **Searchable**: Grep across all projects simultaneously
+- **Versioned**: Track preference evolution with semantic versioning (v2.3)
+- **Automated**: Auto-loads into Claude Code sessions via hooks
+
+---
+
 ## Repository Structure
 
 ```
@@ -87,16 +97,6 @@ cory-learnings/
 ```
 
 **Total Content**: 10,000+ lines across 27 markdown files
-
----
-
-## Key Features
-
-- **Centralized**: Single location for all learnings with git version control
-- **Symlinked**: Project directories link to central files for seamless access
-- **Searchable**: Grep across all projects simultaneously
-- **Versioned**: Track preference evolution with semantic versioning (v2.3)
-- **Automated**: Auto-loads into Claude Code sessions via hooks
 
 ---
 

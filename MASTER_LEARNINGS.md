@@ -918,6 +918,54 @@ Critical/Secure | Any     | Any            | Sonnet (don't cheap out on security
 
 **Cost Impact**: If 1 Sonnet session = 2-3 Haiku sessions, it's worth it. If it's just "slightly nicer output," stick with Haiku.
 
+### Information Architecture Principle: Lead with Action
+
+**Learning**: README readers care about ACTION first, REFERENCE material second. The top of any README should answer:
+1. **What is this?** (one sentence)
+2. **How do I use it / get started?** (next 3-5 steps)
+3. **What can I do with it?** (key features, common tasks)
+
+**Then place below**: Architecture, detailed specs, reference material, setup details.
+
+**Why**:
+- Most people skim README looking for "how do I start?" or "what does this do?"
+- Detailed technical specifications are reference material, not entry points
+- Cost tracking, performance benchmarks, advanced features come after basics
+- Leading with metadata (badges, technical specs, metrics) delays answering the user's primary question
+
+**Example: Good README Order**
+```
+1. Title + one-sentence description
+2. Quick Start (2-3 commands to get running)
+3. What You Can Do (features, core functionality)
+4. How It Works (technical overview, simple)
+5. Architecture (technical details)
+6. Advanced Setup (performance tuning, cost tracking, etc.)
+7. Reference (complete API, detailed specs)
+```
+
+**Example: Bad README Order** (common mistakes)
+```
+1. Title
+2. Technical Badges & Metrics
+3. Detailed Metrics Table
+4. Architecture Diagram
+5. Complete API Reference
+6. ...eventually...
+10. Quick Start (buried!)
+```
+
+**Applied to this repository**:
+- Move "Repository Structure" section lower (it's reference material)
+- Keep "Quick Start" and "For AI Agents/Humans/Project Work" at top (actionable)
+- Move "Cost Optimization" section below development guides (it's secondary)
+
+**Applied to calm-couples**:
+- Keep Quick Start immediately after overview (so devs can run it)
+- Lead with "Core Features" (what the app does) before "Cost Efficiency" section
+- Architecture comes after features are understood
+- Cost tracking is helpful but not a first-time reader priority
+
 ---
 
 ## Frequently Asked Questions
