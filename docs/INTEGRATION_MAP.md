@@ -91,13 +91,13 @@ qa-automation (Playwright + WebdriverIO/Appium)
 
 ### 2. Test Data Generation
 - **From**: calm-ai-project-manager
-- **To**: ios-automation
+- **To**: qa-automation
 - **Data**: Test user accounts, workflows
 - **Purpose**: E2E testing with real scenarios
 - **Format**: JSON fixtures in test directory
 
 ### 3. Test Result Reporting
-- **From**: ios-automation
+- **From**: qa-automation
 - **To**: calm-ai-project-manager
 - **Data**: Pass/fail, coverage, timing
 - **Purpose**: Release gating

@@ -310,10 +310,10 @@ Tests: 63 tests, 98% coverage target
 Key: 3D plant system, race condition fixes, GDPR
 ```
 
-### ios-automation
+### qa-automation
 ```yaml
-Type: E2E testing for Calm iOS app
-Stack: IDB + Appium + Tesseract OCR + Vision AI
+Type: E2E testing for Calm app
+Stack: Playwright + Tesseract OCR + Vision AI
 Status: Framework validated (8/10), test suite in progress (2/10)
 Tests: 648 unit tests passing
 Key: Test isolation, modal dismissal, state management
@@ -428,7 +428,7 @@ cd ~/Desktop/calm/calm-ai-project-manager
 - `/package.json` - Dependencies
 - `/src/lib/supabase/` - Supabase integration
 
-**ios-automation:**
+**qa-automation:**
 - `/AGENTS.md` - Testing framework guide
 - `/CORY_LEARNINGS.md` - Test insights (symlink)
 - `/src/` - Test implementations

@@ -36,10 +36,10 @@ status: "planning"
 
 **Status**:
 - [x] Template created: `projects/AGENTS.md.template`
-- [ ] Copy to calm-couples/AGENTS.md
-- [ ] Copy to ios-automation/AGENTS.md
-- [ ] Copy to calm-ai-project-manager/AGENTS.md
-- [ ] Customize for each project
+- [x] Copy to calm-couples/AGENTS.md
+- [x] Copy to qa-automation/AGENTS.md
+- [x] Copy to calm-ai-project-manager/AGENTS.md
+- [x] Customize for each project
 
 **Each includes**:
 - Entry points (where to start)
@@ -127,9 +127,9 @@ status: "planning"
 **What**: How the 3 Calm projects connect to each other
 
 **Map shows**:
-- [ ] calm-couples ←→ calm-ai-project-manager (data flow)
-- [ ] calm-ai-project-manager ←→ ios-automation (test data)
-- [ ] calm-couples ←→ ios-automation (what's tested)
+- [x] calm-couples ←→ calm-ai-project-manager (data flow)
+- [x] calm-ai-project-manager ←→ qa-automation (test data)
+- [x] calm-couples ←→ qa-automation (what's tested)
 
 **Format**: Mermaid diagram + CSV dependency list
 **Location**: `docs/INTEGRATION_MAP.md`
