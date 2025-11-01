@@ -1,8 +1,8 @@
 ---
 title: "AI Assistant Quick Start"
 description: "Ultra-concise reference for AI agents working with Cory"
-version: "2.4"
-last_updated: "2025-10-30"
+version: "2.5"
+last_updated: "2025-11-01"
 type: "ai-guide"
 audience: ["ai-agents"]
 tags: ["quickstart", "reference", "workflow"]
@@ -528,6 +528,171 @@ Handoff:
 
 ---
 
+## Information Architecture Principle
+
+**Goal**: Make documentation self-navigating so developers find answers quickly.
+
+### README Structure (Apply to all projects)
+
+**✅ CORRECT ORDER:**
+1. Title + Description (what is this?)
+2. Quick Start (get running in 2 min)
+3. Architecture (how does it work?)
+4. Features (what can you do?)
+5. API / Components (deep dive)
+6. Testing (how to test?)
+7. Deployment (how to ship?)
+8. Cost Tracking (what does it cost?)
+
+**Why this order?**
+- New users start with Quick Start (not buried in middle)
+- Architecture comes before features (context before details)
+- Cost transparency at end (don't hide it)
+- Progressive disclosure (quick first, detailed later)
+
+### Apply to Documentation
+
+```yaml
+Principle: Features first, implementation details buried
+Action: Structure READMEs with user goals, not file structure
+
+Bad (File Structure):
+  - src/
+    - components/
+    - lib/
+    - pages/
+
+Good (User Goals):
+  - Quick Start
+  - Common Tasks
+  - Architecture
+  - API Reference
+```
+
+### Example: calm-couples README
+```
+✅ CURRENT GOOD:
+  1. Quick Start: npm install && npm run dev
+  2. Features: 3D plants, couples wellness, GDPR
+  3. Architecture: React + Supabase + Tailwind
+  4. Key Files: Where to edit components
+  5. Costs: Token usage, infrastructure
+```
+
+### Key Files Reference
+Each project's AGENTS.md and README should follow this structure to maximize discoverability.
+
+---
+
+## Decision Trees Framework
+
+**Goal**: Use systematic decision-making for recurring choices across all projects.
+
+### What are Decision Trees?
+
+Decision trees are structured workflows for making consistent decisions:
+- Located in `docs/DECISION_TREES.md` (shared)
+- Project-specific trees in `AGENTS.md` files
+- Reduce analysis paralysis
+- Ensure consistent choices across teams
+
+### When to Use
+
+**Use Decision Trees for:**
+- Feature prioritization (Build or Skip?)
+- Bug triage (Critical vs Nice-to-Have?)
+- Performance investigation (Debug or Accept?)
+- Library selection (Tool X vs Tool Y?)
+- Test strategy (How Much Testing?)
+- Cost optimization (Where to Save?)
+- Device debugging (Local or Device?)
+- GDPR compliance (How to Handle Data?)
+- Refactoring decisions (When to Refactor?)
+- Documentation decisions (When to Document?)
+
+**Don't use when:**
+- Decision is obvious (no tradeoffs)
+- Documented pattern already exists
+- Reversible decision with no impact
+
+### How to Use
+
+**Basic Pattern:**
+```
+1. Identify the decision type
+2. Find matching tree in DECISION_TREES.md
+3. Follow the path (answer each question)
+4. Reach the decision at the end
+5. Document your choice + reasoning
+```
+
+**Example: Should we add dark mode?**
+```
+Decision: Feature Development (Tree #1)
+Path:
+├─ Blocking? NO
+├─ Aligns with mission? YES (UX improvement)
+├─ < 5K tokens? YES (2K estimated)
+├─ Users can work around? YES (browser dark mode)
+└─ Decision: SKIP (low priority, high workaround)
+```
+
+### Project-Specific Trees
+
+**calm-couples** (in AGENTS.md):
+- State management patterns
+- Component optimization
+- Database migration safety
+- GDPR compliance checks
+
+**qa-automation** (in AGENTS.md):
+- Test isolation strategy
+- Modal dismissal handling
+- Performance optimization
+- Device debugging vs local
+
+**calm-ai-project-manager** (in AGENTS.md):
+- Task prioritization
+- API design consistency
+- Multi-team isolation
+- Query optimization
+
+### Shared Trees (docs/DECISION_TREES.md)
+
+Used across ALL projects:
+1. Feature Development: Build or Skip?
+2. Bug Priority: Critical vs Nice-to-Have?
+3. Performance Issue: Debug or Accept?
+4. Tech Stack Decision: Library X vs Y?
+5. Test Strategy: How Much Testing?
+6. Cost Optimization: Where to Save?
+7. Device Debugging: Local or Device?
+8. GDPR / Data Handling: Safety checks
+9. Refactoring: When to Refactor?
+10. Documentation: When to Document?
+
+### Creating New Trees
+
+When you discover a recurring decision pattern:
+1. Document the full decision path
+2. List all decision points (questions)
+3. Map to specific outcomes
+4. Test on 3 actual decisions
+5. Add to DECISION_TREES.md or project AGENTS.md
+6. Reference in relevant places
+
+### Benefits
+
+```yaml
+Consistency: Same decision → same approach across projects
+Speed: Skip analysis paralysis → follow the tree
+Quality: Documented reasoning → easy to review
+Learning: New developers → see decision patterns
+Efficiency: 30-50% faster decisions on recurring choices
+```
+
+---
+
 ## Remember
 
 ```
@@ -536,6 +701,8 @@ Handoff:
 ```
 
 **Action-oriented. Honest. Complete. Tested. Autonomous.**
+
+**Use Decision Trees + Information Architecture = Better decisions + Better docs**
 
 ---
 
@@ -686,5 +853,5 @@ DECISION: Suggest compacting
 
 ---
 
-**Last Updated**: 2025-10-30
+**Last Updated**: 2025-11-01
 **Next Review**: Monthly
