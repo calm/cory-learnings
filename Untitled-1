@@ -1,0 +1,536 @@
+# Comprehensive Project Analysis: cory-learnings
+
+**Analysis Date**: 2025-10-31
+**Project Version**: v2.4.0
+**Working Directory**: /Users/coryweinstein_1_2/cory-learnings
+
+---
+
+## Executive Summary
+
+**cory-learnings** is a sophisticated, centralized knowledge management system designed to maintain consistency in AI-assisted development workflows across multiple projects. It serves as a "single source of truth" for development preferences, working style documentation, and project-specific learnings, with deep integration into the Claude Code AI assistant ecosystem.
+
+### Key Metrics
+- **6,800+ lines** of curated documentation across 19 files
+- **3 active projects** using the system (calm-couples, ios-automation, calm-ai-project-manager)
+- **Automated context loading** via Claude Code hooks ensures consistency
+- **Version-controlled evolution** tracks how preferences change over time (currently v2.4.0)
+
+---
+
+## 1. Project Purpose & Overview
+
+### What Problem Does It Solve?
+
+**Primary Problem**: When working with AI assistants across multiple projects, developers repeatedly explain their preferences, coding standards, and working style, leading to:
+- Inconsistent AI behavior across projects
+- Time wasted re-explaining preferences
+- Context loss when switching between projects
+- Difficulty maintaining consistent code quality standards
+
+**Solution**: A centralized, version-controlled repository that:
+- Documents all development preferences in one location
+- Automatically injects context into every AI session via hooks
+- Links to projects via symlinks for seamless access
+- Tracks preference evolution over time with semantic versioning
+
+### Core Value Proposition
+
+"Instead of telling Claude how I work in every conversation, this repository teaches Claude once and applies it everywhere."
+
+---
+
+## 2. Project Structure
+
+### Directory Organization
+
+```
+/Users/coryweinstein_1_2/cory-learnings/
+├── Core Documentation (Root Level)
+│   ├── README.md                     # Repository overview (212 lines)
+│   ├── AI_QUICKSTART.md              # AI agent quick reference (540 lines)
+│   ├── MASTER_LEARNINGS.md           # Comprehensive guide (1,154 lines)
+│   ├── TERM_DICTIONARY.md            # Terminology reference (600+ lines)
+│   ├── EXAMPLES.md                   # Good vs bad patterns (513 lines)
+│   ├── CHANGELOG.md                  # Version history (288 lines)
+│   ├── SETUP_GUIDE.md                # Setup instructions (732 lines)
+│   ├── ACTIVE_TODOS.md               # Cross-session todo persistence
+│   ├── TEMPLATE_NEW_PROJECT.md       # New project template
+│   ├── README_BEST_PRACTICES.md      # README standards (699 lines)
+│   └── TEMPLATE_README.md            # README template (267 lines)
+│
+├── projects/                         # Project-specific learnings
+│   ├── README.md                     # Project quick reference (372 lines)
+│   ├── calm-couples.md               # React/Supabase app (541 lines)
+│   ├── ios-automation.md             # iOS testing framework (272 lines)
+│   └── calm-ai-project-manager.md    # Node.js AI PM tool (426 lines)
+│
+├── scripts/                          # Maintenance utilities
+│   ├── check-symlinks.sh             # Verify project symlinks
+│   ├── validate-structure.sh         # Repository integrity check
+│   ├── find-broken-links.sh          # Markdown link validation
+│   ├── search-learnings.sh           # Content search tool
+│   └── quick-find.sh                 # Interactive search menu
+│
+├── tests/                            # Validation test suite
+│   ├── run-all-tests.sh              # Test runner
+│   ├── structure.test.sh             # File structure validation
+│   ├── frontmatter.test.sh           # YAML frontmatter validation
+│   ├── markdown.test.sh              # Markdown syntax validation
+│   └── versions.test.sh              # Version consistency checks
+│
+├── add-project.sh                    # Project onboarding automation
+└── .git/                             # Version control
+```
+
+### Architecture Patterns
+
+**Three-Tier Documentation Architecture**:
+
+1. **Quick Reference Layer** (AI_QUICKSTART.md)
+   - 540 lines, ultra-concise
+   - Critical rules and patterns
+   - For fast context loading
+
+2. **Comprehensive Layer** (MASTER_LEARNINGS.md)
+   - 1,154 lines, detailed
+   - Complete working style guide
+   - FAQ, glossary, patterns
+
+3. **Project-Specific Layer** (projects/*.md)
+   - 272-541 lines per project
+   - Context-specific details
+   - Technology stack specifics
+
+---
+
+## 3. Documentation
+
+### Core Documentation Files
+
+#### AI_QUICKSTART.md (540 lines)
+**Purpose**: Ultra-concise reference for AI agents
+**Key Sections**:
+- Critical Rules (must-follow directives)
+- Communication Decoder (phrase interpretation)
+- When to Ask for Help (decision framework)
+- Workflow Pattern (with Mermaid diagrams)
+- Session Checklist (before/during/after work)
+- Quick Commands per project
+
+**Innovation**: Uses Mermaid diagrams for visual workflow representation
+
+#### MASTER_LEARNINGS.md (1,154 lines)
+**Purpose**: Comprehensive preferences and working style guide
+**Key Sections**:
+- Core Working Principles
+- Communication Style
+- Task Management & Todo Lists
+- Code Quality Standards
+- Technical Preferences
+- Project Contexts
+- Quality Bars (98% test coverage)
+- FAQ (40+ Q&A pairs)
+- Glossary (50+ terms)
+
+#### TERM_DICTIONARY.md (600+ lines)
+**Purpose**: Single source of truth for technical terminology
+**Categories**:
+- Development Workflow
+- Version Control
+- Testing & Quality
+- Project-Specific Terms
+- Tools & Frameworks
+- Architecture & Design
+- Claude Code Concepts
+
+#### EXAMPLES.md (513 lines)
+**Purpose**: Real conversation patterns showing good vs bad interactions
+**Categories**:
+- Good Conversations (4 scenarios)
+- Bad Conversations (4 anti-patterns)
+- Asking vs Not Asking
+- Todo List Management
+- Testing Scenarios
+- Communication Style
+
+#### SETUP_GUIDE.md (732 lines)
+**Purpose**: Complete guide for creating your own learnings repository
+**Sections**:
+- Prerequisites
+- Initial Setup
+- Core Files
+- Project Integration
+- Claude Code Integration
+- Optional Enhancements
+- Maintenance workflows
+
+#### README_BEST_PRACTICES.md (699 lines)
+**Purpose**: Professional README guidelines and standards
+**Key Concepts**:
+- What/How/Where approach
+- Length guidelines (150-250 lines ideal)
+- Professional writing style
+- Before/after examples
+- Templates by project type
+
+---
+
+## 4. Technology Stack
+
+### Core Technologies
+
+**Language**: Bash (shell scripts) + Markdown (documentation)
+**Version Control**: Git with semantic versioning (v2.4.0)
+**Documentation Formats**: Markdown, YAML frontmatter, Mermaid diagrams
+
+### Integration Technologies
+
+**Claude Code (AI Assistant Platform)**:
+- VS Code extension integration
+- Hook system for context injection
+- TodoWrite tool for task management
+- Slash command system
+
+**Testing Stack**:
+- Bash test scripts
+- YAML validation
+- Markdown linting
+- Structure verification
+
+### Project-Specific Stacks (Documented)
+
+**calm-couples**: React 19, TypeScript, Tailwind CSS, Supabase, Zustand, Three.js, Vitest
+**ios-automation**: TypeScript, Node.js, IDB, Appium, WebDriverIO, Tesseract OCR, Jest
+**calm-ai-project-manager**: Node.js, Express, Prisma ORM, SQLite/PostgreSQL, Claude 3.5 API
+
+---
+
+## 5. Configuration
+
+### Claude Code Integration
+
+**Hook Configuration** (`~/.claude/settings.local.json`):
+```json
+{
+  "hooks": {
+    "user-prompt-submit": "echo '\n---\n🤖 AUTOMATIC REMINDER:\n- If 2+ steps: Create optimized todo list using TodoWrite BEFORE starting work\n- \"Do this yourself\": NEVER leave TODOs in code - complete implementations fully\n- \"Test all and make sure ok\": Run tests, verify they pass - zero tolerance for failures\n- \"Be critical and continue\": Work autonomously, be brutally honest about issues\n- Use structured logger (not console.log) for all error/info messages\n- Review ~/cory-learnings/MASTER_LEARNINGS.md for Cory'\''s preferences\n---'"
+  }
+}
+```
+
+**Purpose**: Automatically injects core rules into every Claude Code conversation.
+
+### Symlink Configuration
+
+**Pattern**: Each project has a symlink pointing to central repository:
+```bash
+~/Desktop/calm/calm-couples/CORY_LEARNINGS.md
+  → ~/cory-learnings/projects/calm-couples.md
+
+~/Desktop/calm/ios-automation/CORY_LEARNINGS.md
+  → ~/cory-learnings/projects/ios-automation.md
+
+~/Desktop/calm/calm-ai-project-manager/Cory learnings.md
+  → ~/cory-learnings/projects/calm-ai-project-manager.md
+```
+
+---
+
+## 6. Development Workflows
+
+### Core Workflow Principles
+
+- **"Do This Yourself"**: Complete implementations, zero TODOs in code
+- **"Be Critical and Continue"**: Autonomous quality mindset
+- **"Test All and Make Sure OK"**: Zero tolerance for failing tests
+- **"Do Next Todo"**: Keep momentum, handle blockers gracefully
+
+### Todo List Management (Critical Requirement)
+
+**When**: ANY task with 2+ steps
+**Tool**: TodoWrite (Claude Code tool)
+**Timing**: BEFORE starting work
+**Rules**:
+- Only ONE todo in_progress at a time
+- Mark completed IMMEDIATELY after finishing (no batching)
+- Create todos in priority order
+- Save pending todos to ACTIVE_TODOS.md at end of session
+
+### Git Practices
+
+**Commit Format**: Conventional commits
+```bash
+feat: add new feature
+fix: resolve bug
+docs: update documentation
+test: add tests
+refactor: restructure code
+chore: maintenance tasks
+```
+
+**Attribution**: Include Claude Code attribution in commits
+
+**Versioning**: Semantic versioning (MAJOR.MINOR.PATCH)
+
+### Testing Approaches
+
+**Quality Standards**:
+- **Target**: 98% test coverage
+- **Tolerance**: Zero failing tests
+- **Types**: Unit tests (mocked), Integration tests (real), E2E tests (full flows)
+- **Enforcement**: Tests must pass before committing
+
+---
+
+## 7. Key Entry Points
+
+### For AI Agents
+
+**Primary**: [AI_QUICKSTART.md](AI_QUICKSTART.md) - Read FIRST before starting any task
+**Secondary**: [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) - Comprehensive details
+
+### For Developers
+
+**Primary**: [README.md](README.md) - Repository overview
+**Secondary**: [SETUP_GUIDE.md](SETUP_GUIDE.md) - Create your own
+
+### For Project-Specific Context
+
+**Entry Point**: [projects/README.md](projects/README.md) - Quick-access project cards
+
+### Auto-Load System (Automatic)
+
+**Trigger**: Every user message in Claude Code
+**Hook**: `user-prompt-submit` configured in VS Code settings
+**Action**: Automatically injects critical rules
+**Result**: Zero manual context loading required
+
+---
+
+## 8. Dependencies & Integrations
+
+### Core Dependencies
+
+**System Requirements**:
+- macOS/Linux (bash scripts)
+- Git (version control)
+- Text editor (VS Code, Vim, etc.)
+- Claude Code extension for VS Code
+
+**No External Libraries**: Pure bash + markdown, zero npm/pip dependencies
+
+### Claude Code Integration (Primary)
+
+**Hook System**: Auto-loads critical rules into every conversation
+**TodoWrite Tool**: Required for any 2+ step task
+**Slash Commands**: `/project-context`, `/cory-context`, `/load-learnings`
+
+---
+
+## 9. Unique Innovations & Differentiators
+
+### 1. Auto-Load System
+**Innovation**: Automatic context injection via Claude Code hooks
+**Impact**: Zero manual context loading, consistent behavior
+
+### 2. Three-Tier Documentation Architecture
+**Innovation**: Quick reference + Comprehensive + Project-specific
+**Impact**: AI loads appropriate depth based on context
+
+### 3. Symlink Pattern
+**Innovation**: Central repository with symlinks to projects
+**Impact**: Edit once, available everywhere
+
+### 4. Version-Controlled Preferences
+**Innovation**: Track preference evolution with semantic versioning
+**Impact**: Understand how working style evolves
+
+### 5. Mermaid Workflow Diagrams
+**Innovation**: Visual flowcharts for AI decision-making
+**Impact**: AI can visualize complex workflows
+
+### 6. Comprehensive Test Suite
+**Innovation**: Validate repository integrity
+**Impact**: Ensure consistency, catch errors early
+
+### 7. ACTIVE_TODOS.md Pattern
+**Innovation**: Persist todo context across sessions
+**Impact**: Solve session continuity problem
+
+### 8. Multi-Window Coordination
+**Innovation**: Support multiple Claude Code windows on same repo
+**Impact**: Work on different features in parallel
+
+### 9. TERM_DICTIONARY.md
+**Innovation**: Single source of truth for terminology
+**Impact**: Consistent language across documentation
+
+### 10. Interface Verification Protocol
+**Innovation**: 4-step process to verify expected behavior works
+**Impact**: Catch broken features before user opens browser
+
+---
+
+## 10. Version History & Evolution
+
+### Current Version: 2.4.0 (2025-10-30)
+
+**Major Additions**:
+- Interface verification requirement (4-step process)
+- Localhost port management (prevent conflicts)
+- Professional README guidelines
+- Ready-to-use README template
+
+### Key Milestones
+
+**v2.0.0 (2025-10-30)** - Major overhaul for AI consumption:
+- AI_QUICKSTART.md
+- Structured YAML frontmatter
+- Core directives (MUST DO / NEVER DO)
+
+**v1.0.0 (2025-10-29)** - Initial release:
+- MASTER_LEARNINGS.md
+- Core working principles
+- Project-specific files (3 projects)
+- Symlink pattern
+
+**v0.1.0 (Pre-2025-10-29)** - Historical:
+- Scattered CORY_LEARNINGS.md files per project
+- No central repository
+
+---
+
+## 11. Maintenance Workflows
+
+### Maintenance Schedule
+
+**Daily**: Update project files, add terms
+**Weekly**: Review/consolidate learnings, commit changes
+**Monthly**: Update AI_QUICKSTART, clean outdated info, bump version
+**Quarterly**: Verify symlinks, elevate patterns, major review
+
+### Automation Features
+
+**Auto-Load**: Runs on every Claude Code message
+**Test Suite**: `./tests/run-all-tests.sh` validates everything
+**Search Tools**: `search-learnings.sh` and `quick-find.sh`
+
+### Adding New Projects
+
+```bash
+./add-project.sh new-project-name ~/path/to/project
+# Creates learnings file + symlink automatically
+```
+
+---
+
+## 12. Quality Standards & Metrics
+
+### Code Quality Bars
+
+**Testing**:
+- 98% coverage target
+- Zero tolerance for failing tests
+- Unit + Integration + E2E tests
+
+**TypeScript**:
+- Strict mode enabled
+- Zero 'any' unless absolutely necessary
+- All interfaces properly defined
+
+**Code Standards**:
+- ESLint: Zero warnings
+- Prettier: Auto-formatted
+- No console.log (use structured logger)
+- Complete implementations (no TODOs)
+
+---
+
+## 13. Communication Decoder
+
+### Key Phrases
+
+- **"do it"** → Full approval, implement completely
+- **"be critical"** → Honest assessment, identify all issues
+- **"continue" / "c"** → Keep working autonomously
+- **"do next todo"** → Work through list, use judgment
+- **"keep localhost running"** → Don't interrupt server
+
+### When to Ask vs When to Decide
+
+**ALWAYS Ask**:
+- Destructive operations (delete data, drop tables, force push)
+- Breaking changes affecting other systems
+- Multiple valid approaches with significant tradeoffs
+
+**NEVER Ask**:
+- Standard operations (running tests, creating commits)
+- Documented patterns (todo lists, logging style)
+- Following established code patterns
+
+---
+
+## Key Takeaways
+
+### What Makes This Project Special
+
+1. **Comprehensive**: 6,800+ lines of curated documentation
+2. **Automated**: Zero manual context loading via hooks
+3. **Versioned**: Track preference evolution (v2.4.0)
+4. **Tested**: Validation suite ensures integrity
+5. **Symlinked**: Available everywhere, managed centrally
+6. **Searchable**: Grep across all projects simultaneously
+7. **Visual**: Mermaid diagrams for complex workflows
+8. **Persistent**: ACTIVE_TODOS.md solves session continuity
+9. **Scalable**: Easy to add projects and terms
+10. **Proven**: Active use across 3 production projects
+
+### Core Philosophy
+
+"AI assistants should understand how I work once and apply it consistently everywhere."
+
+### Success Metrics
+
+- **0 seconds** context loading time (automatic)
+- **3 projects** successfully integrated
+- **19 files** of comprehensive documentation
+- **98%** test coverage target maintained
+- **v2.4.0** version demonstrating continuous evolution
+
+---
+
+## Absolute File Paths Reference
+
+**Core Documentation**:
+- [README.md](README.md)
+- [AI_QUICKSTART.md](AI_QUICKSTART.md)
+- [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md)
+- [TERM_DICTIONARY.md](TERM_DICTIONARY.md)
+- [EXAMPLES.md](EXAMPLES.md)
+- [CHANGELOG.md](CHANGELOG.md)
+- [SETUP_GUIDE.md](SETUP_GUIDE.md)
+
+**Templates**:
+- [TEMPLATE_NEW_PROJECT.md](TEMPLATE_NEW_PROJECT.md)
+- [README_BEST_PRACTICES.md](README_BEST_PRACTICES.md)
+- [TEMPLATE_README.md](TEMPLATE_README.md)
+
+**Project-Specific**:
+- [projects/README.md](projects/README.md)
+- [projects/calm-couples.md](projects/calm-couples.md)
+- [projects/ios-automation.md](projects/ios-automation.md)
+- [projects/calm-ai-project-manager.md](projects/calm-ai-project-manager.md)
+
+**Utilities**:
+- [add-project.sh](add-project.sh)
+- [scripts/check-symlinks.sh](scripts/check-symlinks.sh)
+- [scripts/validate-structure.sh](scripts/validate-structure.sh)
+- [scripts/search-learnings.sh](scripts/search-learnings.sh)
+
+**Tests**:
+- [tests/run-all-tests.sh](tests/run-all-tests.sh)
+
+---
+
+**End of Analysis**
