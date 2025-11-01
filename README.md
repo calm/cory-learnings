@@ -204,6 +204,7 @@ VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
 | [ARCHITECTURE.md](ARCHITECTURE.md) | System design and technical details | 600+ |
 | [LEARNING_PATH.md](LEARNING_PATH.md) | Structured learning guide | 650+ |
 | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | One-page cheat sheet | 400+ |
+| [LEARNINGS_COST_OPTIMIZATION.md](LEARNINGS_COST_OPTIMIZATION.md) | Institutional cost optimization knowledge | 650+ |
 | [COMPREHENSIVE_COST_ANALYSIS.md](COMPREHENSIVE_COST_ANALYSIS.md) | Cost projections and analysis | 380+ |
 | [ALL_PROJECTS_COST_ANALYSIS.md](ALL_PROJECTS_COST_ANALYSIS.md) | Complete cost analysis across all projects | 550+ |
 | [COST_SAVINGS_GUIDE.md](COST_SAVINGS_GUIDE.md) | Dependency sync cost savings | 400+ |
