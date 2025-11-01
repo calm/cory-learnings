@@ -188,6 +188,10 @@ VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
 | [LEARNING_PATH.md](LEARNING_PATH.md) | Structured learning guide | 650+ |
 | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | One-page cheat sheet | 400+ |
 | [COMPREHENSIVE_COST_ANALYSIS.md](COMPREHENSIVE_COST_ANALYSIS.md) | Cost projections and analysis | 380+ |
+| [COST_SAVINGS_GUIDE.md](COST_SAVINGS_GUIDE.md) | Dependency sync cost savings | 400+ |
+| [COST_TIERS.md](COST_TIERS.md) | Cost optimization roadmap | 350+ |
+| [IOS_AUTOMATION_COST_SAVINGS.md](IOS_AUTOMATION_COST_SAVINGS.md) | ios-automation storage optimization | 427 |
+| [IOS_AUTOMATION_CREATIVE_SAVINGS.md](IOS_AUTOMATION_CREATIVE_SAVINGS.md) | ios-automation execution optimization | 439 |
 | [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Terminology reference | 600+ |
 | [EXAMPLES.md](EXAMPLES.md) | Conversation patterns | 513 |
 | [CHANGELOG.md](CHANGELOG.md) | Version history | 169 |
