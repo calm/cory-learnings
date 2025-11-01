@@ -72,7 +72,19 @@
     },
     "improvements": {
       "path": "AI_AGENT_IMPROVEMENTS.md",
-      "purpose": "Roadmap for AI agent feature enhancements (decision trees, patterns, etc)"
+      "purpose": "Roadmap for AI agent feature enhancements"
+    },
+    "optimization_summary": {
+      "path": "OPTIMIZATION_SUMMARY.md",
+      "purpose": "Complete summary of all 20+ optimization tools built (status, impact, usage)"
+    },
+    "token_baselines": {
+      "path": "docs/TOKEN_BASELINES.md",
+      "purpose": "Real token costs per task type for budgeting and planning"
+    },
+    "prompts": {
+      "path": "docs/AI_PROMPT_LIBRARY.md",
+      "purpose": "13 pre-built prompts for common tasks (200-500t savings each)"
     }
   },
   "projects": {
