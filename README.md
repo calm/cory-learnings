@@ -34,6 +34,13 @@ Fast navigation guide with links to all documentation and resources.
 - [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) - Comprehensive reference
 - [TERM_DICTIONARY.md](TERM_DICTIONARY.md) - Terminology
 
+### For Project Work
+- **[AGENTS.md](projects/AGENTS.md.template)** in each project (calm-couples, ios-automation, calm-ai-project-manager)
+  - Quick entry points, common tasks, code patterns
+- **[Decision Trees](docs/decision-trees/)** - When to refactor vs rewrite, tests vs bugs, optimize vs ship
+- **[Pattern Library](docs/patterns/)** - Copy-paste templates for logging, testing, error handling
+- **[Integration Map](docs/INTEGRATION_MAP.md)** - How projects connect and share data
+
 ---
 
 ## Repository Structure
