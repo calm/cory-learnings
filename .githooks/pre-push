@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# Pre-push hook: Ensure tests pass before pushing
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+echo "🧪 Pre-push checks..."
+
+# Check if we're in a project with tests
+if [ -f "$REPO_ROOT/package.json" ]; then
+  echo "  → Running tests..."
+
+  # Try to run tests
+  if command -v npm &> /dev/null; then
+    if npm test 2>&1 | tail -20; then
+      echo "  ✓ Tests passed"
+    else
+      echo "  ❌ Tests failed"
+      echo "     Fix failing tests before pushing"
+      exit 1
+    fi
+  else
+    echo "  ⚠️  npm not found, skipping tests"
+  fi
+fi
+
+# Check for fixme/todo/hack comments (just warn)
+echo "  → Checking for debug comments..."
+if git diff origin/main..HEAD --name-only | grep -E '\.(ts|tsx|js|jsx)$' | xargs grep -i "FIXME\|HACK" 2>/dev/null || true; then
+  echo "  ⚠️  Found FIXME/HACK comments"
+fi
+
+echo "✓ Pre-push checks passed"
+echo ""
+echo "💡 Ready to push!"

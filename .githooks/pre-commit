@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Pre-commit hook: Check for TODOs, lint, format before committing
+
+set -e
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+echo "🔍 Pre-commit checks..."
+
+# Check for TODOs in code files (not allowed)
+echo "  → Checking for TODOs in code..."
+if git diff --cached --name-only | grep -E '\.(ts|tsx|js|jsx)$' | xargs grep -l "TODO:" 2>/dev/null || true; then
+  echo "  ❌ Found TODO comments in staged files"
+  echo "     Complete implementations - no TODOs allowed"
+  exit 1
+fi
+
+# Check for console.log (should use logger)
+echo "  → Checking for console.log..."
+if git diff --cached --name-only | grep -E '\.(ts|tsx|js|jsx)$' | xargs grep -l "console\.log" 2>/dev/null | grep -v node_modules || true; then
+  echo "  ⚠️  Found console.log - prefer logger"
+fi
+
+# Check for merge conflicts
+echo "  → Checking for merge conflicts..."
+if git diff --cached | grep -E "^(<<<<<<<|=======|>>>>>>>)" 2>/dev/null; then
+  echo "  ❌ Merge conflicts detected"
+  exit 1
+fi
+
+# Check for large files
+echo "  → Checking file sizes..."
+MAX_SIZE=10000000  # 10MB
+LARGE_FILES=$(git diff --cached --name-only --diff-filter=A | while read file; do
+  SIZE=$(git cat-file blob :0:"$file" 2>/dev/null | wc -c)
+  if [ "$SIZE" -gt "$MAX_SIZE" ]; then
+    echo "$file ($SIZE bytes)"
+  fi
+done)
+
+if [ -n "$LARGE_FILES" ]; then
+  echo "  ⚠️  Large files staged:"
+  echo "$LARGE_FILES"
+fi
+
+echo "✓ Pre-commit checks passed"
