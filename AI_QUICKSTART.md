@@ -539,6 +539,91 @@ Handoff:
 
 ---
 
+## Auto-Compacting Conversations
+
+When to request context compaction to keep conversation focused and token-efficient.
+
+### When to Suggest Compacting
+
+```yaml
+Conditions (ALL must be true):
+  1. Conversation is making progress toward goal
+  2. Context window is 70%+ full
+  3. Session is multi-phase (2+ major sections completed)
+  4. Earlier context no longer needed for current work
+  5. Risk of context loss is low (work is committed/saved)
+
+NOT when:
+  - Working on first phase of task
+  - High risk of needing earlier context
+  - Active debugging (need full trace)
+  - Complex dependencies across earlier work
+```
+
+### Suggestion Format
+
+```
+When context is ~70% used and task progression is clear:
+
+"We're about 70% through the token budget. Should we compact the conversation
+to keep momentum? We can summarize [Phase 1: X, Phase 2: Y] and continue with
+fresh context on [current phase]."
+
+User Response:
+- "yes" / "compact" → Request /compact
+- "no" / "keep going" → Continue without compacting
+```
+
+### Workflow After Compacting
+
+```
+1. User runs: /compact (local hook)
+2. Conversation context is compacted (summarized)
+3. Fresh context window = 0% (or minimal summary)
+4. Continue work immediately (no pause needed)
+5. Benefits: 30-50% token savings, clear focus
+```
+
+### Decision Tree
+
+```
+Is conversation active and making progress?
+├─ NO → Don't suggest compacting yet
+└─ YES → Continue
+
+Is token usage > 70%?
+├─ NO → Don't suggest yet
+└─ YES → Continue
+
+Will we need earlier context?
+├─ YES → Keep full context, don't compact
+└─ NO → Continue
+
+Has current phase been committed/saved?
+├─ NO → Wait until safer
+└─ YES → Suggest compacting
+
+DECISION: Suggest compacting
+```
+
+### Rules
+
+✅ **DO**
+- Suggest compacting when >70% token usage AND safe
+- Be explicit about what's being summarized
+- Wait until work is saved/committed
+- Offer it as option, not requirement
+- Continue immediately after compacting
+
+❌ **DON'T**
+- Suggest compacting in first 30% of conversation
+- Compact during active debugging
+- Compact if earlier context is needed
+- Force compacting (user decides)
+- Stop working after compacting
+
+---
+
 ## Communication Best Practices
 
 ### Project Context Summary (REQUIRED at end of sessions)
