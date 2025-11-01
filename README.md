@@ -1,8 +1,8 @@
 ---
 title: "Cory's Centralized Learnings Repository"
 description: "Single source of truth for preferences and learnings"
-version: "2.4"
-last_updated: "2025-10-30"
+version: "2.9"
+last_updated: "2025-11-01"
 type: "repository-readme"
 audience: ["ai-agents", "developers", "teams"]
 tags: ["documentation", "learnings", "repository-structure"]
@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.8 | **Last Updated**: 2025-11-01
+**Version**: 2.9 | **Last Updated**: 2025-11-01
 
 ---
 
@@ -37,7 +37,9 @@ Fast navigation guide with links to all documentation and resources.
 ### For Project Work
 - **[AGENTS.md](projects/AGENTS.md.template)** in each project (calm-couples, qa-automation, calm-ai-project-manager)
   - Quick entry points, common tasks, code patterns
-- **[Decision Trees](docs/decision-trees/)** - When to refactor vs rewrite, tests vs bugs, optimize vs ship
+- **[Decision Trees](docs/DECISION_TREES.md)** - 10 systematic frameworks for consistent decisions
+- **[Tools Selection Guide](docs/TOOLS_SELECTION_GUIDE.md)** - How to evaluate and choose technologies
+- **[CI/CD Cost Tracking](docs/CI_CD_COST_TRACKING.md)** - GitHub Actions workflow for commit tracking
 - **[Pattern Library](docs/patterns/)** - Copy-paste templates for logging, testing, error handling
 - **[Integration Map](docs/INTEGRATION_MAP.md)** - How projects connect and share data
 
@@ -58,6 +60,13 @@ cory-learnings/
 ├── TEMPLATE_README.md               # Ready-to-use README template
 ├── ACTIVE_TODOS.md                  # Persistent todos across sessions
 ├── add-project.sh                   # Project addition script
+├── docs/                            # Comprehensive guides and analysis
+│   ├── DECISION_TREES.md            # 10 frameworks for consistent decisions
+│   ├── TOOLS_SELECTION_GUIDE.md     # Tech evaluation and selection
+│   ├── CI_CD_COST_TRACKING.md       # GitHub Actions commit tracking
+│   ├── INTEGRATION_MAP.md           # Project connections and data flow
+│   ├── PROJECT_PAIN_POINTS.md       # Cross-project known issues
+│   └── cost-optimization/           # Token efficiency resources
 ├── scripts/                         # Validation and search tools
 │   ├── check-symlinks.sh           # Verify project symlinks
 │   ├── validate-structure.sh       # Check repository integrity
