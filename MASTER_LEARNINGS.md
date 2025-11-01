@@ -874,6 +874,50 @@ git checkout -b docs/readme-update
 - ❌ Having multiple todos in_progress simultaneously
 - ❌ Assuming clean state without verification
 
+### Resource & Cost Management
+
+**When to Switch to More Expensive Models (Sonnet → Opus, Haiku → Sonnet)**:
+
+The default is efficiency - but sometimes it's worth paying more for speed/quality:
+
+✅ **Switch if**:
+- **Complex problem-solving** (multi-file refactors, architectural decisions, novel patterns)
+  - Haiku might struggle or need multiple iterations → Sonnet saves time & cost overall
+  - Example: "Redesign auth system" → Sonnet likely gets it right first try
+- **High-stakes decisions** (breaking changes, security refactors, critical bugs)
+  - Better to pay 3x token cost once than fix a botched solution
+  - Example: "Secure password reset flow" → Worth the extra cost to get it right
+- **Time-sensitive work** where iterations are costly
+  - Faster model = faster completion = quicker feedback loops
+- **Genuinely unclear problem** that needs deep reasoning
+  - Cheaper model might misunderstand → more iterations needed
+
+❌ **Don't switch if**:
+- Task is straightforward (simple CRUD, routine fixes, documentation)
+  - Haiku handles these perfectly fine
+- You're just avoiding thinking through the problem
+  - That's analysis paralysis, not a legitimate use case
+- It's "nice to have" feature optimization
+  - Keep it cheap unless it's blocking progress
+
+**Cost-Conscious Decision Matrix**:
+```
+Task Complexity | Clarity | Time-Sensitive | Recommendation
+Simple          | Clear   | No             | Haiku (save costs)
+Simple          | Clear   | Yes            | Haiku (still cheap)
+Complex         | Clear   | No             | Haiku first (iterate if needed)
+Complex         | Unclear | No             | Sonnet (worth 2-3x cost upfront)
+Complex         | Unclear | Yes            | Sonnet (speed pays for itself)
+Critical/Secure | Any     | Any            | Sonnet (don't cheap out on security)
+```
+
+**Rule of Thumb**: Default to Haiku. Switch to Sonnet only if you genuinely believe it will:
+1. Solve the problem in 1-2 tries (vs. 3-5 with cheaper model)
+2. Save engineering time (faster reasoning > token cost)
+3. Reduce risk of bugs in critical code
+
+**Cost Impact**: If 1 Sonnet session = 2-3 Haiku sessions, it's worth it. If it's just "slightly nicer output," stick with Haiku.
+
 ---
 
 ## Frequently Asked Questions
