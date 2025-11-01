@@ -7,7 +7,8 @@
       "Complete implementations (no TODOs in code)",
       "Zero tolerance for test failures",
       "Work autonomously",
-      "Use structured logger (not console.log)"
+      "Use structured logger (not console.log)",
+      "Prioritize quick wins when smart (don't over-engineer)"
     ],
     "when_to_ask": [
       "Destructive operations",

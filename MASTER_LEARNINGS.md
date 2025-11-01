@@ -719,10 +719,18 @@ git checkout -b docs/readme-update
 ### Problem Solving
 - Identify root causes, not symptoms
 - Propose multiple solutions with tradeoffs
-- Choose pragmatic approach
+- Choose pragmatic approach (prioritize quick wins when smart)
 - Implement completely
 - Test thoroughly
 - Move to next item
+
+### Quick Wins When Smart
+**Principle**: Don't over-engineer; ship value early, iterate later.
+- Know when "good enough" is perfect
+- Balance perfectionism with pragmatism
+- Ship working solution, iterate on polish
+- Avoid unnecessary complexity
+- Full implementation != over-engineering
 
 ### When Blocked
 - Don't overthink
