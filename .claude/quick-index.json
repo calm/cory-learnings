@@ -4,11 +4,19 @@
   "fastLookup": {
     "critical_rules": [
       "Todo lists for 2+ step tasks (use TodoWrite)",
-      "Complete implementations (no TODOs in code)",
+      "Complete implementations (no TODOs in code, BUT templates OK if obvious)",
       "Zero tolerance for test failures",
       "Work autonomously",
       "Use structured logger (not console.log)",
       "Prioritize quick wins when smart (don't over-engineer)"
+    ],
+    "template_pattern": [
+      "Templates OK for quick starts if TODOs are obvious",
+      "Mark with: // TODO: [feature-name] - [what's missing]",
+      "List TODOs in commit message",
+      "Each piece must be finished (not partial implementations)",
+      "Don't hide pending work - be transparent",
+      "Finish feature OR mark entire feature WIP"
     ],
     "when_to_ask": [
       "Destructive operations",

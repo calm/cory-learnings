@@ -44,6 +44,14 @@ audience: ["ai-agents"]
 - Have multiple todos in_progress
 - Batch todo completions
 
+### ✅ BUT: Templates are OK if TODOs are obvious
+**Smart approach to starting features**:
+- Start with clear template + visible TODOs
+- Mark incomplete sections: `// TODO: [feature-name] - [what's missing]`
+- List TODOs in commit message or PR
+- Each completed piece must be finished (not partial)
+- Don't hide what's pending - make it obvious
+
 ---
 
 ## 🤔 When to Ask (Smart Balance)

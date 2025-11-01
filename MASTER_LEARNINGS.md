@@ -148,6 +148,12 @@ tags: ["preferences", "working-style", "best-practices", "standards"]
 - If planning something, implement it completely
 - No placeholders or "we'll do this later" - do it now
 - Pragmatic over theoretical
+- **Exception**: Templates with OBVIOUS TODOs are OK for quick starts
+  - Structure features clearly with visible `// TODO: [feature] - [detail]` comments
+  - List TODOs in commit message or pull request
+  - Each completed piece must be fully functional (not partial)
+  - Don't hide pending work - make it transparent what's missing
+  - Finish feature before submitting, OR mark entire feature as WIP
 
 ### "Be Critical and Continue" - Autonomous Quality Mindset
 - Perform thorough analysis before implementing
