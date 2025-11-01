@@ -12,7 +12,7 @@ tags: ["documentation", "learnings", "repository-structure"]
 
 **Single source of truth for development preferences, working style, and project-specific learnings across all Calm projects.**
 
-**Version**: 2.5 | **Last Updated**: 2025-10-31
+**Version**: 2.6 | **Last Updated**: 2025-11-01
 
 ---
 
@@ -93,18 +93,29 @@ cory-learnings/
 
 ## Cost Optimization Initiatives
 
-This repository now includes comprehensive cost optimization guides for all projects:
+This repository includes comprehensive cost analysis and optimization guides.
 
-**Total Potential Savings: $26,256/year**
+### 💰 Current Costs (as of 2025-10-31)
 
-- **ios-automation** ($15,949/year): Storage cleanup + test optimization + device matrix
-- **calm-couples** ($4,080/year): Query optimization + caching + bundle reduction
-- **calm-ai-project-manager** ($4,830/year): API caching + token optimization + service consolidation
-- **Dependency Sync** ($639/year): Auto-update system already deployed
-- **Repository Management** ($750/year): Token efficiency gains
+| Metric | Amount |
+|--------|--------|
+| **Current Monthly** | $277 - $1,925 |
+| **Optimized Monthly** | $130 - $900 |
+| **Potential Savings** | $147 - $1,025/month |
+| **Savings %** | 47-53% |
 
-**Quick Start:**
-See [WEEK1_IMPLEMENTATION_SUMMARY.md](WEEK1_IMPLEMENTATION_SUMMARY.md) for ready-to-deploy code (3 hours = $2,670/year savings, 22:1 ROI) or [ALL_PROJECTS_COST_ANALYSIS.md](ALL_PROJECTS_COST_ANALYSIS.md) for full analysis.
+### Project Breakdown
+- **calm-couples**: $42-316/month → $25-190/month (40% savings)
+- **ios-automation**: $175-415/month → $45-110/month (60-70% savings)
+- **calm-ai-project-manager**: $60-1,194/month → $60-600/month (50% savings)
+
+**Primary Cost Drivers**: Supabase (calm-couples), Claude Vision API (ios-automation), Claude API (calm-ai-project-manager)
+
+### Cost Tracking Guide
+1. **Review current costs**: Check [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md)
+2. **Token optimization**: Use [TOKEN_EFFICIENCY.md](docs/cost-optimization/TOKEN_EFFICIENCY.md) guidelines
+3. **Implement savings**: Follow strategies in [COST_SAVINGS_GUIDE.md](docs/cost-optimization/COST_SAVINGS_GUIDE.md)
+4. **Update costs quarterly** - See "Maintenance" section below
 
 ---
 
@@ -210,30 +221,24 @@ VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
 
 ## Documentation Files
 
-| File | Purpose | Lines |
-|------|---------|-------|
-| [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents | 540 |
-| [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide | 940 |
-| [TOKEN_EFFICIENCY.md](TOKEN_EFFICIENCY.md) | Token optimization guidelines | 1190 |
-| [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level system overview | 500+ |
-| [ARCHITECTURE.md](ARCHITECTURE.md) | System design and technical details | 600+ |
-| [LEARNING_PATH.md](LEARNING_PATH.md) | Structured learning guide | 650+ |
-| [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | One-page cheat sheet | 400+ |
-| [LEARNINGS_COST_OPTIMIZATION.md](LEARNINGS_COST_OPTIMIZATION.md) | Institutional cost optimization knowledge | 650+ |
-| [WEEK1_IMPLEMENTATION_SUMMARY.md](WEEK1_IMPLEMENTATION_SUMMARY.md) | Complete ready-to-deploy implementation guide | 450+ |
-| [QUICK_COST_WINS.md](QUICK_COST_WINS.md) | Ready-to-implement week 1 savings | 350+ |
-| [cache-implementation.js](cache-implementation.js) | Drop-in API caching layer ($1,560/year) | 250+ |
-| [COMPREHENSIVE_COST_ANALYSIS.md](COMPREHENSIVE_COST_ANALYSIS.md) | Cost projections and analysis | 380+ |
-| [ALL_PROJECTS_COST_ANALYSIS.md](ALL_PROJECTS_COST_ANALYSIS.md) | Complete cost analysis across all projects | 550+ |
-| [COST_SAVINGS_GUIDE.md](COST_SAVINGS_GUIDE.md) | Dependency sync cost savings | 400+ |
-| [COST_TIERS.md](COST_TIERS.md) | Cost optimization roadmap | 350+ |
-| [IOS_AUTOMATION_COST_SAVINGS.md](IOS_AUTOMATION_COST_SAVINGS.md) | ios-automation storage & execution | 866 |
-| [CALM_COUPLES_COST_SAVINGS.md](CALM_COUPLES_COST_SAVINGS.md) | calm-couples optimization | 427 |
-| [CALM_AI_PM_COST_SAVINGS.md](CALM_AI_PM_COST_SAVINGS.md) | calm-ai-project-manager optimization | 439 |
-| [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Terminology reference | 600+ |
-| [EXAMPLES.md](EXAMPLES.md) | Conversation patterns | 513 |
-| [CHANGELOG.md](CHANGELOG.md) | Version history | 169 |
-| [projects/README.md](projects/README.md) | Project overview | 296 |
+### Core Files (Root)
+| File | Purpose |
+|------|---------|
+| [AI_QUICKSTART.md](AI_QUICKSTART.md) | Quick reference for AI agents |
+| [MASTER_LEARNINGS.md](MASTER_LEARNINGS.md) | Comprehensive preferences guide |
+| [MASTER_LEARNINGS_SUMMARY.md](MASTER_LEARNINGS_SUMMARY.md) | Executive summary of key learnings |
+| [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Terminology reference |
+| [CHANGELOG.md](CHANGELOG.md) | Version history |
+| [INDEX.md](INDEX.md) | Navigation index for all documentation |
+| [AI_AGENT_IMPROVEMENTS.md](AI_AGENT_IMPROVEMENTS.md) | Tools and patterns for AI agent optimization |
+
+### Cost Optimization (docs/cost-optimization/)
+| File | Purpose |
+|------|---------|
+| [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md) | Complete analysis across all projects |
+| [TOKEN_EFFICIENCY.md](docs/cost-optimization/TOKEN_EFFICIENCY.md) | Token usage optimization guidelines |
+| [COST_SAVINGS_GUIDE.md](docs/cost-optimization/COST_SAVINGS_GUIDE.md) | Dependency sync cost reduction strategies |
+| [COST_TIERS.md](docs/cost-optimization/COST_TIERS.md) | Cost optimization roadmap |
 
 ---
 
@@ -279,11 +284,19 @@ git log --follow projects/calm-couples.md    # File-specific history
 - Review and consolidate monthly
 - Commit changes with semantic versioning
 - Verify symlinks quarterly
+- **Review infrastructure costs quarterly**
 
 ### Quarterly Review
 - Identify patterns to elevate to MASTER_LEARNINGS.md
 - Remove outdated information
 - Update version in CHANGELOG.md
+
+### Quarterly Cost Review
+1. **Check actual vs projected costs** in each project's billing dashboard
+2. **Update [COMPREHENSIVE_COST_ANALYSIS.md](docs/cost-optimization/COMPREHENSIVE_COST_ANALYSIS.md)** with new figures
+3. **Verify optimization savings** from implemented strategies
+4. **Identify new cost drivers** or changes in usage patterns
+5. **Update the "Current Costs" table** in this README with date and amounts
 
 ---
 
