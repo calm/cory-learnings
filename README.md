@@ -76,6 +76,23 @@ cory-learnings/
 
 ---
 
+## Cost Optimization Initiatives
+
+This repository now includes comprehensive cost optimization guides for all projects:
+
+**Total Potential Savings: $26,256/year**
+
+- **ios-automation** ($15,949/year): Storage cleanup + test optimization + device matrix
+- **calm-couples** ($4,080/year): Query optimization + caching + bundle reduction
+- **calm-ai-project-manager** ($4,830/year): API caching + token optimization + service consolidation
+- **Dependency Sync** ($639/year): Auto-update system already deployed
+- **Repository Management** ($750/year): Token efficiency gains
+
+**Quick Start:**
+See [ALL_PROJECTS_COST_ANALYSIS.md](ALL_PROJECTS_COST_ANALYSIS.md) for complete breakdown with implementation timeline (5 hours Week 1 = $2,010/year savings).
+
+---
+
 ## Usage
 
 ### Search Learnings
@@ -188,10 +205,12 @@ VERBOSE=true ./tests/code-quality.test.sh ~/Desktop/calm/calm-couples
 | [LEARNING_PATH.md](LEARNING_PATH.md) | Structured learning guide | 650+ |
 | [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | One-page cheat sheet | 400+ |
 | [COMPREHENSIVE_COST_ANALYSIS.md](COMPREHENSIVE_COST_ANALYSIS.md) | Cost projections and analysis | 380+ |
+| [ALL_PROJECTS_COST_ANALYSIS.md](ALL_PROJECTS_COST_ANALYSIS.md) | Complete cost analysis across all projects | 550+ |
 | [COST_SAVINGS_GUIDE.md](COST_SAVINGS_GUIDE.md) | Dependency sync cost savings | 400+ |
 | [COST_TIERS.md](COST_TIERS.md) | Cost optimization roadmap | 350+ |
-| [IOS_AUTOMATION_COST_SAVINGS.md](IOS_AUTOMATION_COST_SAVINGS.md) | ios-automation storage optimization | 427 |
-| [IOS_AUTOMATION_CREATIVE_SAVINGS.md](IOS_AUTOMATION_CREATIVE_SAVINGS.md) | ios-automation execution optimization | 439 |
+| [IOS_AUTOMATION_COST_SAVINGS.md](IOS_AUTOMATION_COST_SAVINGS.md) | ios-automation storage & execution | 866 |
+| [CALM_COUPLES_COST_SAVINGS.md](CALM_COUPLES_COST_SAVINGS.md) | calm-couples optimization | 427 |
+| [CALM_AI_PM_COST_SAVINGS.md](CALM_AI_PM_COST_SAVINGS.md) | calm-ai-project-manager optimization | 439 |
 | [TERM_DICTIONARY.md](TERM_DICTIONARY.md) | Terminology reference | 600+ |
 | [EXAMPLES.md](EXAMPLES.md) | Conversation patterns | 513 |
 | [CHANGELOG.md](CHANGELOG.md) | Version history | 169 |
